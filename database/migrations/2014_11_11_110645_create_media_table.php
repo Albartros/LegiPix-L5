@@ -19,7 +19,7 @@ class CreateMediaTable extends Migration {
             $table->integer('mediable_id')->unsigned();
             $table->string('filename');
             $table->string('mime');
-            $table->bigInteger('size')->unsigned()->nullable()->default(NULL);
+            $table->bigInteger('size')->unsigned()->nullable()->default(null);
             $table->string('name');
             $table->string('alt');
             $table->string('title');
