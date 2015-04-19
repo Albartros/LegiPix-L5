@@ -154,6 +154,7 @@ return [
       'Devfactory\Media\MediaServiceProvider',
       'That0n3guy\Transliteration\TransliterationServiceProvider',
       'Torann\Hashids\HashidsServiceProvider',
+      'Zizaco\Entrust\EntrustServiceProvider',
 
    ],
 
@@ -207,6 +208,7 @@ return [
        * Custom Aliases...
        */
       'Debugbar'  => 'Barryvdh\Debugbar\Facade',
+      'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
 
    ],
 
