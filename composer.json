@@ -10,6 +10,7 @@
       "barryvdh/laravel-debugbar": "~2.0",
       "cviebrock/eloquent-sluggable": "dev-master",
       "devfactory/media": "2.0.*",
+      "mjohnson/decoda": "6.*",
       "torann/hashids": "2.0.*@dev",
       "zizaco/entrust": "dev-laravel-5"
    },
