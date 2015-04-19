@@ -39,7 +39,7 @@ return [
    |
    */
 
-   'timezone' => 'UTC',
+   'timezone' => 'Europe/Paris',
 
    /*
    |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
    |
    */
 
-   'locale' => 'en',
+   'locale' => 'fr',
 
    /*
    |--------------------------------------------------------------------------
@@ -148,7 +148,12 @@ return [
       /*
        * Custom Service Providers...
        */
+      'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
+      'Awjudd\FeedReader\FeedReaderServiceProvider',
       'Barryvdh\Debugbar\ServiceProvider',
+      'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+      'Devfactory\Media\MediaServiceProvider',
+      'That0n3guy\Transliteration\TransliterationServiceProvider',
       'Torann\Hashids\HashidsServiceProvider',
 
    ],
@@ -198,7 +203,12 @@ return [
       'URL'       => 'Illuminate\Support\Facades\URL',
       'Validator' => 'Illuminate\Support\Facades\Validator',
       'View'      => 'Illuminate\Support\Facades\View',
+
+      /*
+       * Custom Aliases...
+       */
       'Debugbar'  => 'Barryvdh\Debugbar\Facade',
+      'FeedReader'=> 'Awjudd\FeedReader\Facades\FeedReader',
 
    ],
 
