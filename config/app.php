@@ -150,8 +150,10 @@ return [
        */
       'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
       'Barryvdh\Debugbar\ServiceProvider',
+      'Collective\Html\HtmlServiceProvider',
       'Cviebrock\EloquentSluggable\SluggableServiceProvider',
       'Devfactory\Media\MediaServiceProvider',
+      'Frozennode\Administrator\AdministratorServiceProvider',
       'That0n3guy\Transliteration\TransliterationServiceProvider',
       'Torann\Hashids\HashidsServiceProvider',
       'Zizaco\Entrust\EntrustServiceProvider',
@@ -209,6 +211,8 @@ return [
        */
       'Debugbar'  => 'Barryvdh\Debugbar\Facade',
       'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
+      'Form'      => 'Collective\Html\FormFacade',
+      'Html'      => 'Collective\Html\HtmlFacade',
 
    ],
 
