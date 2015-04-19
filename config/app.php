@@ -149,7 +149,6 @@ return [
        * Custom Service Providers...
        */
       'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
-      'Awjudd\FeedReader\FeedReaderServiceProvider',
       'Barryvdh\Debugbar\ServiceProvider',
       'Cviebrock\EloquentSluggable\SluggableServiceProvider',
       'Devfactory\Media\MediaServiceProvider',
@@ -208,7 +207,6 @@ return [
        * Custom Aliases...
        */
       'Debugbar'  => 'Barryvdh\Debugbar\Facade',
-      'FeedReader'=> 'Awjudd\FeedReader\Facades\FeedReader',
 
    ],
 

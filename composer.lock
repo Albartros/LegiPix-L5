@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c1477555a7435f14c80d9bcb5608c87c",
+    "hash": "d4527ab37658ec0f5e835858f5cdb499",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -50,44 +50,6 @@
                 "recaptcha"
             ],
             "time": "2015-03-14 04:52:19"
-        },
-        {
-            "name": "awjudd/feed-reader",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/awjudd/l4-feed-reader.git",
-                "reference": "edb0c61b824436e575f3a5bf630ab28e36d76c16"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/awjudd/l4-feed-reader/zipball/edb0c61b824436e575f3a5bf630ab28e36d76c16",
-                "reference": "edb0c61b824436e575f3a5bf630ab28e36d76c16",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5",
-                "php": ">=5.4.0",
-                "simplepie/simplepie": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Awjudd\\FeedReader": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Andrew Judd",
-                    "email": "contact@andrewjudd.ca"
-                }
-            ],
-            "description": "A simple RSS feed reader for Laravel 5",
-            "time": "2015-03-23 02:57:42"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1325,60 +1287,6 @@
                 "shell"
             ],
             "time": "2015-03-26 18:43:54"
-        },
-        {
-            "name": "simplepie/simplepie",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/simplepie/simplepie.git",
-                "reference": "9a9faaa0d563426cf6d897c169373c5b62f1b252"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/simplepie/simplepie/zipball/9a9faaa0d563426cf6d897c169373c5b62f1b252",
-                "reference": "9a9faaa0d563426cf6d897c169373c5b62f1b252",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "SimplePie": "library"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ryan Parman",
-                    "homepage": "http://ryanparman.com/",
-                    "role": "Creator, alumnus developer"
-                },
-                {
-                    "name": "Geoffrey Sneddon",
-                    "homepage": "http://gsnedders.com/",
-                    "role": "Alumnus developer"
-                },
-                {
-                    "name": "Ryan McCue",
-                    "email": "me@ryanmccue.info",
-                    "homepage": "http://ryanmccue.info/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A simple Atom/RSS parsing library for PHP",
-            "homepage": "http://simplepie.org/",
-            "keywords": [
-                "atom",
-                "feeds",
-                "rss"
-            ],
-            "time": "2014-04-28 12:50:39"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3354,7 +3262,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "cviebrock/eloquent-sluggable": 20,
-        "simplepie/simplepie": 20,
         "torann/hashids": 20
     },
     "prefer-stable": false,

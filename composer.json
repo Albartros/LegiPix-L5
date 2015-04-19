@@ -7,11 +7,9 @@
    "require": {
       "laravel/framework": "5.0.*",
       "anhskohbo/no-captcha": "2.*",
-      "awjudd/feed-reader": "1.2.*",
       "barryvdh/laravel-debugbar": "~2.0",
       "cviebrock/eloquent-sluggable": "dev-master",
       "devfactory/media": "2.0.*",
-      "simplepie/simplepie": "dev-master",
       "torann/hashids": "2.0.*@dev"
    },
    "require-dev": {
