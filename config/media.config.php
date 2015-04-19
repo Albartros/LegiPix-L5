@@ -16,7 +16,7 @@ return array(
    * Set to TRUE if want sub directories by Model to be created in the
    * upload folder. FALSE if you want to have them all in the root.
    */
-  'sub_directories' => TRUE,
+  'sub_directories' => true,
 
   /**
    * Define how to rename filenames, options are:
@@ -31,5 +31,5 @@ return array(
    *   Clean up the file name, lowercasing all letters, replacing
    *   spaces with _'s and removing accents and special characters.
    */
-  'rename' => 'transliterate',
+  'rename' => 'unique',
 );
