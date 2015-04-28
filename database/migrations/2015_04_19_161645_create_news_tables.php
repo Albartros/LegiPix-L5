@@ -47,6 +47,9 @@ class CreateNewsTables extends Migration {
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('news_categories');
 
+            // Metadata
+            $table->boolean('featured')->default(false);
+
             // Timestamps
             $table->timestamps();
             $table->softDeletes();
