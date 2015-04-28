@@ -1,0 +1,230 @@
+.index-articles, .index-contents, .index-contents--video { @include clearfix() }
+
+.index-articles .index-article:nth-of-type(n+5),
+.index-contents .index-video:nth-of-type(n+4) {
+   display: none;
+   @include respond-to(desktop) {
+      display: block;
+   }
+}
+
+.index-contents, .index-contents--video {
+   position: relative;
+   background-color: $md-clr-grey-100;
+
+   //border-top: 20px solid $background-color;
+   //border-bottom: 20px solid $background-color;
+   margin-top: 20px;
+
+
+    padding: 20px 0;
+}
+
+.index-contents--video {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.index-article {
+   border-bottom: 1px solid $gradColorTo;
+   height: 110px;
+   overflow: hidden;
+   position: relative;
+   width: 100%;
+   color: $md-clr-grey-200;
+   @include respond-to(tablet) {
+      border-style: none;
+      float: left;
+      height: auto;
+      width: 50%;
+   }
+   @include respond-to(desktop) {
+      width: 30%;
+      &:first-child {
+        width: 40%;
+        .corner-ribbon { display: block }
+        .index-ratio-keeper { padding-top: 112.5% }
+        .index-article__news { height: 6.4em }
+      }
+   }
+}
+
+.index-article__link-block {
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   bottom: 0;
+   left: 0;
+   position: absolute;
+   right: 0;
+   top: 0;
+}
+
+
+
+.corner-ribbon{
+  width: 200px;
+  position: absolute;
+
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+
+  top: 25px;
+  left: -50px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+
+  background-color: rgba(0, 0, 0, .7);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: none;
+}
+
+
+
+
+.index-article__news {
+   @include transition-duration(.1s);
+   @include transition-property(all);
+   @include transition-timing-function(linear);
+   background-color: rgba(0, 0, 0, .7);
+   bottom: 0;
+   //color: lighten($fontColorLight, 40%);
+   display: block;
+   height: 2em;
+   left: 0;
+   line-height: 2em;
+   position: absolute;
+   width: 100%;
+}
+
+.index-article__link-block:hover {
+   @include respond-to(tablet) {
+      .index-article__news {
+         height: 6.4em;
+      }
+   }
+}
+
+.index-article__news__title {
+   display: block;
+   text-align: center;
+   height: 2em;
+   overflow: hidden;
+}
+
+.index-article__news__resume {
+   display: none;
+   @include respond-to(tablet) {
+      display: block;
+      font-size: 14px;
+      font-weight: 300;
+      height: 4.1em;
+      line-height: 1em;
+      overflow: hidden;
+      padding: 0 5px;
+      text-align: justify;
+   }
+}
+
+.index-video {
+   height: auto;
+   width: 100%;
+   @include respond-to(tablet) {
+      border-left: 1px solid $gradColorFrom;
+   }
+   @include respond-to(desktop) {
+      @include box-sizing(border-box);
+      border-left-width: 5px;
+      border-right: 2px solid $gradColorFrom;
+      width: 75%;
+   }
+}
+
+.index-video__bloc {
+   @include respond-to(tablet) {
+      margin: 0 auto;
+      padding: 1em 0;
+      width: 80%;
+   }
+}
+
+.video-shadow {
+   @include respond-to(tablet) {
+      @include box-shadow($boxShadow 1px 1px 2px);
+   }
+}
+
+.videoWrapper {
+   height: 0;
+   margin: 0 auto;
+   padding-bottom: 56.25%; /* 16:9 */
+   padding-top: 25px;
+   position: relative;
+   @include respond-to(tablet) {
+      top: 1px;
+   }
+}
+
+.index-video__video {
+    height: 100%;
+    left: 0;
+    max-width: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.index-video__name {
+   display: none;
+   @include respond-to(desktop) {
+      background-color: $gradColorFrom;
+      color: $backgroundColor;
+      display: block;
+      font-size: 15px;
+      font-weight: normal;
+      line-height: 2em;
+      margin: 0;
+      text-align: center;
+   }
+}
+
+.countdown {
+   display: none;
+   @include respond-to(desktop) {
+      @include flexbox((
+         display: flex,
+         flex-direction: column,
+         justify-content: center,
+      ));
+      bottom: 0;
+      color: $backgroundColor;
+      float: right;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
+      width: 25%;
+   }
+}
+
+.countdown__image {
+   @include box-shadow($boxShadow 1px 1px 2px);
+   height: auto;
+   margin: 0 auto;
+   width: 75%;
+}
+
+.countdown__title {
+   @include box-shadow($boxShadow 1px 1px 2px);
+   background-color: $gradColorFrom;
+   display: inline-block;
+   margin: 0 auto;
+   padding: 2px 0;
+   position: relative;
+   top: -4px;
+   width: 75%;
+}

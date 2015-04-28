@@ -1,0 +1,281 @@
+/*
+|--------------------------------------------------------------------------
+| Le header comme bloc
+|--------------------------------------------------------------------------
+*/
+header {
+    transform: translateZ(0); // Acceleration Materielle
+    @include transition-duration(.2s);
+    @include transition-property(box-shadow);
+    @include transition-timing-function(ease-in);
+    background-color: $md-clr-grey-900;
+    color: $md-clr-grey-200;
+    width: 100%
+}
+.header__main, .header__second { padding: 10px 0 }
+.header__main {
+    border-bottom-color: $head-foot-color;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    font-size: 14px;
+    line-height: 18px;
+    @include respond-to(tablet) { border-bottom-width: 4px; font-size: 18px }
+    @include respond-to(desktop) { line-height: 60px }
+}
+.header__second {
+    display: none;
+    @include respond-to(tablet) {
+        @include clearfix();
+        display: block
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Logo du site
+|--------------------------------------------------------------------------
+*/
+.logo {
+    background-image: url("../img/logo/bleu-154-48.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: 40px;
+    margin: 0 auto;
+    width: 130px;
+    @include respond-to(tablet) {
+        background-image: url("../img/logo/bleu-154-48.svg");
+        height: 48px;
+        margin: 0 auto;
+        width: 154px
+    }
+    @include respond-to(desktop) {
+        display: inline-block;
+        margin-left: 15px;
+        margin-right: 10px;
+        vertical-align: middle;
+        &[data-version]:after {
+            color: #757575;
+            content: attr(data-version);
+            font-family: monospace;
+            font-size: 0.7em;
+            left: 5%;
+            position: relative;
+            top: 22px
+        }
+    }
+}
+.no-svg .logo { background-image: url(../img/logo/logo_bleu.png); background-size: 154px 48px }
+
+/*
+|--------------------------------------------------------------------------
+| Le menu général
+|--------------------------------------------------------------------------
+*/
+.menu {
+    font-family: $roboto;
+    margin-top: 5px;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    @include respond-to(desktop) {
+        display: inline-block;
+        margin: 0;
+        text-align: left
+    }
+}
+.menu__list {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+.menu__list__item {
+    display: inline-block;
+    padding: 0 .35em;
+    @include respond-to(tablet) { padding: 0 .5em }
+}
+.menu__list__link {
+    position: relative;
+    .icon--large {
+        display: none;
+        @include respond-to(tablet) {
+            bottom: 3px;
+            font-size: 1.5em;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle
+        }
+    }
+    @include respond-to(desktop) {
+        display: block;
+        &:before {
+            transform: translateZ(0); // Acceleration Materielle
+            @include transition-duration(.1s);
+            @include transition-property(height);
+            @include transition-timing-function(linear);
+            background-color: $head-foot-color;
+            content: "";
+            display: block;
+            height: 0;
+            position: absolute;
+            top: -10px;
+            width: 100%
+        }
+        &:hover:before { height: 4px }
+    }
+}
+.header__second__menu { // Menu secondaire
+    transform: translateZ(0); // Acceleration Materielle
+    @include transition-duration(.2s);
+    @include transition-property(opacity);
+    @include transition-timing-function(ease-in);
+    opacity: 0;
+    visibility: hidden;
+    &.fadeIn {
+        opacity: 1
+    }
+    @include respond-to(tablet) {
+        float: left;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        padding-left: 5px
+    }
+    li { display: inline; padding-right: 1em }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Bloc utilisateur Principal
+|--------------------------------------------------------------------------
+*/
+.auth-user__avatar {
+    @include respond-to(mobile) { display: none }
+    @include respond-to(desktop) {
+        display: inline-block;
+        float: right;
+        position: relative;
+        top: 6px;
+        right: 25px;
+        width: 50px
+    }
+}
+.auth-user, .auth-user--logged-out {
+    @include respond-to(mobile) { margin: 0 auto; text-align: center }
+    @include respond-to(tablet) {
+        position: absolute;
+        right: 7%;
+        top: 10px
+    }
+    @include respond-to(desktop) {
+        float: right;
+        position: relative;
+        right: 15px;
+        text-align: left;
+        top: 0
+    }
+}
+.auth-user {
+    @include respond-to(desktop) { line-height: 27px }
+}
+.auth-user--logged-out {
+    color: $md-clr-orange-A400;
+    text-transform: uppercase
+}
+.header__second__user .auth-user--logged-out { right: 0 }
+
+/*
+|--------------------------------------------------------------------------
+| Bloc utilisateur Alternatif
+|--------------------------------------------------------------------------
+*/
+.header__second__user {
+    transform: translateZ(0); // Acceleration Materielle
+    @include transition-duration(.2s);
+    @include transition-property(opacity);
+    @include transition-timing-function(ease-in);
+    opacity: 0;
+    padding-right: 5px;
+    visibility: hidden;
+    &.fadeIn {
+        opacity: 1
+    }
+}
+.header__second__user-notification { float: right }
+.header__second__user-name {
+    float: right;
+    padding-right: .5em
+}
+
+/*
+|--------------------------------------------------------------------------
+| Notifications
+|--------------------------------------------------------------------------
+*/
+.header__main__user-notification, .header__second__user-notification {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    @include respond-to(tablet) { display: block }
+}
+.notification-item { display: inline-block }
+.notification-item__icon {
+    &.icon--large {
+        @include respond-to(tablet) { font-size: 1.25em }
+        @include respond-to(desktop) { font-size: 1.5em }
+    }
+    &:after {
+        background-color: $head-foot-color;
+        content: attr(data-content);
+        font-family: Tahoma, Geneva, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        padding: 1px 2px;
+        position: relative;
+        right: 3px
+    }
+    &[data-content="00"] {
+        transform: translateZ(0); // Acceleration Materielle
+        @include transition-duration(.1s);
+        @include transition-property(color);
+        @include transition-timing-function(ease-in);
+        color: $md-clr-grey-500;
+        &:hover { color: inherit }
+        &:after { background-color: transparent; color: transparent }
+    }
+}
+.header__second__user-notification .notification-item__icon:after {
+    bottom: 3px;
+    font-size: .8em;
+    left: 2.5em;
+    right: 0;
+    top: 3px
+}
+.header__second__user-notification {
+    a {
+        position: relative;
+        margin-right: 2em;
+        .notification-item__icon {
+            &:before {
+                position: absolute;
+                font-size: 1.5em;
+                line-height: .6em
+            }
+        }
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Passage au header fixé et réduit
+|--------------------------------------------------------------------------
+*/
+header.fixed {
+    @include box-shadow(black 0 -1px 2px);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    .header__main { display: none }
+}

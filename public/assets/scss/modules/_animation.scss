@@ -1,0 +1,27 @@
+@include keyframes(pulse) {
+	0% {
+		@include transform(scale(0));
+		@include opacity(0);
+		@include filter(alpha(opacity=0));
+	}
+	8% {
+		@include transform(scale(0));
+		@include opacity(0);
+		@include filter(alpha(opacity=0));
+	}
+	15% {
+		@include transform(scale(.1));
+		@include opacity(1);
+		@include filter(alpha(opacity=100));
+	}
+	30% {
+		@include transform(scale(.5));
+		@include opacity(1);
+		@include filter(alpha(opacity=100));
+	}
+	100% {
+		@include transform(scale(1));
+		@include opacity(0);
+		@include filter(alpha(opacity=0));
+	}
+}

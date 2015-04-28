@@ -1,0 +1,36 @@
+@mixin respond-to($media) {
+	@if $media == mobile {
+		@content;
+	}
+	@else if $media == tablet {
+		@media (min-width: $tablet) {
+			@content;
+		}
+	}
+	@else if $media == desktop {
+		@media (min-width: $desktop) {
+			@content;
+		}
+	}
+}
+
+@mixin clearfix() {
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both
+	}
+}
+
+@mixin selection() {
+	$prefixes: ("-webkit-","-moz-", "");
+	@each $prefix in $prefixes {
+		::#{$prefix}selection {
+			background-color: $salmon;
+			color: $black;
+			text-shadow: none;
+		}
+	}
+}

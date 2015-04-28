@@ -1,0 +1,263 @@
+.pulse-holder {
+   display: block;
+   left: 13px;
+   position: absolute;
+   top: 12px;
+   @include respond-to(desktop) {
+      left: auto;
+      right: 6px;
+      top: 10px;
+   }
+}
+
+.pulse-holder__marker {
+   @include border-radius(28px);
+   background: $blue;
+   height: 10px;
+   width: 10px;
+}
+
+.pulse-holder__rays {
+   @include animation(pulse 2s linear infinite);
+   @include border-radius(100px);
+   background-color: transparent;
+   border-image: initial;
+   border: 4px solid $blue;
+   height: 30px;
+   margin: 0 auto;
+   opacity: .1;
+   position: absolute;
+   right: -14px;
+   top: -14px;
+   width: 30px;
+   z-index: 10;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Decoda
+|--------------------------------------------------------------------------
+*/
+.news__article,
+.post__content {
+   img {
+      display: block;
+      margin: 0 auto;
+      max-width: 90%;
+      @include respond-to(tablet) {
+         max-width: 70%;
+      }
+   }
+}
+
+.decoda-list,
+.decoda-olist {
+   list-style-position: inside;
+   margin: 1em 5%;
+   padding: 0;
+   .decoda-note, .decoda-alert, blockquote {
+      margin: 1em 0;
+   }
+}
+
+.decoda-list {
+   list-style-type: square;
+}
+
+.decoda-olist {
+   list-style-type: upper-roman;
+}
+
+.decoda-list li,
+.decoda-olist li {
+   margin-bottom: .5em;
+}
+
+.decoda-list li:last-child,
+.decoda-olist li:last-child {
+   margin-bottom: 0;
+}
+
+blockquote {
+   background: darken($white, 3%);
+   border: 1px solid darken($white, 10%);
+   margin: 1em 0;
+   quotes: "\201C""\201D""\2018""\2019";
+   blockquote {
+      margin: 1em;
+   }
+}
+
+.decoda-quote-head {
+   background-color: $peterriver;
+   color: $backgroundColor;
+   cursor: default;
+   font-size: 1.1em;
+   font-weight: 500;
+   line-height: 2.2em;
+   width: 100%;
+}
+
+.decoda-quote-author {
+   padding-left: 15px;
+}
+
+.decoda-quote-body {
+   border-left: 10px solid $peterriver;
+   padding: 5px;
+}
+
+.decoda-note,
+.decoda-alert {
+   background: darken($white, 3%);
+   border: 1px solid darken($white, 10%);
+   margin: 1em 0;
+   padding: 0.5em 10px;
+}
+
+.align-center {
+   text-align: center;
+}
+
+.decoda-alert {
+   border-color: $alizarin;
+   border-left-width: 10px;
+   /*&:before {
+      color: $alizarin;
+      content: "\002042";
+      font-size: 2em;
+      line-height: 0.1em;
+      margin-right: 0.25em;
+   }*/
+   /*img[src*="smiley"] {
+      display: none;
+   }*/
+}
+
+.decoda-table {
+   background: darken($backgroundColor, 2%);
+   border: 1px solid darken($white, 10%);
+   margin: 1em auto;
+   width: 100%;
+   text-align: center;
+   @include respond-to(tablet) {
+      max-width: 70%;
+      min-width: 50%;
+   }
+   thead, tfoot, th {
+      color: $backgroundColor;
+   }
+   thead, tfoot {
+      background-color: $peterriver;
+      line-height: 2.2em;
+      font-size: 1.1em;
+      * {
+         border-color: $peterriver;
+      }
+   }
+   tbody {
+      line-height: 1.5em;
+   }
+   th {
+      background-color: lighten($gradColorFrom, 10%);
+      font-weight: normal;
+   }
+   tr:nth-of-type(2n) {
+      background-color: darken($white, 3%);
+   }
+}
+
+@include respond-to(desktop) {
+   .decoda-list,
+   .decoda-olist,
+   .decoda-note,
+   .decoda-alert,
+   blockquote {
+      margin: 1em 3%;
+   }
+}
+
+img[src*="smiley"] {
+   bottom: 0.15em;
+   display: inline-block;
+   height: 16px;
+   position: relative;
+   vertical-align: middle;
+   width: 16px;
+}
+
+hr {
+   background: #333;
+   @include background-image(linear-gradient(to right, lighten($fontColor, 70%), $fontColor, lighten($fontColor, 70%)));
+   border: 0;
+   height: 1px;
+}
+
+iframe {
+   &:before {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+   }
+   display: block;
+   margin: 0 auto;
+   max-width: 90%;
+   @include respond-to(tablet) {
+      max-width: 70%;
+   }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Barres
+|--------------------------------------------------------------------------
+*/
+.bottom-banners {
+   position: fixed;
+   right: 0px;
+   z-index: 255;
+   left: 0px;
+   height: auto;
+   bottom: 0px;
+}
+.cookie-banner,
+.browser-banner {
+   background: none repeat scroll 0% 0% rgb(56, 56, 107);
+   color: rgb(221, 221, 221);
+   display: none;
+   font-family: arial,sans-serif;
+   font-size: 14px;
+   height: auto;
+   line-height: 21px;
+   min-height: 21px;
+   opacity: 1;
+   padding: 5px 16px;
+   a {
+      color: rgb(170, 170, 170);
+      text-decoration: none;
+   }
+}
+
+.cookie-banner__close,
+.browser-banner__close {
+   cursor: pointer;
+   float: right;
+   padding-left: 5px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Les monopages
+|--------------------------------------------------------------------------
+*/
+.access__poster {
+   height: 100%;
+   @include respond-to(tablet) {
+      bottom: 0px;
+      left: 0px;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+   }
+}
