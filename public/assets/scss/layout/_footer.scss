@@ -1,0 +1,25 @@
+footer {
+    background-color: $md-clr-grey-900;
+    border-top-color: $head-foot-color;
+    border-top-style: solid;
+    border-top-width: 3px;
+    color: $md-clr-grey-200;
+    font-family: $robotoCond;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
+    i { display: none }
+    @include respond-to(tablet) {
+        border-top-width: 4px;
+        font-family: inherit;
+        font-size: inherit;
+        margin-bottom: 20px !important;
+        i {
+            display: inline;
+            &:before { margin-left: 0 !important }
+        }
+    }
+}
+.footer__link { color: $head-foot-color }

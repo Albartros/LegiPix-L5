@@ -1,0 +1,57 @@
+/*
+|--------------------------------------------------------------------------
+| Style général de LegiPix
+|--------------------------------------------------------------------------
+|
+| Réalisation : Albartros.
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
+| On indègre les règles de css3 par défaut.
+|--------------------------------------------------------------------------
+*/
+@import "compass/css3";
+@import "compass/typography/text/nowrap";
+
+/*
+|--------------------------------------------------------------------------
+| On charge nos outils par défaut (variables, fonctions..)
+|--------------------------------------------------------------------------
+*/
+@import "tools/settings";
+@import "tools/functions";
+@import "tools/material-color-prefixed";
+
+/*
+|--------------------------------------------------------------------------
+| On réinitialise les styles et on les adapte à nos besoins.
+|--------------------------------------------------------------------------
+*/
+@import "base/normalize";
+@import "base/base";
+
+/*
+|--------------------------------------------------------------------------
+| On charge le layout.
+|--------------------------------------------------------------------------
+*/
+@import "layout/column";
+@import "layout/content";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/modal";
+
+/*
+|--------------------------------------------------------------------------
+| On définit les modules.
+|--------------------------------------------------------------------------
+*/
+@import "modules/addons";
+@import "modules/animation";
+@import "modules/headers";
+@import "modules/forum";
+@import "modules/index";
+@import "modules/news";
+@import "modules/user";

@@ -1,0 +1,67 @@
+.user__header {
+   @include flexbox((
+      align-items: center,
+      display: flex,
+      flex-direction: row,
+      justify-content: flex-start
+   ));
+   background-color: $gradColorFrom;
+   border-top: 3px solid lighten($black, 30%);
+   color : $backgroundColor;
+   position: relative;
+}
+
+.user__header__avatar {
+   padding: 20px;
+}
+
+.user__header__info {
+   height: 120px;
+   line-height: 120px;
+}
+
+.user__header__username {
+   font-weight: 500;
+   margin: 0;
+   width: auto;
+}
+
+.user__header__rank {
+   color : darken($backgroundColor, 20%);
+   font-size: 2em;
+   font-weight: normal;
+   margin: 0;
+}
+
+.user__header__links,
+.user__header__links--self {
+   @include flexbox((
+      flex-grow: 2
+   ));
+   font-weight: normal;
+   margin: 0;
+   padding-right: 20px;
+   text-align: right;
+   text-transform: uppercase;
+   width: auto;
+}
+
+.user__header__links--self {
+   line-height: 30px;
+}
+
+.user__details {
+   @include clearfix();
+}
+
+.user__page {
+   float: left;
+   width: 50%;
+}
+
+.user__messages {
+   float: right;
+   width: 50%;
+}
+
+

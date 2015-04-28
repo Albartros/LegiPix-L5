@@ -1,0 +1,119 @@
+.modal__mask {
+   background-color: $black;
+   cursor: pointer;
+   display: none;
+   height: 100%;
+   left: 0;
+   position: fixed;
+   top: 0;
+   width: 100%;
+}
+
+.modal {
+   @include flexbox((
+      align-items: center,
+      justify-content: center
+   ));
+   display: none;
+   height: 100%;
+   position: fixed;
+   top: 0;
+   width: 100%;
+}
+
+.modal__container {
+   background-color: lighten($fontColorLight, 10%);
+   font-weight: 300;
+   width: 450px;
+   z-index: 99;
+}
+
+.modal__name {
+   background-color: $belizehole;
+   color: $clouds;
+   font-size: 16px;
+   font-weight: 400;
+   height: 45px;
+   line-height: 45px;
+   text-align: center;
+   text-transform: uppercase;
+   width: 100%;
+   a {
+      float: right;
+      position: relative;
+      right: 1em;
+   }
+}
+
+.modal__content {
+   padding: 10px;
+}
+
+.modal__info {
+   margin: 0;
+   text-align: center;
+}
+
+.modal__form__block {
+   display: inline-block;
+   left: 70px;
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   width: 100%;
+   width: 300px;
+   &:first-of-type {
+      margin-top: 5px;
+   }
+}
+
+.modal__form__icon {
+   display: none;
+   background-color: $belizehole;
+   color: $clouds;
+   display: inline-block;
+   float: left;
+   font-size: 24px;
+   height: 40px;
+   width: 40px;
+   i {
+      top: 2px;
+      position: relative;
+   }
+}
+
+.modal__field__input {
+   display: inline-block;
+   float: left;
+   height: 40px;
+   position: relative;
+   width: 260px;
+   input {
+      @include box-sizing(border-box);
+      font-size: 15px;
+      height: 100%;
+      width: 100%;
+   }
+}
+
+.modal__field__remember {
+   margin-top: 5px;
+   text-align: center;
+}
+
+.modal__field__button {
+   margin-top: 10px;
+   text-align: center;
+   button {
+      background-color: $belizehole;
+      border-style: none;
+      color: $backgroundColor;
+      cursor: pointer;
+      line-height: 28px;
+      margin-top: 10px;
+      margin: 0;
+      padding: 0;
+      text-transform: uppercase;
+      width: 50%;
+   }
+}

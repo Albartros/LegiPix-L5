@@ -154,6 +154,7 @@ return [
       'Cviebrock\EloquentSluggable\SluggableServiceProvider',
       'Devfactory\Media\MediaServiceProvider',
       'Frozennode\Administrator\AdministratorServiceProvider',
+      'GrahamCampbell\Markdown\MarkdownServiceProvider',
       'That0n3guy\Transliteration\TransliterationServiceProvider',
       'Torann\Hashids\HashidsServiceProvider',
       'Zizaco\Entrust\EntrustServiceProvider',
@@ -213,6 +214,7 @@ return [
       'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
       'Form'      => 'Collective\Html\FormFacade',
       'Html'      => 'Collective\Html\HtmlFacade',
+      'Markdown'  => 'GrahamCampbell\Markdown\Facades\Markdown',
 
    ],
 

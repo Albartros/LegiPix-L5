@@ -11,6 +11,7 @@
       "cviebrock/eloquent-sluggable": "dev-master",
       "devfactory/media": "2.0.*",
       "frozennode/administrator": "5.*",
+      "graham-campbell/markdown": "~3.0",
       "laravelcollective/html": "~5.0",
       "mjohnson/decoda": "6.*",
       "torann/hashids": "2.0.*@dev",

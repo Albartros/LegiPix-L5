@@ -1,0 +1,74 @@
+/*
+|--------------------------------------------------------------------------
+| Supervariables
+|--------------------------------------------------------------------------
+*/
+$head-foot-color: $md-clr-red-A200;
+$background-color: mix($md-clr-grey-300, $md-clr-grey-400);
+
+/*
+|--------------------------------------------------------------------------
+| Règlement de l'ensemble des règles globales au site.
+|--------------------------------------------------------------------------
+*/
+@include selection();
+html {
+    color: $md-clr-grey-900;
+    font-family: $roboto;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%
+}
+body {
+    background-color: $background-color;
+    background-image: url(../img/bckg/background.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    @include respond-to(desktop) {
+        &.is_mirrored {
+            @include filter("FlipH");
+            @include transform(scaleX(-1))
+        }
+    }
+}
+.wrapper {
+    width: 100%;
+    @include respond-to(tablet) { margin: 0 auto; max-width: 1050px; width: 90% }
+    @include respond-to(desktop) { width: 1050px }
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+b, strong {
+    font-weight: 500;
+}
+img {
+    @include user-select(none);
+}
+.no-smartphone {
+    display: none;
+    @include respond-to(tablet) {
+        display: initial;
+    }
+}
+.only-smartphone {
+    @include respond-to(tablet) {
+        display: none;
+    }
+}
+.index-ratio-keeper {
+    padding-top: 90px;
+    @include respond-to(tablet) {
+        padding-top: 56.25%;
+    }
+    @include respond-to(desktop) {
+        padding-top: 75%;
+    }
+}
+.index-ratio-keeper--video {
+    padding-top: 50%;
+}

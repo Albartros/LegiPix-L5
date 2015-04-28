@@ -1,0 +1,659 @@
+.category {
+   @include clearfix();
+   @include respond-to(mobile) {
+      width: 100%;
+   }
+   @include respond-to(desktop) {
+      margin: 0 auto;
+      padding-top: 10px;
+      width: 96%;
+   }
+}
+
+.forum {
+   @include respond-to(mobile) {
+      height: 43px;
+      margin: 0 auto 10px;
+      position: relative;
+      width: 96%;
+      &:first-of-type {
+         margin-top: 10px;
+      }
+   }
+   @include respond-to(tablet) {
+      height: 64px;
+      &:first-of-type {
+         margin-top: 0;
+      }
+   }
+   @include respond-to(desktop) {
+      float: left;
+      width: 50%;
+      &:hover .forum__info__title {
+         color: darken($blue, 20%);
+         padding-left: .2em;
+      }
+   }
+}
+
+.forum__thumbnail {
+   display: block;
+   left: 0;
+   position: absolute;
+   top: 0;
+   @include respond-to(mobile) {
+      width: 43px;
+   }
+   @include respond-to(tablet) {
+      width: 64px;
+   }
+}
+
+.forum__info {
+   line-height: 14px;
+   padding-left: 2%;
+   position: relative;
+   @include respond-to(mobile) {
+      margin-left: 43px;
+      top: 7px;
+   }
+   @include respond-to(tablet) {
+      margin-left: 64px;
+      top: 11px;
+   }
+   @include respond-to(desktop) {
+      top: 2px;
+   }
+}
+
+.forum__info__title {
+   @include transition-duration(.1s);
+   @include transition-property(all);
+   @include transition-timing-function(linear);
+   font-size: 16px;
+   font-weight: 500;
+   margin: 0.5em 0 0 0;
+   padding: 0;
+   position: relative;
+}
+
+.forum__info__description {
+   color: darken($fontColorLight, 50%);
+}
+
+.forum__info__meta {
+   @include respond-to(mobile) {
+      display: none;
+   }
+   @include respond-to(tablet) {
+      color: lighten($black, 50%);
+      display: inline;
+   }
+}
+
+.topics {
+   list-style-type: none;
+   margin: 10px auto;
+   padding: 0;
+   width: 100%;
+   @include respond-to(tablet) {
+      margin: 0 auto;
+   }
+}
+
+.topic {
+   @include clearfix();
+   width: 96%;
+   overflow: hidden;
+   padding: 0 2%;
+   @include respond-to(mobile) {
+      margin-bottom: 10px;
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+   @include respond-to(tablet) {
+      @include flexbox((
+         align-items: center,
+         display: flex,
+         justify-content: space-between
+      ));
+      border-bottom: 1px solid lighten($gradColorFrom, 50%);
+      margin-bottom: 0;
+      &:last-child {
+         border-bottom-style: none;
+      }
+   }
+}
+
+.topic__tag, .topic__info, .topic__last-post, .topic__main__author-avatar {
+   float: left;
+}
+
+.topic__main {
+   overflow: hidden;
+   @include respond-to(tablet) {
+      @include flexbox((
+         display: flex,
+         flex-direction: column,
+         flex-grow: 1
+         ));
+   }
+   @include respond-to(desktop) {
+      &:hover .topic__main__title {
+         color: darken($blue, 20%);
+         padding-left: .2em;
+      }
+   }
+}
+
+.topic__author-avatar {
+   display: block;
+   float: left;
+   width: 42px;
+   @include respond-to(tablet) {
+      padding: 5px;
+      width: 50px;
+   }
+
+}
+
+.topic__main__title {
+   @include nowrap();
+   font-size: 16px;
+   font-weight: 500;
+   @include respond-to(mobile) {
+      margin: 0.3em 0 0 7px;
+   }
+   @include respond-to(tablet) {
+      margin: 0;
+   }
+   @include respond-to(desktop) {
+      @include transition-duration(.1s);
+      @include transition-property(all);
+      @include transition-timing-function(linear);
+   }
+}
+
+.topic__main__info {
+   display: none;
+   @include respond-to(tablet) {
+      display: block;
+   }
+}
+
+.topic__tag {
+   display: none;
+   @include respond-to(desktop) {
+      border: 1px solid lighten($gradColorFrom, 50%);
+      display: block;
+      margin-left: .2em;
+      padding: 3px 6px;
+   }
+   i {
+      cursor: default;
+   }
+}
+
+.topic__info {
+   @include respond-to(mobile) {
+      display: none;
+   }
+   @include respond-to(desktop) {
+      border-left: 1px solid lighten($gradColorFrom, 50%);
+      border-right: 1px solid lighten($gradColorFrom, 50%);
+      display: block;
+      margin-left: 10px;
+      padding: 0 10px;
+      width: 130px;
+   }
+}
+
+.topic__main__author {
+   font-weight: 500;
+}
+
+.topic__last-post {
+   @include respond-to(mobile) {
+      margin-left: 7px;
+      line-height: .3em;
+   }
+   @include respond-to(tablet) {
+      line-height: 1em;
+      width: 120px;
+      text-align: right;
+   }
+   @include respond-to(desktop) {
+
+   }
+}
+
+.topic__last-post__user {
+   display: inline-block;
+   font-weight: 500;
+   &:before {
+      content: "Dernier : ";
+      font-weight: 300;
+   }
+   @include respond-to(tablet) {
+      display: block;
+      &:before {
+         content: none;
+      }
+   }
+}
+
+.topic__last-post__date {
+   display: inline-block;
+}
+
+.topic__info__major,
+.topic__info__minor {
+   margin: 0;
+   min-width: 100px;
+   dt, dd {
+      display: inline-block;
+      margin: 0;
+   }
+   dt {
+      font-weight: 500;
+   }
+   dd {
+      float: right;
+   }
+}
+
+.topic__info__minor {
+   font-size: .9em;
+}
+
+.posts {
+   list-style-type: none;
+   margin: 10px auto;
+   padding: 0;
+   width: 96%;
+   @include respond-to(desktop) {
+      width: auto;
+      margin: 0;
+      border-left: 5px solid $gradColorFrom;
+   }
+}
+
+.post, .post--self {
+   @include clearfix();
+   @include respond-to(desktop) {
+      display: table; // Fix width
+      padding-top: 3px;
+      width: 100%;
+      &:first-of-type {
+         padding-top: 0;
+      }
+   }
+   /*&:target .post__content {
+      background-color: adjust-saturation(lighten($blue, 36%), -50%);
+   }*/
+}
+
+.post__author {
+   @include flexbox((
+      display: flex
+   ));
+   background-color: lighten($backgroundColor, 3%);
+   border: 1px solid darken($backgroundColor, 5%);
+   margin-bottom: 3px;
+   position: relative;
+   @include respond-to(tablet) {
+      width: 60%;
+   }
+   @include respond-to(desktop) {
+      background-color: lighten($black, 30%);
+      border-width: 0;
+      color: $backgroundColor;
+      display: table-cell;
+      margin: 0;
+      text-align: center;
+      //vertical-align: middle;
+      width: 110px;
+   }
+}
+
+.post__author__avatar {
+   height: 40px;
+   margin-right: 5px;
+   padding: 10px;
+   width: 40px;
+   @include respond-to(desktop) {
+      height: 70px;
+      padding: 0;
+      margin: 10px 10px 5px 10px;
+      width: auto;
+   }
+
+}
+
+.post__author__contact {
+   display: none;
+   @include respond-to(desktop) {
+      display: block;
+      left: 0;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 10px;
+      li {
+         @include transition-duration(.1s);
+         @include transition-property(all);
+         @include transition-timing-function(linear);
+         color: darken($backgroundColor, 40%);
+         cursor: default;
+         &.team {
+            bottom: .3em;
+            position: relative;
+         }
+      }
+      li:hover {
+         color: darken($backgroundColor, 20%);
+      }
+   }
+}
+
+.post__author__info {
+   font-size: 1.1em;
+   width: 100%;
+}
+
+.post__author__head {
+   float: left;
+   font-weight: 500;
+   line-height: 60px;
+   width: 50%;
+   @include respond-to(desktop) {
+      float: none;
+      line-height: 1em;
+      width: 100%;
+   }
+}
+
+.post__author__rank {
+   display: block;
+   float: right;
+   font-style: normal;
+   line-height: 60px;
+   text-align: center;
+   width: 50%;
+   @include respond-to(desktop) {
+      float: none;
+      font-weight: 300;
+      line-height: .5em;
+      padding: 5px 0;
+      width: 100%;
+   }
+}
+
+.post__author__rank--detail {
+   color: $asbestos;
+   @include respond-to(desktop) {
+      display: none;
+   }
+}
+
+.post__author__bottom {
+   display: none;
+   @include respond-to(desktop) {
+      display: block;
+      font-size: 80%;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 2em;
+   }
+}
+
+.post__content {
+   padding: 0 5px;
+   @include respond-to(desktop) {
+      @include box-sizing(padding-box);
+      display: table-cell;
+      vertical-align: top;
+   }
+}
+
+.post--self {
+   .pulse-holder {
+      display: none;
+   }
+}
+
+.post__quote {
+   display: none;
+}
+
+.post__footer {
+   @include clearfix();
+   margin-top: 5px;
+   @include respond-to(desktop) {
+      border-top: 1px solid $asbestos;
+      min-height: 2em;
+   }
+}
+
+.post__meta {
+   float: left;
+   color: $asbestos;
+}
+
+.post__btns {
+   display: none;
+   @include respond-to(tablet) {
+      float: right;
+      display: inherit;
+   }
+   a:not(:first-of-type) {
+      color: darken($blue, 10%);
+   }
+}
+
+.btn__separator {
+   font-style: normal;
+   &:before {
+      content: "\7c\20";
+   }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Editeur
+|--------------------------------------------------------------------------
+*/
+.post__header {
+   margin: 1em auto;
+   text-align: center;
+   width: 96%;
+   @include respond-to(desktop) {
+      background-color: $gradColorFrom;
+      border: 1px solid $gradColorFrom;
+      color: $backgroundColor;
+      //font-size: 1.2em;
+      top: 1.3em;
+      line-height: 2.5em;
+      margin: 0 auto;
+      padding-bottom: .2em;
+      position: relative;
+      text-align: left;
+      width: 86%;
+
+      label {
+         padding-left: .5em;
+      }
+      input[type=text] {
+         background-color: transparent;
+         border: 1px solid darken($backgroundColor, 10%);
+         font-size: 0.85em;
+         font-weight: 400;
+         padding: 1px 5px;
+         width: 200px;
+      }
+      input[type=checkbox] {
+         display:none;
+      }
+      input[type=checkbox] + label:after {
+        display: inline-block;
+        font-family: Fontello;
+        font-size: 1.5em;
+      }
+      input[type=checkbox] + label:after {
+         content: "\E828";
+      }
+      input[type=checkbox] + label:after {
+         margin-left: .2em;
+         position: relative;
+         top: .11em;
+      }
+      input[type=checkbox]:checked + label:after {
+         content: "\E827";
+      }
+   }
+}
+
+.post__editor {
+   margin: 0 auto;
+   margin-top: 5px;
+   width: 96%;
+   @include respond-to(desktop) {
+      border-top-style: none;
+      border: 1px solid $gradColorFrom;
+      margin: 1em auto;
+      width: 86%;
+   }
+}
+
+.post__editor__bar,
+.post__editor__bar--smileys {
+   @include flexbox((
+      align-content: center,
+      align-items: center,
+      display: flex,
+      flex-direction: row,
+      flex-wrap: wrap,
+      justify-content: center
+   ));
+   font-size: 1.25em;
+   padding: .5em 0;
+   text-align: center;
+   @include respond-to(tablet) {
+      margin-bottom: 3px;
+   }
+   @include respond-to(desktop) {
+      border-top: 4px solid $gradColorFrom;
+      line-height: 1.8em;
+      margin: 0;
+      padding: 0;
+      width: auto;
+      a {
+         @include transition-duration(.1s);
+         @include transition-property(all);
+         @include transition-timing-function(linear);
+         padding: 0 .2em;
+         &:hover {
+            background-color: $peterriver;
+            color: $backgroundColor;
+         }
+      }
+   }
+}
+
+.post__editor__bar--smileys {
+   display: none;
+   @include respond-to(desktop) {
+      border-top-style: none;
+      padding: 0;
+      width: auto;
+      line-height: 1em;
+      a:hover {
+         background-color: transparent;
+      }
+   }
+}
+
+.post__editor__area {
+   @include box-sizing(border-box);
+   background-color: transparent;
+   border: none;
+   outline: none;
+   overflow: auto;
+   padding: 5px;
+   resize: vertical;
+   color: $gradColorFrom;
+   width: 100%;
+   border: 1px solid $gradColorFrom;
+   @include respond-to(desktop) {
+      border-left-style: none;
+      border-right-style: none;
+   }
+}
+
+.post__editor__btn {
+   background-color: $gradColorFrom;
+   border-style: none;
+   color: $backgroundColor;
+   cursor: pointer;
+   display: block;
+   line-height: 28px;
+   padding: 3px 0;
+   text-transform: uppercase;
+   width: 100%;
+}
+
+.post__help,
+.post__help--alt {
+   color: lighten($fontColor, 5%);
+   line-height: 1.1em;
+   padding: 0 10px;
+   a {
+      color: darken($blue, 10%);
+   }
+}
+
+.post__help--alt {
+   border-bottom: 1px solid $gradColorFrom;
+   padding-bottom: 1em;
+   @include respond-to(desktop) {
+      border-style: none;
+      margin-bottom: 0;
+      padding: 0 10px;
+   }
+}
+
+.empty__page {
+   display: table;
+   margin: 2em auto;
+   width: 90%;
+}
+
+.empty__page__smiley {
+   display: table-cell;
+   font-family: monospace;
+   font-size: 5em;
+   height: 100%;
+   letter-spacing: -.4em;
+   margin: 0;
+   padding: 0;
+   padding-right: .5em;
+   text-align: center;
+   vertical-align: middle;
+   white-space: nowrap;
+   width: 20%;
+}
+
+.empty__page__message {
+   display: table-cell;
+   height: 100%;
+   vertical-align: middle;
+   p {
+      margin: 0;
+   }
+   h3 {
+      font-weight: 500;
+      margin-top: 0;
+   }
+}

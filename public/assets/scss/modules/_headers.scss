@@ -1,0 +1,247 @@
+/*
+|--------------------------------------------------------------------------
+| Les en-têtes des articles
+|--------------------------------------------------------------------------
+*/
+.news__header {
+   @include clearfix();
+   background-color: $gradColorFrom;
+   color: $backgroundColor;
+   height: 2.5em;
+   line-height: 2.5em;
+   width: 100%;
+   @include respond-to(tablet) {
+      border-top: 2px solid lighten($black, 30%);
+      font-size: 15px;
+   }
+   @include respond-to(desktop) {
+      border-top-width: 3px;
+   }
+}
+
+.news__header__date {
+   @include respond-to(mobile) {
+      display: none;
+   }
+   @include respond-to(tablet) {
+      display: block;
+      float: right;
+      padding-right: 10px;
+   }
+   @include respond-to(desktop) {
+      border-right: 2px solid lighten($black, 30%);
+      float: left;
+      padding-left: 10px;
+      .news__header__date--day {
+         font-weight: 400;
+      }
+   }
+}
+
+.news__header__title {
+   @include respond-to(mobile) {
+      display: block;
+      text-align: center;
+      width: 100%;
+   }
+   @include respond-to(tablet) {
+      float: left;
+      padding-left: 8px;
+      width: auto;
+   }
+}
+
+.news__header__meta {
+   @include respond-to(mobile) {
+      display: none;
+   }
+   @include respond-to(desktop) {
+      border-left: 2px solid lighten($black, 30%);
+      display: block;
+      float: right;
+      padding-left: 10px;
+      padding-right: 8px;
+   }
+}
+
+.news__header__meta--icons {
+   position: relative;
+   top: 1px;
+   i:before {
+      margin: 0;
+   }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Les en-têtes de la section Forum
+|--------------------------------------------------------------------------
+*/
+.category__name {
+   background-color: $gradColorFrom;
+   color: $backgroundColor;
+   height: 2.5em;
+   line-height: 2.5em;
+   width: 100%;
+   @include respond-to(mobile) {
+      text-align: center;
+   }
+   @include respond-to(tablet) {
+      border-top: 2px solid lighten($black, 30%);
+      font-size: 15px;
+      text-align: left;
+      .category__name__title {
+         padding: 0 10px 0 8px;
+      }
+   }
+   @include respond-to(desktop) {
+      border-top-width: 3px;
+   }
+}
+
+.category__name:not(:nth-of-type(2)) {
+   border-top-width: 0;
+}
+
+.category__name__title {
+   font-size: 1em;
+   font-weight: 500;
+   margin: 0;
+   @include respond-to(desktop) {
+      float: left;
+      border-right: 2px solid lighten($black, 30%);
+   }
+}
+
+.category__name__description {
+   @include respond-to(mobile) {
+      display: none;
+   }
+   @include respond-to(desktop) {
+      display: block;
+      float: left;
+      padding-left: 10px;
+   }
+}
+
+.topics__header {
+   display: none;
+   @include respond-to(tablet) {
+      @include clearfix();
+      background-color: $gradColorFrom;
+      border-top: 2px solid lighten($black, 30%);
+      color: $backgroundColor;
+      display: block;
+      font-size: 15px;
+      height: 2.5em;
+      line-height: 2.5em;
+      width: 100%;
+   }
+   @include respond-to(desktop) {
+      border-top-width: 3px;
+   }
+}
+
+.topics__header__info {
+   @include clearfix();
+   width: 96%;
+   margin: 0 auto;
+}
+
+.topics__info__info {
+   display: none;
+   @include respond-to(desktop) {
+      border-left: 2px solid lighten($black, 30%);
+      display: block;
+      float: right;
+      text-align: center;
+      width: 149px;
+   }
+}
+
+.topics__info__new {
+   float: left;
+   a {
+      padding: 0.1em 1em;
+      border: 2px solid lighten($black, 30%);
+   }
+}
+
+.topics__info__last-post {
+   @include respond-to(tablet) {
+      display: block;
+      float: right;
+      text-align: right;
+      width: 127px;
+   }
+   @include respond-to(desktop) {
+      border-left: 2px solid lighten($black, 30%);
+   }
+}
+
+.topic__header,
+.editor__header {
+   @include clearfix();
+   background-color: $gradColorFrom;
+   color: $backgroundColor;
+   font-size: 15px;
+   height: 2.5em;
+   line-height: 2.5em;
+   width: 100%;
+   @include respond-to(tablet) {
+      border-top: 2px solid lighten($black, 30%);
+   }
+   @include respond-to(desktop) {
+      border-top-width: 3px;
+   }
+}
+
+.topic__header__title {
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   font-size: 15px;
+   font-weight: 400;
+   @include respond-to(tablet) {
+      text-align: left;
+      float: left;
+      padding-left: 8px;
+   }
+}
+
+.topic__header__info {
+   display: none;
+   @include respond-to(desktop) {
+      border-right: 2px solid lighten($black, 30%);
+      display: block;
+      float: left;
+      padding-left: 4px;
+      text-align: center;
+      width: 110px;
+   }
+}
+
+.topic__header__post {
+   display: none;
+   @include respond-to(tablet) {
+      display: block;
+      float: right;
+      margin-right: 8px;
+      a {
+         padding: 0.1em 1em;
+         border: 2px solid lighten($black, 30%);
+      }
+   }
+}
+
+.editor__header {
+   border-top-style: none;
+}
+
+.editor__header__info {
+   text-align: center;
+   @include respond-to(desktop) {
+      padding-left: 10px;
+      text-align: left;
+   }
+}
