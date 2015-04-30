@@ -1,230 +1,306 @@
-.index-articles, .index-contents, .index-contents--video { @include clearfix() }
-
-.index-articles .index-article:nth-of-type(n+5),
-.index-contents .index-video:nth-of-type(n+4) {
-   display: none;
-   @include respond-to(desktop) {
-      display: block;
-   }
+.index-articles, .index-contents { @include clearfix() }
+.index-articles .index-article:nth-of-type(n+5) {
+    display: none;
+    @include respond-to(desktop) { display: block }
 }
-
 .index-contents, .index-contents--video {
-   position: relative;
-   background-color: $md-clr-grey-100;
-
-   //border-top: 20px solid $background-color;
-   //border-bottom: 20px solid $background-color;
-   margin-top: 20px;
-
-
-    padding: 20px 0;
+    background-color: $md-clr-grey-100;
+    margin-top: 20px;
+    padding: 20px;
+    position: relative
 }
-
 .index-contents--video {
-    display: flex;
-    justify-content: space-between;
-
+    @include flexbox((
+        display: flex,
+        justify-content: space-between
+    ))
 }
-
+/*
+|--------------------------------------------------------------------------
+| Articles
+|--------------------------------------------------------------------------
+*/
 .index-article {
-   border-bottom: 1px solid $gradColorTo;
-   height: 110px;
-   overflow: hidden;
-   position: relative;
-   width: 100%;
-   color: $md-clr-grey-200;
-   @include respond-to(tablet) {
-      border-style: none;
-      float: left;
-      height: auto;
-      width: 50%;
-   }
-   @include respond-to(desktop) {
-      width: 30%;
-      &:first-child {
-        width: 40%;
-        .corner-ribbon { display: block }
-        .index-ratio-keeper { padding-top: 112.5% }
-        .index-article__news { height: 6.4em }
-      }
-   }
+    border-bottom: 1px solid $gradColorTo;
+    height: 110px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    color: $md-clr-grey-200;
+    @include respond-to(tablet) {
+        border-style: none;
+        float: left;
+        height: auto;
+        width: 50%
+    }
+    @include respond-to(desktop) {
+        width: 30%;
+        &:first-child { // Le bloc principal
+            width: 40%;
+            .corner-ribbon { display: block }
+            .index-article__news { height: 6.4em }
+            .index-ratio-keeper { padding-top: 112.5% }
+        }
+    }
 }
-
 .index-article__link-block {
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   bottom: 0;
-   left: 0;
-   position: absolute;
-   right: 0;
-   top: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0
 }
-
-
-
-.corner-ribbon{
-  width: 200px;
-  position: absolute;
-
-  text-align: center;
-  line-height: 50px;
-  letter-spacing: 1px;
-
-  top: 25px;
-  left: -50px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-
-  background-color: rgba(0, 0, 0, .7);
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  display: none;
+.corner-ribbon {
+    @include transform(rotate(-45deg));
+    background-color: rgba(0,0,0,.7);
+    display: none;
+    font-weight: 500;
+    left: -50px;
+    letter-spacing: 2px;
+    line-height: 50px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 25px;
+    width: 200px
 }
-
-
-
-
 .index-article__news {
-   @include transition-duration(.1s);
-   @include transition-property(all);
-   @include transition-timing-function(linear);
-   background-color: rgba(0, 0, 0, .7);
-   bottom: 0;
-   //color: lighten($fontColorLight, 40%);
-   display: block;
-   height: 2em;
-   left: 0;
-   line-height: 2em;
-   position: absolute;
-   width: 100%;
+    @include transition-duration(.1s);
+    @include transition-property(all);
+    @include transition-timing-function(linear);
+    background-color: rgba(0,0,0,.7);
+    bottom: 0;
+    display: block;
+    height: 2em;
+    left: 0;
+    line-height: 2em;
+    position: absolute;
+    width: 100%
 }
-
 .index-article__link-block:hover {
-   @include respond-to(tablet) {
-      .index-article__news {
-         height: 6.4em;
-      }
-   }
+    @include respond-to(tablet) {
+        .index-article__news { height: 6.4em }
+    }
 }
-
 .index-article__news__title {
-   display: block;
-   text-align: center;
-   height: 2em;
-   overflow: hidden;
+    display: block;
+    height: 2em;
+    overflow: hidden;
+    text-align: center
 }
-
 .index-article__news__resume {
-   display: none;
-   @include respond-to(tablet) {
-      display: block;
-      font-size: 14px;
-      font-weight: 300;
-      height: 4.1em;
-      line-height: 1em;
-      overflow: hidden;
-      padding: 0 5px;
-      text-align: justify;
-   }
+    display: none;
+    @include respond-to(tablet) {
+        display: block;
+        font-size: 14px;
+        font-weight: 300;
+        height: 4.1em;
+        line-height: 1em;
+        overflow: hidden;
+        padding: 0 5px;
+        text-align: justify
+    }
 }
-
+/*
+|--------------------------------------------------------------------------
+| Videos
+|--------------------------------------------------------------------------
+*/
 .index-video {
-   height: auto;
-   width: 100%;
-   @include respond-to(tablet) {
-      border-left: 1px solid $gradColorFrom;
-   }
-   @include respond-to(desktop) {
-      @include box-sizing(border-box);
-      border-left-width: 5px;
-      border-right: 2px solid $gradColorFrom;
-      width: 75%;
-   }
+    @include respond-to(desktop) {
+        width: 49% // Padding like
+    }
 }
-
-.index-video__bloc {
-   @include respond-to(tablet) {
-      margin: 0 auto;
-      padding: 1em 0;
-      width: 80%;
-   }
-}
-
-.video-shadow {
-   @include respond-to(tablet) {
-      @include box-shadow($boxShadow 1px 1px 2px);
-   }
-}
-
 .videoWrapper {
-   height: 0;
-   margin: 0 auto;
-   padding-bottom: 56.25%; /* 16:9 */
-   padding-top: 25px;
-   position: relative;
-   @include respond-to(tablet) {
-      top: 1px;
-   }
+    height: 0;
+    margin: 0 auto;
+    padding-bottom: 56.25%; // 16:9
+    padding-top: 25px;
+    position: relative;
+    @include respond-to(tablet) { top: 1px }
 }
-
 .index-video__video {
     height: 100%;
     left: 0;
     max-width: none;
     position: absolute;
     top: 0;
-    width: 100%;
+    width: 100%
 }
-
 .index-video__name {
-   display: none;
-   @include respond-to(desktop) {
-      background-color: $gradColorFrom;
-      color: $backgroundColor;
-      display: block;
-      font-size: 15px;
-      font-weight: normal;
-      line-height: 2em;
-      margin: 0;
-      text-align: center;
-   }
+    display: none;
+    @include respond-to(desktop) {
+        background-color: $gradColorFrom;
+        color: $backgroundColor;
+        display: block;
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 2em;
+        margin: 0;
+        text-align: center
+    }
 }
-
+/*
+|--------------------------------------------------------------------------
+| Countdowns
+|--------------------------------------------------------------------------
+*/
 .countdown {
-   display: none;
-   @include respond-to(desktop) {
-      @include flexbox((
-         display: flex,
-         flex-direction: column,
-         justify-content: center,
-      ));
-      bottom: 0;
-      color: $backgroundColor;
-      float: right;
-      position: absolute;
-      right: 0;
-      text-align: center;
-      top: 0;
-      width: 25%;
-   }
+    display: none;
+    @include respond-to(desktop) {
+        @include flexbox((
+            display: flex,
+            flex-direction: column,
+            justify-content: center
+        ));
+        bottom: 0;
+        color: $backgroundColor;
+        float: right;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 40%
+    }
 }
-
+.countdown__container {
+    margin: 0px auto;
+    width: 45%
+}
 .countdown__image {
-   @include box-shadow($boxShadow 1px 1px 2px);
-   height: auto;
-   margin: 0 auto;
-   width: 75%;
+    display: block;
+    height: auto;
+    width: 100%
+}
+.countdown__title {
+    background: #107c10; // XBOX Green
+    display: inline-block;
+    padding: 5px 0;
+    width: 100%
+}
+/*
+|--------------------------------------------------------------------------
+| Topics
+|--------------------------------------------------------------------------
+*/
+.index-topics {
+    height: 100%;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    width: 60%
+}
+.index-topic {
+    border-bottom: 1px solid $md-clr-grey-600;
+    padding-top: 12%;
+    position: relative;
+    width: 100%;
+    &:last-of-type { border: none }
+    &:hover + .index-topic__bloc { opacity: 1 }
+}
+.index-topic__link {
+    @include clearfix();
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    white-space: nowrap;
+}
+.index-topic__avatar {
+    border-radius: 50%;
+    display: block;
+    float: left;
+    margin-left: 1%;
+    margin-right: 3%;
+    margin-top: 1%;
+    width: 10%
+}
+.index-topic__info {
+    display: inline-block;
+    width: 86%;
+    font-size: 16px;
+    position: relative;
+    top: 14px;
+    p {
+        @include clearfix();
+        margin: 0;
+        width: 99%
+    }
+}
+.index-topic__title {
+    display: block;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%
+}
+.index-topic__author {
+    color: $md-clr-grey-600;
+    float: right
+}
+.index-topic__forum {
+    bottom: 5px;
+    color: $md-clr-grey-600;
+    display: block;
+    float: left;
+    font-size: 14px;
+    position: relative;
+    text-transform: uppercase;
+    i {
+        font-size: 1.5em;
+        &:before {
+            margin-left: 0;
+            position: relative;
+            top: 3px
+        }
+    }
+}
+.index-topic__bloc {
+    transform: translateZ(0);
+    @include transition-duration(.3s);
+    @include transition-property(all);
+    @include transition-timing-function(fade-in);
+    @include box-sizing(padding-box);
+    background: $md-clr-grey-100;
+    height: 100%;
+    opacity: 0;
+    padding: 6px 10px 20px;
+    position: absolute;
+    right:0;
+    top:0;
+    width: 40.3%;
+    z-index: 1
+    //&:hover{ opacity: 1; z-index: 1 }
 }
 
-.countdown__title {
-   @include box-shadow($boxShadow 1px 1px 2px);
-   background-color: $gradColorFrom;
-   display: inline-block;
-   margin: 0 auto;
-   padding: 2px 0;
-   position: relative;
-   top: -4px;
-   width: 75%;
+.index-post-info {
+    text-align: center;
+}
+
+.index-post__avatar {
+    border-radius: 50%;
+    width: 45px;
+}
+
+.index-post {
+    //border: 1px solid $md-clr-grey-600;
+    height: 50%;
+    overflow: hidden;
+    padding: 2px 3px;
+    position: relative;
+    &:last-child {
+        color: $md-clr-grey-600;
+        img { opacity: .7 }
+    }
+}
+
+.index-post__separator {
+    padding: 0 3px;
+    position: absolute;
+    top: 15px;
+    &:nth-of-type(2) { color: $md-clr-grey-600 }
 }
