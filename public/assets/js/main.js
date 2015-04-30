@@ -256,7 +256,7 @@ if(countdown) {
       seconds = ("0" + parseInt(seconds_left % 60, 10)).slice(-2);
 
       // format countdown string + set tag value
-      countdown.innerHTML = days + "j " + hours + "h " + minutes + "m " + seconds + "s";
+      countdown.innerHTML = "<strong>" + days + "Jours</strong> " + hours + "h " + minutes + "m " + seconds + "s";
    }, 1000);
 }
 
