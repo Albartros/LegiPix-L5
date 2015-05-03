@@ -191,15 +191,24 @@
     list-style-type: none;
     margin: 0px;
     padding: 0px;
-    width: 60%
+    width: 60%;
+    &:hover + .index-topic__background { opacity: 1 }
 }
-.index-topic {
+.index-topic, .index-topic--new {
+    @include box-sizing(border-box);
     border-bottom: 1px solid $md-clr-grey-600;
     padding-top: 12%;
     position: relative;
     width: 100%;
+    z-index: 3;
     &:last-of-type { border: none }
-    &:hover + .index-topic__bloc { opacity: 1 }
+    &:hover + .index-topic__bloc {
+        @include translateX(100%);
+        opacity: 1
+    }
+}
+.index-topic--new {
+    .index-topic__title { color: $md-clr-red-700 }
 }
 .index-topic__link {
     @include clearfix();
@@ -243,38 +252,43 @@
     float: right
 }
 .index-topic__forum {
-    bottom: 5px;
     color: $md-clr-grey-600;
     display: block;
     float: left;
-    font-size: 14px;
+    font-size: 15px;
     position: relative;
     text-transform: uppercase;
-    i {
-        font-size: 1.5em;
-        &:before {
-            margin-left: 0;
-            position: relative;
-            top: 3px
-        }
-    }
+    top: 1px;
 }
 .index-topic__bloc {
     transform: translateZ(0);
     @include transition-duration(.3s);
     @include transition-property(all);
-    @include transition-timing-function(fade-in);
-    @include box-sizing(padding-box);
-    background: $md-clr-grey-100;
-    height: 100%;
+    @include transition-timing-function(linear);
+    @include box-sizing(border-box);
+    bottom: 20px;
     opacity: 0;
     padding: 6px 10px 20px;
     position: absolute;
-    right:0;
-    top:0;
+    right: 40.3%;
+    top: 20px;
+    width: 40.3%;
+    z-index: 2
+}
+.index-topic__background {
+    transform: translateZ(0);
+    @include transition-duration(.2s);
+    @include transition-property(opacity);
+    @include transition-timing-function(linear);
+    background: $md-clr-grey-100;
+    bottom: 0;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 40.3%;
     z-index: 1
-    //&:hover{ opacity: 1; z-index: 1 }
 }
 
 .index-post-info {

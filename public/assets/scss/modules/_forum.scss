@@ -412,7 +412,7 @@
 .post__content {
    padding: 0 5px;
    @include respond-to(desktop) {
-      @include box-sizing(padding-box);
+      @include box-sizing(border-box);
       display: table-cell;
       vertical-align: top;
    }
