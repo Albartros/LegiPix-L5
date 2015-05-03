@@ -300,15 +300,24 @@
     width: 45px;
 }
 
-.index-post {
-    //border: 1px solid $md-clr-grey-600;
-    height: 50%;
+.index-post, .index-post--new {
+    color: $md-clr-grey-600;
+    height: 100%;
     overflow: hidden;
     padding: 2px 3px;
     position: relative;
+    img { opacity: .7 }
+    .index-post__separator:before { content: "Dernier message" }
+    &:first-child {
+        color: $md-clr-grey-900;
+        img { opacity: 1 }
+    }
+}
+
+.index-post--new {
+    height: 50%;
     &:last-child {
-        color: $md-clr-grey-600;
-        img { opacity: .7 }
+        .index-post__separator:before { content: "Dernier message lu" }
     }
 }
 
