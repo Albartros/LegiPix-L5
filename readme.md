@@ -10,3 +10,5 @@ LegiPix est une communauté fondée par des joueurs amateurs, nous ne somes ni u
 ## Comment participer ?
 
 Toute personne sachant coder et souhaitant participer peut se porter volontaire. Il suffit de me contacter par [e-mail](mailto://albartros@legipix.net) et je vous expliquerai ce que je recherche.
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/94f1c74f-4edb-4c30-8c55-cc31044ef1f8/big.png)](https://insight.sensiolabs.com/projects/94f1c74f-4edb-4c30-8c55-cc31044ef1f8)

@@ -87,20 +87,12 @@
     </li>
     <div class="index-topic__bloc">
         <div class="index-post">
-            <span class="index-post__separator">Dernier message</span>
+            <span class="index-post__separator"></span>
             <div class="index-post-info">
                 <img class="index-post__avatar" src="http://placehold.it/45x45&amp;text=A"></img><br>
                 Albartros, le 12 novembre à 12h15
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium repudiandae numquam voluptas in sint exercitationem voluptates reprehenderit inventore cum ratione aspernatur, amet, totam asperiores temporibus, esse molestias, minima necessitatibus maxime quaerat repellendus illum natus impedit quidem! Suscipit esse aut eos minus eligendi commodi unde assumenda qui. Minima beatae qui accusantium possimus numquam, natus incidunt dignissimos inventore ducimus illo tempore aliquam porro, facilis maxime impedit consequatur culpa quae et omnis repellat iure sit. Vitae quaerat enim ratione excepturi sint laboriosam, aut, at esse? Architecto recusandae possimus iusto ipsa optio, mollitia ut libero, nihil culpa a, distinctio commodi. Amet aliquid aut nemo blanditiis aperiam numquam corrupti dolorem quis adipisci, enim quibusdam suscipit voluptatum animi neque placeat, ipsum eius impedit repellendus. Incidunt a, nam placeat eum provident esse perspiciatis necessitatibus atque eaque saepe officiis, dolor aut, maiores, sed dignissimos laboriosam consequuntur sit nulla quaerat delectus culpa ut. Sed labore, mollitia autem quo, voluptatum quidem. Provident amet doloremque illo repudiandae nostrum a velit, commodi corporis iure possimus odit. Atque ipsam voluptatibus aliquam molestiae modi architecto cumque sunt nobis accusantium reprehenderit quos earum nam maiores expedita reiciendis numquam aperiam blanditiis, qui culpa harum sapiente, corporis. Reiciendis accusamus itaque alias veritatis dolores, excepturi suscipit magni repellendus.</p>
-        </div>
-        <div class="index-post">
-            <span class="index-post__separator">Dernier message lu</span>
-            <div class="index-post-info">
-                <img class="index-post__avatar" src="http://placehold.it/45x45&amp;text=A"></img><br>
-                Albartros, le 12 novembre à 12h15
-            </div>
-            <p>Laudantium repudiandae numquam voluptas in sint exercitationem voluptates reprehenderit inventore cum ratione aspernatur, amet, totam asperiores temporibus, esse molestias, minima necessitatibus maxime quaerat repellendus illum natus impedit quidem! Suscipit esse aut eos minus eligendi commodi unde assumenda qui. Minima beatae qui accusantium possimus numquam, natus incidunt dignissimos inventore ducimus illo tempore aliquam porro, facilis maxime impedit consequatur culpa quae et omnis repellat iure sit. Vitae quaerat enim ratione excepturi sint laboriosam, aut, at esse? Architecto recusandae possimus iusto ipsa optio, mollitia ut libero, nihil culpa a, distinctio commodi. Amet aliquid aut nemo blanditiis aperiam numquam corrupti dolorem quis adipisci, enim quibusdam suscipit voluptatum animi neque placeat, ipsum eius impedit repellendus. Incidunt a, nam placeat eum provident esse perspiciatis necessitatibus atque eaque saepe officiis, dolor aut, maiores, sed dignissimos laboriosam consequuntur sit nulla quaerat delectus culpa ut. Sed labore, mollitia autem quo, voluptatum quidem. Provident amet doloremque illo repudiandae nostrum a velit, commodi corporis iure possimus odit. Atque ipsam voluptatibus aliquam molestiae modi architecto cumque sunt nobis accusantium reprehenderit quos earum nam maiores expedita reiciendis numquam aperiam blanditiis, qui culpa harum sapiente, corporis. Reiciendis accusamus itaque alias veritatis dolores, excepturi suscipit magni repellendus.</p>
         </div>
     </div>
 
@@ -115,20 +107,12 @@
     </li>
     <div class="index-topic__bloc">
         <div class="index-post">
-            <span class="index-post__separator">Dernier message</span>
+            <span class="index-post__separator"></span>
             <div class="index-post-info">
                 <img class="index-post__avatar" src="http://placehold.it/45x45&amp;text=A"></img><br>
                 Albartros, le 12 novembre à 12h15
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium repudiandae numquam voluptas in sint exercitationem voluptates reprehenderit inventore cum ratione aspernatur, amet, totam asperiores temporibus, esse molestias, minima necessitatibus maxime quaerat repellendus illum natus impedit quidem! Suscipit esse aut eos minus eligendi commodi unde assumenda qui. Minima beatae qui accusantium possimus numquam, natus incidunt dignissimos inventore ducimus illo tempore aliquam porro, facilis maxime impedit consequatur culpa quae et omnis repellat iure sit. Vitae quaerat enim ratione excepturi sint laboriosam, aut, at esse? Architecto recusandae possimus iusto ipsa optio, mollitia ut libero, nihil culpa a, distinctio commodi. Amet aliquid aut nemo blanditiis aperiam numquam corrupti dolorem quis adipisci, enim quibusdam suscipit voluptatum animi neque placeat, ipsum eius impedit repellendus. Incidunt a, nam placeat eum provident esse perspiciatis necessitatibus atque eaque saepe officiis, dolor aut, maiores, sed dignissimos laboriosam consequuntur sit nulla quaerat delectus culpa ut. Sed labore, mollitia autem quo, voluptatum quidem. Provident amet doloremque illo repudiandae nostrum a velit, commodi corporis iure possimus odit. Atque ipsam voluptatibus aliquam molestiae modi architecto cumque sunt nobis accusantium reprehenderit quos earum nam maiores expedita reiciendis numquam aperiam blanditiis, qui culpa harum sapiente, corporis. Reiciendis accusamus itaque alias veritatis dolores, excepturi suscipit magni repellendus.</p>
-        </div>
-        <div class="index-post">
-            <span class="index-post__separator">Dernier message lu</span>
-            <div class="index-post-info">
-                <img class="index-post__avatar" src="http://placehold.it/45x45&amp;text=A"></img><br>
-                Albartros, le 12 novembre à 12h15
-            </div>
-            <p>Laudantium repudiandae numquam voluptas in sint exercitationem voluptates reprehenderit inventore cum ratione aspernatur, amet, totam asperiores temporibus, esse molestias, minima necessitatibus maxime quaerat repellendus illum natus impedit quidem! Suscipit esse aut eos minus eligendi commodi unde assumenda qui. Minima beatae qui accusantium possimus numquam, natus incidunt dignissimos inventore ducimus illo tempore aliquam porro, facilis maxime impedit consequatur culpa quae et omnis repellat iure sit. Vitae quaerat enim ratione excepturi sint laboriosam, aut, at esse? Architecto recusandae possimus iusto ipsa optio, mollitia ut libero, nihil culpa a, distinctio commodi. Amet aliquid aut nemo blanditiis aperiam numquam corrupti dolorem quis adipisci, enim quibusdam suscipit voluptatum animi neque placeat, ipsum eius impedit repellendus. Incidunt a, nam placeat eum provident esse perspiciatis necessitatibus atque eaque saepe officiis, dolor aut, maiores, sed dignissimos laboriosam consequuntur sit nulla quaerat delectus culpa ut. Sed labore, mollitia autem quo, voluptatum quidem. Provident amet doloremque illo repudiandae nostrum a velit, commodi corporis iure possimus odit. Atque ipsam voluptatibus aliquam molestiae modi architecto cumque sunt nobis accusantium reprehenderit quos earum nam maiores expedita reiciendis numquam aperiam blanditiis, qui culpa harum sapiente, corporis. Reiciendis accusamus itaque alias veritatis dolores, excepturi suscipit magni repellendus.</p>
         </div>
     </div>
 <li class="index-topic--new">
@@ -141,16 +125,16 @@
         </a>
     </li>
     <div class="index-topic__bloc">
-        <div class="index-post">
-            <span class="index-post__separator">Dernier message</span>
+        <div class="index-post--new">
+            <span class="index-post__separator"></span>
             <div class="index-post-info">
                 <img class="index-post__avatar" src="http://placehold.it/45x45&amp;text=A"></img><br>
                 Albartros, le 12 novembre à 12h15
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium repudiandae numquam voluptas in sint exercitationem voluptates reprehenderit inventore cum ratione aspernatur, amet, totam asperiores temporibus, esse molestias, minima necessitatibus maxime quaerat repellendus illum natus impedit quidem! Suscipit esse aut eos minus eligendi commodi unde assumenda qui. Minima beatae qui accusantium possimus numquam, natus incidunt dignissimos inventore ducimus illo tempore aliquam porro, facilis maxime impedit consequatur culpa quae et omnis repellat iure sit. Vitae quaerat enim ratione excepturi sint laboriosam, aut, at esse? Architecto recusandae possimus iusto ipsa optio, mollitia ut libero, nihil culpa a, distinctio commodi. Amet aliquid aut nemo blanditiis aperiam numquam corrupti dolorem quis adipisci, enim quibusdam suscipit voluptatum animi neque placeat, ipsum eius impedit repellendus. Incidunt a, nam placeat eum provident esse perspiciatis necessitatibus atque eaque saepe officiis, dolor aut, maiores, sed dignissimos laboriosam consequuntur sit nulla quaerat delectus culpa ut. Sed labore, mollitia autem quo, voluptatum quidem. Provident amet doloremque illo repudiandae nostrum a velit, commodi corporis iure possimus odit. Atque ipsam voluptatibus aliquam molestiae modi architecto cumque sunt nobis accusantium reprehenderit quos earum nam maiores expedita reiciendis numquam aperiam blanditiis, qui culpa harum sapiente, corporis. Reiciendis accusamus itaque alias veritatis dolores, excepturi suscipit magni repellendus.</p>
         </div>
-        <div class="index-post">
-            <span class="index-post__separator">Dernier message lu</span>
+        <div class="index-post--new">
+            <span class="index-post__separator"></span>
             <div class="index-post-info">
                 <img class="index-post__avatar" src="http://placehold.it/45x45&amp;text=A"></img><br>
                 Albartros, le 12 novembre à 12h15
@@ -169,20 +153,12 @@
     </li>
     <div class="index-topic__bloc">
         <div class="index-post">
-            <span class="index-post__separator">Dernier message</span>
+            <span class="index-post__separator"></span>
             <div class="index-post-info">
                 <img class="index-post__avatar" src="http://placehold.it/45x45&amp;text=A"></img><br>
                 Albartros, le 12 novembre à 12h15
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium repudiandae numquam voluptas in sint exercitationem voluptates reprehenderit inventore cum ratione aspernatur, amet, totam asperiores temporibus, esse molestias, minima necessitatibus maxime quaerat repellendus illum natus impedit quidem! Suscipit esse aut eos minus eligendi commodi unde assumenda qui. Minima beatae qui accusantium possimus numquam, natus incidunt dignissimos inventore ducimus illo tempore aliquam porro, facilis maxime impedit consequatur culpa quae et omnis repellat iure sit. Vitae quaerat enim ratione excepturi sint laboriosam, aut, at esse? Architecto recusandae possimus iusto ipsa optio, mollitia ut libero, nihil culpa a, distinctio commodi. Amet aliquid aut nemo blanditiis aperiam numquam corrupti dolorem quis adipisci, enim quibusdam suscipit voluptatum animi neque placeat, ipsum eius impedit repellendus. Incidunt a, nam placeat eum provident esse perspiciatis necessitatibus atque eaque saepe officiis, dolor aut, maiores, sed dignissimos laboriosam consequuntur sit nulla quaerat delectus culpa ut. Sed labore, mollitia autem quo, voluptatum quidem. Provident amet doloremque illo repudiandae nostrum a velit, commodi corporis iure possimus odit. Atque ipsam voluptatibus aliquam molestiae modi architecto cumque sunt nobis accusantium reprehenderit quos earum nam maiores expedita reiciendis numquam aperiam blanditiis, qui culpa harum sapiente, corporis. Reiciendis accusamus itaque alias veritatis dolores, excepturi suscipit magni repellendus.</p>
-        </div>
-        <div class="index-post">
-            <span class="index-post__separator">Dernier message lu</span>
-            <div class="index-post-info">
-                <img class="index-post__avatar" src="http://placehold.it/45x45&amp;text=A"></img><br>
-                Albartros, le 12 novembre à 12h15
-            </div>
-            <p>Laudantium repudiandae numquam voluptas in sint exercitationem voluptates reprehenderit inventore cum ratione aspernatur, amet, totam asperiores temporibus, esse molestias, minima necessitatibus maxime quaerat repellendus illum natus impedit quidem! Suscipit esse aut eos minus eligendi commodi unde assumenda qui. Minima beatae qui accusantium possimus numquam, natus incidunt dignissimos inventore ducimus illo tempore aliquam porro, facilis maxime impedit consequatur culpa quae et omnis repellat iure sit. Vitae quaerat enim ratione excepturi sint laboriosam, aut, at esse? Architecto recusandae possimus iusto ipsa optio, mollitia ut libero, nihil culpa a, distinctio commodi. Amet aliquid aut nemo blanditiis aperiam numquam corrupti dolorem quis adipisci, enim quibusdam suscipit voluptatum animi neque placeat, ipsum eius impedit repellendus. Incidunt a, nam placeat eum provident esse perspiciatis necessitatibus atque eaque saepe officiis, dolor aut, maiores, sed dignissimos laboriosam consequuntur sit nulla quaerat delectus culpa ut. Sed labore, mollitia autem quo, voluptatum quidem. Provident amet doloremque illo repudiandae nostrum a velit, commodi corporis iure possimus odit. Atque ipsam voluptatibus aliquam molestiae modi architecto cumque sunt nobis accusantium reprehenderit quos earum nam maiores expedita reiciendis numquam aperiam blanditiis, qui culpa harum sapiente, corporis. Reiciendis accusamus itaque alias veritatis dolores, excepturi suscipit magni repellendus.</p>
         </div>
     </div>
 <li class="index-topic">
@@ -196,20 +172,12 @@
     </li>
     <div class="index-topic__bloc">
         <div class="index-post">
-            <span class="index-post__separator">Dernier message</span>
+            <span class="index-post__separator"></span>
             <div class="index-post-info">
                 <img class="index-post__avatar" src="http://placehold.it/45x45&amp;text=A"></img><br>
                 Albartros, le 12 novembre à 12h15
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium repudiandae numquam voluptas in sint exercitationem voluptates reprehenderit inventore cum ratione aspernatur, amet, totam asperiores temporibus, esse molestias, minima necessitatibus maxime quaerat repellendus illum natus impedit quidem! Suscipit esse aut eos minus eligendi commodi unde assumenda qui. Minima beatae qui accusantium possimus numquam, natus incidunt dignissimos inventore ducimus illo tempore aliquam porro, facilis maxime impedit consequatur culpa quae et omnis repellat iure sit. Vitae quaerat enim ratione excepturi sint laboriosam, aut, at esse? Architecto recusandae possimus iusto ipsa optio, mollitia ut libero, nihil culpa a, distinctio commodi. Amet aliquid aut nemo blanditiis aperiam numquam corrupti dolorem quis adipisci, enim quibusdam suscipit voluptatum animi neque placeat, ipsum eius impedit repellendus. Incidunt a, nam placeat eum provident esse perspiciatis necessitatibus atque eaque saepe officiis, dolor aut, maiores, sed dignissimos laboriosam consequuntur sit nulla quaerat delectus culpa ut. Sed labore, mollitia autem quo, voluptatum quidem. Provident amet doloremque illo repudiandae nostrum a velit, commodi corporis iure possimus odit. Atque ipsam voluptatibus aliquam molestiae modi architecto cumque sunt nobis accusantium reprehenderit quos earum nam maiores expedita reiciendis numquam aperiam blanditiis, qui culpa harum sapiente, corporis. Reiciendis accusamus itaque alias veritatis dolores, excepturi suscipit magni repellendus.</p>
-        </div>
-        <div class="index-post">
-            <span class="index-post__separator">Dernier message lu</span>
-            <div class="index-post-info">
-                <img class="index-post__avatar" src="http://placehold.it/45x45&amp;text=A"></img><br>
-                Albartros, le 12 novembre à 12h15
-            </div>
-            <p>Laudantium repudiandae numquam voluptas in sint exercitationem voluptates reprehenderit inventore cum ratione aspernatur, amet, totam asperiores temporibus, esse molestias, minima necessitatibus maxime quaerat repellendus illum natus impedit quidem! Suscipit esse aut eos minus eligendi commodi unde assumenda qui. Minima beatae qui accusantium possimus numquam, natus incidunt dignissimos inventore ducimus illo tempore aliquam porro, facilis maxime impedit consequatur culpa quae et omnis repellat iure sit. Vitae quaerat enim ratione excepturi sint laboriosam, aut, at esse? Architecto recusandae possimus iusto ipsa optio, mollitia ut libero, nihil culpa a, distinctio commodi. Amet aliquid aut nemo blanditiis aperiam numquam corrupti dolorem quis adipisci, enim quibusdam suscipit voluptatum animi neque placeat, ipsum eius impedit repellendus. Incidunt a, nam placeat eum provident esse perspiciatis necessitatibus atque eaque saepe officiis, dolor aut, maiores, sed dignissimos laboriosam consequuntur sit nulla quaerat delectus culpa ut. Sed labore, mollitia autem quo, voluptatum quidem. Provident amet doloremque illo repudiandae nostrum a velit, commodi corporis iure possimus odit. Atque ipsam voluptatibus aliquam molestiae modi architecto cumque sunt nobis accusantium reprehenderit quos earum nam maiores expedita reiciendis numquam aperiam blanditiis, qui culpa harum sapiente, corporis. Reiciendis accusamus itaque alias veritatis dolores, excepturi suscipit magni repellendus.</p>
         </div>
     </div>
 
