@@ -30,7 +30,7 @@ class Authenticate {
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Illuminate\Http\Request $request, Closure $next)
+    public function handle(App\Http\Middleware\Illuminate\Http\Request $request, Closure $next)
     {
         if ($this->auth->guest())
         {
