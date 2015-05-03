@@ -23,7 +23,7 @@ class Topic extends Model {
      *
      * @return object
      */
-    public function get_author()
+    public function getAuthor()
     {
         return $this->belongsTo('User');
     }
@@ -33,7 +33,7 @@ class Topic extends Model {
      *
      * @return object
      */
-    public function get_forum()
+    public function getForum()
     {
         return $this->belongsTo('Forum');
     }
@@ -43,7 +43,7 @@ class Topic extends Model {
      *
      * @return object
      */
-    public function list_index_topics()
+    public function listIndexTopics()
     {
         $shown_on_index = 10;
 
@@ -58,7 +58,7 @@ class Topic extends Model {
      *
      * @return object
      */
-    public function get_posts()
+    public function getPosts()
     {
         $pagination = 15;
 
@@ -71,7 +71,7 @@ class Topic extends Model {
      *
      * @return object
      */
-    public function get_last_post()
+    public function getLastPost()
     {
         return $this->hasMany('Post')
                     ->find($this->last_post_id);
@@ -82,7 +82,7 @@ class Topic extends Model {
      *
      * @return void
      */
-    public function add_view()
+    public function addView()
     {
         $this->views = $this->views + 1;
         $this->save();

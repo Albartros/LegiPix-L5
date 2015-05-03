@@ -16,7 +16,7 @@ class Video extends Model {
      *
      * @return object
      */
-    public function list_index_videos()
+    public function listIndexVideos()
     {
         $shown_on_index = 2;
 
