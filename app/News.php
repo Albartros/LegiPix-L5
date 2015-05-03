@@ -16,7 +16,7 @@ class News extends Model {
      *
      * @return object
      */
-    public function get_category()
+    public function getCategory()
     {
         return $this->belongsTo('CategoryNews');
     }
@@ -26,7 +26,7 @@ class News extends Model {
      *
      * @return object
      */
-    public function list_index_topics()
+    public function listIndexTopics()
     {
         return $this->orderBy('created_at', 'desc')
                     ->orderBy('id', 'desc')

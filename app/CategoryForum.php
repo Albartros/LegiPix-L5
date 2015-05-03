@@ -16,7 +16,7 @@ class CategoryForum extends Model {
      *
      * @return object
      */
-    public function get_forums() {
+    public function getForums() {
         return $this->hasMany('Forum');
     }
 

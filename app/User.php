@@ -38,7 +38,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @return string
      */
-    public function get_user_rank()
+    public function getUserRank()
     {
         // Counting total amount of posts
         $number_of_posts = $this->posts + $this->comments;
@@ -68,8 +68,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             'Légendaire',  // 2 097 152
             'H4cK3R'       // 4 194 304
         );
+        $size_of_rank_names = sizeof($rank_names);
 
-        for ($i = 0; $i < sizeof($rank_names); $i++) {
+        for ($i = 0; $i < $size_of_rank_names; $i++) {
 
             // If user has no posts
             if ($number_of_posts == 0) {
@@ -91,7 +92,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @return boolean
      */
-    public function is_online()
+    public function isOnline()
     {
         // Defining the variables
         $last_seen_visit = $this->online_at;

@@ -16,7 +16,7 @@ class Countdown extends Model {
      *
      * @return object
      */
-    public function list_index_countdowns()
+    public function listIndexCountdowns()
     {
         $shown_on_index = 2;
 

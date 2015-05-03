@@ -16,7 +16,7 @@ class Forum extends Model {
      *
      * @return object
      */
-    public function get_category()
+    public function getCategory()
     {
         return $this->belongsTo('CategoryForum');
     }
@@ -26,7 +26,7 @@ class Forum extends Model {
      *
      * @return object
      */
-    public function get_topics()
+    public function getTopics()
     {
         $pagination = 15;
 
