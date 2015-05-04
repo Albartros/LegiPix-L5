@@ -1,17 +1,11 @@
 <?php namespace App\Http\Controllers;
 
-class WelcomeController extends Controller {
+use App\Countdown;
+use App\News;
+use App\Topic;
+use App\Video;
 
-    /*
-    |--------------------------------------------------------------------------
-    | Welcome Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller renders the "marketing page" for the application and
-    | is configured to only allow guests. Like most of the other sample
-    | controllers, you are free to modify or remove it as you desire.
-    |
-    */
+class WelcomeController extends Controller {
 
     /**
      * Create a new controller instance.
@@ -20,7 +14,7 @@ class WelcomeController extends Controller {
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        //
     }
 
     /**
@@ -30,7 +24,24 @@ class WelcomeController extends Controller {
      */
     public function index()
     {
-        return view('welcome');
+        $c = new Countdown;
+        $countdowns = $c->listIndexCountdowns();
+
+        $n = new News;
+        $news = $n->listIndexNews();
+
+        $t = new Topic;
+        $topics = $t->listIndexTopics();
+
+        $v = new Video;
+        $videos = $v->listIndexVideos();
+
+        return view('welcome', [
+            'countdowns' => $countdowns,
+            'news' => $news,
+            'topics' => $topics,
+            'videos' => $videos
+        ]);
     }
 
 }
