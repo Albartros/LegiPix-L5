@@ -153,12 +153,12 @@ header {
 .auth-user__avatar {
     @include respond-to(mobile) { display: none }
     @include respond-to(desktop) {
+        border-radius: 50%;
         display: inline-block;
         float: right;
         position: relative;
-        top: 6px;
-        right: 25px;
-        width: 50px
+        top: 1px;
+        width: 60px
     }
 }
 .auth-user, .auth-user--logged-out {
@@ -171,8 +171,8 @@ header {
     @include respond-to(desktop) {
         float: right;
         position: relative;
-        right: 15px;
-        text-align: left;
+        right: 8px;
+        text-align: right;
         top: 0
     }
 }

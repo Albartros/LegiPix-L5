@@ -7,6 +7,7 @@
     background-color: $md-clr-grey-100;
     margin-top: 20px;
     padding: 20px;
+    overflow: hidden;
     position: relative
 }
 .index-contents--video {
@@ -187,6 +188,24 @@
 | Topics
 |--------------------------------------------------------------------------
 */
+h1.sujets {
+        //border-radius:5px 5px 0 0;
+        //margin-bottom: 0;
+        //text-shadow:0 0 10px rgba(0,0,0,.8);
+        background: $md-clr-red-600;
+        color: white;
+        cursor: default;
+        font-size: 120%;
+        font-weight: 400;
+        letter-spacing: 1px;
+        padding: 15px 0;
+        text-align: center;
+        text-transform: uppercase;
+        width: 60%;
+        margin:0;
+        margin-bottom: 3px;
+        display: none;
+    }
 .index-topics {
     height: 100%;
     list-style-type: none;
@@ -268,7 +287,7 @@
     font-size: 15px;
     position: relative;
     text-transform: uppercase;
-    top: 1px;
+    top: 1px
 }
 .index-topic__bloc {
     transform: translateZ(0);
@@ -300,44 +319,30 @@
     width: 40.3%;
     z-index: 1
 }
-
-.index-post-info {
-    text-align: center;
-}
-
-.index-post__avatar {
-    border-radius: 50%;
-    width: 45px;
-}
-
+.index-post-info { text-align: center }
+.index-post__avatar { border-radius: 50%; width: 45px }
 .index-post, .index-post--new {
-    color: $md-clr-grey-600;
+    color: $md-clr-grey-900;
     height: 100%;
+    opacity: .7;
     overflow: hidden;
     padding: 2px 3px;
     position: relative;
-    img { opacity: .7 }
     .index-post__separator:before { content: "Dernier message" }
-    &:first-child {
-        color: $md-clr-grey-900;
-        img { opacity: 1 }
-    }
+    &:first-child { opacity: 1 }
 }
-
 .index-post--new {
     height: 50%;
     &:last-child {
         .index-post__separator:before { content: "Dernier message lu" }
     }
 }
-
 .index-post__separator {
     padding: 0 3px;
     position: absolute;
     top: 15px;
     &:nth-of-type(2) { color: $md-clr-grey-600 }
 }
-
 /*
 |--------------------------------------------------------------------------
 | Test http://codepen.io/miroot/pen/aHCIg
