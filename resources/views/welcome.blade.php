@@ -74,7 +74,7 @@
 </div>
 <div class="index-contents" style="border-top: none">
 
-
+<h1 class="sujets">Derniers sujets actifs</h1>
 <ul class="index-topics">
     <li class="index-topic">
         <a class="index-topic__link" href="#">
@@ -198,9 +198,10 @@
       </div>
 
 </div>
-<div class="index-contents" style="border-top: none;     padding-left: 20px;">
+<div class="index-contents" style="border-top: none;">
+<center><code>Encart à remplir</code></center>
 
-<div id="calendar">
+<!--<div id="calendar">
   <h1>Octobre 2015</h1>
   <table>
     <tr><td class="lastmonth"></td><td>1</td><td>2</td><td>3</td><td class="hastask">4</td><td>5</td><td>6</td></tr>
@@ -209,7 +210,7 @@
     <tr><td class="hastask">21</td><td>22</td><td>23</td><td>24</td><td>25</td><td class="hastask">26</td><td>27</td></tr>
     <tr><td>28</td><td>29</td><td class="hastask">30</td><td>31</td><td class="nextmonth"></td><td></td><td></td></tr>
   </table>
-</div>
+</div>-->
 
 </div>
 <div class="index-contents--video">
@@ -228,6 +229,6 @@
     </div>
 </div>
 <div class="index-contents" style="border: none">
-Les meilleurs posteurs de la semaine / derniers membres / connectés + feed twitter (?)
+<center><code>Encart à remplir</code></center>
 </div>
 @stop

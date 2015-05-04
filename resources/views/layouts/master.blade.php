@@ -29,35 +29,36 @@
     <body>
         <header>
             <div class="header__main" id="head-main">
-                <div class="wrapper">
-                    {!! link_to_action('WelcomeController@index', $title = '', $secure = null, $attributes = array('class' => 'logo', 'data-version' => 'Prototype 5.0 ')) !!}
+                <div class="wrapper--main">
+                    <a href="{!! route('index') !!}" data-version="Prototype 5.0" class="logo"></a>
                     <nav class="menu">
                         <menu class="menu__list">
                             <li class="menu__list__item">
-                                <a href="{{ route('index') }}" class="menu__list__link">
+                                <a href="{!! route('index') !!}" class="menu__list__link">
                                 <i class="icon-fire icon--large"></i>News
                                 </a>
                             </li>
                             <li class="menu__list__item">
-                                <a href="{{ route('index') }}" class="menu__list__link">
+                                <a href="{!! route('index') !!}" class="menu__list__link">
                                 <i class="icon-forum icon--large"></i>Forum
                                 </a>
                             </li>
                             <li class="menu__list__item">
-                                <a href="{{ route('index') }}" class="menu__list__link">
+                                <a href="{!! route('index') !!}" class="menu__list__link">
                                 <i class="icon-rocket icon--large"></i>Communauté
                                 </a>
                             </li>
                             <li class="menu__list__item">
-                                <a href="{{ route('index') }}" class="menu__list__link">
+                                <a href="{!! route('index') !!}" class="menu__list__link">
                                 <i class="icon-pad icon--large"></i>Social Play
                                 </a>
                             </li>
                         </menu>
                     </nav>
                     @if(Auth::check())
+                    <img src="http://placehold.it/60x60&amp;text=A" class="auth-user__avatar">
                     <div class="auth-user" id="header-main-user">
-                        <span class="auth-user__name">Bienvenue, {!! link_to_route('user.view', $title = Auth::user()->username, array(Auth::id(), Auth::user()->username), $attributes = array(), $secure = null) !!}</span>
+                        <span class="auth-user__name">Bienvenue, {!! link_to_route('m.view', $title = Auth::user()->name, array(Auth::id(), Auth::user()->name), $attributes = array(), $secure = null) !!}</span>
                         <ul class="header__main__user-notification">
                             <li class="notification-item">
                                 <a href="#"><i id="m-notification-forum" data-content="06" class="notification-item__icon icon--large icon-chat"></i></a>
@@ -79,10 +80,10 @@
                             </li>
                         </ul>
                     </div>
-                    {{ Html::image(Auth::user()->getAvatarUrl(), 'avatar', array('class' => 'auth-user__avatar')) }}
+
                     @else
                     <div class="auth-user--logged-out">
-                        {!! link_to_route('m.login', $title = 'Connexion au site', $secure = null, $attributes = array('id' => 'modal-open')) !!}
+                        <a href="{!! action('Auth\AuthController@getLogin') !!}" id="modal-open">Connexion au site</a>
                     </div>
                     @endif
                 </div>
@@ -127,7 +128,7 @@
                     @else
                     <div class="header__second__user" id="header-second-user">
                         <div class="auth-user--logged-out">
-                            {!! link_to_route('m.login', $title = 'Connexion au site', $secure = null, $attributes = array('id' => 'modal-open')) !!}
+                            <a href="{!! action('Auth\AuthController@getLogin') !!}" id="modal-open">Connexion au site</a>
                         </div>
                     </div>
                     @endif
@@ -145,7 +146,7 @@
             Développement du site par Albartros, contribuez sur <a href="{{ url('https://github.com/Albartros/LegiPix-L5', $parameters = array(), $secure = null) }}" class="footer__link" rel="nofollow" target="_blank"><i class="icon-github"></i>GitHub</a>.
 
             @if(Auth::check()/* && Auth::user()->hasRole('Admin')*/)
-            <span class="no-smartphone">Accéder à l'onglet <a href="{{ Config::get('administrator::administrator.uri') }}" class="footer__link" rel="nofollow"><i class="icon-locked"></i>Administration</a>.</span>
+            <span class="no-smartphone">Accéder à l'onglet <a href="{!! route('admin_dashboard') !!}" class="footer__link" rel="nofollow"><i class="icon-locked"></i>Administration</a>.</span>
             @endif
         </footer>
         <div id="modal-mask" class="modal__mask"></div>
@@ -158,15 +159,15 @@
                     <a href="#" id="modal-close">&#x2573;</a>
                 </div>
                 <div class="modal__content">
-                <form role="form" method="POST" action="{{{ route('index') }}}" accept-charset="UTF-8">
+                <form role="form" method="POST" action="{{ url('/auth/login') }}" accept-charset="UTF-8">
                     <p class="modal__info">Utilisez vos identifiants pour vous connecter</p>
-                    <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="modal__form__block">
                         <div class="modal__form__icon">
                             <i class="icon-user"></i>
                         </div>
                         <div class="modal__field__input">
-                            <input tabindex="1" placeholder="{{{ Lang::get('confide::confide.username_e_mail') }}}" type="text" name="email" id="email" value="{{{ Input::old('email') }}}">
+                            <input type="email" name="email" value="{{ old('email') }}" placeholder="Adresse e-mail" required>
                         </div>
                     </div>
                     <div class="modal__form__block">
@@ -174,24 +175,24 @@
                             <i class="icon-key"></i>
                         </div>
                         <div class="modal__field__input">
-                            <input tabindex="2" placeholder="{{{ Lang::get('confide::confide.password') }}}" type="password" name="password" id="password">
+                            <input type="password" name="password" placeholder="Mot de passe" required>
                         </div>
                     </div>
                     <div class="modal__field__remember">
                         <label for="remember">
                             <input type="hidden" name="remember" value="0">
-                            <input tabindex="4" type="checkbox" name="remember" id="remember" value="1"> {{{ Lang::get('confide::confide.login.remember') }}}
+                            <input type="checkbox" name="remember"> Se souvenir de moi
                         </label>
                     </div>
                     <div class="modal__field__links">
                         <i class="icon-question"></i>
-                        <u>{{ link_to_route('index', 'Vous n\'avez pas encore de compte ?', $attributes = array(), $secure = null) }}</u>
+                        <u>{!! link_to_route('index', 'Vous n\'avez pas encore de compte ?', $attributes = array(), $secure = null) !!}</u>
                         <br>
                         <i class="icon-question"></i>
-                        <u>{{ link_to_route('index', 'Vous avez oublié votre mot de passe ?', $attributes = array(), $secure = null) }}</u>
+                        <u><a href="{{ url('/password/email') }}">Mot de passe oublié ?</a></u>
                     </div>
                     <div class="modal__field__button">
-                        <button tabindex="3" type="submit">{{{ Lang::get('confide::confide.login.submit') }}}</button>
+                        <button tabindex="3" type="submit">Envoyer</button>
                     </div>
                 </form>
                 </div>
