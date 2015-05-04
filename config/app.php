@@ -155,6 +155,7 @@ return [
       'Devfactory\Media\MediaServiceProvider',
       'Frozennode\Administrator\AdministratorServiceProvider',
       'GrahamCampbell\Markdown\MarkdownServiceProvider',
+      'Jenssegers\Date\DateServiceProvider',
       'That0n3guy\Transliteration\TransliterationServiceProvider',
       'Torann\Hashids\HashidsServiceProvider',
       'Zizaco\Entrust\EntrustServiceProvider',
