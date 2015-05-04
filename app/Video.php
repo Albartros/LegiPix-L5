@@ -9,7 +9,7 @@ class Video extends Model {
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'videos';
 
     /**
      * Lists the videos shown on index page.
@@ -18,7 +18,7 @@ class Video extends Model {
      */
     public function listIndexVideos()
     {
-        $shown_on_index = 2;
+        $shown_on_index = 4;
 
         return $this->orderBy('created_at', 'desc')
                     ->take($shown_on_index)
