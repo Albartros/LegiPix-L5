@@ -37,6 +37,11 @@ Route::get('/', array(
     'uses' => 'WelcomeController@index'
 ));
 
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
+
 /*
  |--------------------------------------------------------------------------
  | Gestions des comptes utilisateurs
@@ -47,34 +52,19 @@ Route::get('/', array(
  |
  */
 Route::group(
-    array('prefix' => 'membres'), function()
+    array('prefix' => 'profil'), function()
     {
-        Route::get('/inscription', array(
-            'as' => 'm.register',
-            'uses' => 'UsersController@create'
-        ));
-
-        Route::get('/connexion', array(
-            'as' => 'm.login',
-            'uses' => 'UsersController@login'
-        ));
-
-        Route::get('/deconnexion', array(
-            'as' => 'm.logout',
-            'uses' => 'UsersController@logout'
-        ));
-
         Route::group(
             array('prefix' => '/{id}-{username}'), function()
             {
                 Route::get('/', array(
                     'as' => 'm.view',
-                    'uses' => 'UsersController@showUser'
+                    'uses' => 'WelcomeController@index'
                 ));
 
                 Route::get('/edit', array(
                     'as' => 'm.edit',
-                    'uses' => 'UsersController@editUser'
+                    'uses' => 'WelcomeController@index'
                 ));
             }
         );
