@@ -2,50 +2,50 @@
 
 return array(
 
-    /**
-    * Model title
-    * @type string
-    */
     'title' => 'Gestion des Membres',
 
-    /**
-    * The singular name of your model
-    * @type string
-    */
     'single' => 'membre',
 
-    /**
-    * The class name of the Eloquent model that this config represents
-    * @type string
-    */
     'model' => 'App\User',
 
-    /**
-    * The columns array
-    * @type array
-    */
     'columns' => array(
-    'name' => array(
-    'title' => 'Pseudonyme'
-    ),
-    'posts' => array(
-    'title' => 'Messages'
-    ),
-    'email' => array(
-    'title' => 'Adresse e-mail'
-    ),
-    'created_at' => array(
-    'title' => 'Création'
-    ),
-    'online_at' => array(
-    'title' => 'Dernière visite'
-    ),
+        'name' => array(
+            'title' => 'Pseudo',
+        ),
+        'nbr_posts' => array(
+            'title' => '#Posts',
+        ),
+        'nbr_comments' => array(
+            'title' => '#Comms',
+        ),
+        'nbr_topics' => array(
+            'title' => '#Topics',
+        ),
+        'rank' => array(
+            'output' => function($value)
+            {
+                return App\User::find($value)->getUserRank();
+            },
+            'select' => '(:table).id',
+            'sortable' => false,
+            'title' => 'Rang',
+        ),
+        'roles' => array(
+            'relationship' => 'roles',
+            'select' => "GROUP_CONCAT((:table).display_name SEPARATOR ', ')",
+            'title' => 'Rôles',
+        ),
+        'email' => array(
+        'title' => 'Adresse e-mail',
+        ),
+        'created_at' => array(
+        'title' => 'Création',
+        ),
+        'online_at' => array(
+        'title' => 'Dernière visite',
+        ),
     ),
 
-    /**
-    * The filters array
-    * @type array
-    */
     'filters' => array(
     'username' => array(
     'title' => 'Pseudonyme'
@@ -60,46 +60,58 @@ return array(
     )
     ),
 
-    /**
-    * The edit fields array
-    * @type array
-    */
     'edit_fields' => array(
-    'id' => array(
-    'type' => 'key',
-    'title' => 'ID'
-    ),
-    'name' => array(
-    'title' => 'Pseudo',
-    'type' => 'text'
-    ),
-    'email' => array(
-    'title' => 'Adresse e-mail',
-    'type' => 'text'
-    ),
-    'confirmed' => array(
-    'type' => 'bool',
-    'title' => 'Vérifié'
-    ),
-    'contact_xbox' => array(
-    'title' => 'Xbox',
-    'type' => 'text'
-    ),
-    'contact_playstation' => array(
-    'title' => 'PSN',
-    'type' => 'text'
-    ),
-    'contact_steam' => array(
-    'title' => 'Steam',
-    'type' => 'text'
-    ),
-    'contact_twitter' => array(
-    'title' => 'Twitter',
-    'type' => 'text'
-    ),
-    'contact_youtube' => array(
-    'title' => 'Youtube',
-    'type' => 'text'
-    )
+        'id' => array(
+            'title' => 'ID',
+            'type' => 'key',
+        ),
+        'name' => array(
+            'title' => 'Pseudo',
+            'type' => 'text',
+        ),
+        'email' => array(
+            'title' => 'Adresse e-mail',
+            'type' => 'text',
+        ),
+        'confirmed' => array(
+            'title' => 'Vérifié',
+            'type' => 'bool',
+        ),
+        'ctc_xbox_live' => array(
+            'title' => 'Xbox',
+            'type' => 'text',
+        ),
+        'ctc_playstation' => array(
+            'title' => 'PSN',
+            'type' => 'text',
+        ),
+        'ctc_steam' => array(
+            'title' => 'Steam',
+            'type' => 'text',
+        ),
+        'ctc_twitch' => array(
+            'title' => 'Twitch',
+            'type' => 'text',
+        ),
+        'ctc_skype' => array(
+            'title' => 'Skype',
+            'type' => 'text',
+        ),
+        'ctc_twitter' => array(
+            'title' => 'Twitter',
+            'type' => 'text',
+        ),
+        'ctc_facebook' => array(
+            'title' => 'Facebook',
+            'type' => 'text',
+        ),
+        'ctc_youtube' => array(
+            'title' => 'Youtube',
+            'type' => 'text',
+        ),
+        'ctc_internet' => array(
+            'title' => 'Site Web',
+            'type' => 'text',
+        ),
     )
 );

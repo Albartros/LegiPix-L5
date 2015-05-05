@@ -1,80 +1,56 @@
 <?php
 
 return array(
-   /**
-    * Model title
-    *
-    * @type string
-    */
-   'title' => 'Gestion des Countdowns',
 
-   /**
-    * The singular name of your model
-    *
-    * @type string
-    */
-   'single' => 'countdown',
+    'title' => 'Gestion des Countdowns',
 
-   /**
-    * The class name of the Eloquent model that this config represents
-    *
-    * @type string
-    */
-   'model' => 'App\Countdown',
+    'single' => 'countdown',
 
-   /**
-    * The columns array
-    *
-    * @type array
-    */
-   'columns' => array(
-      'name' => array(
-         'title' => 'Jeu',
-         'output' => '<div style="text-align: center;position: relative;top: 68px;">(:value)</div>'
-      ),
-      'thumbnail' => array(
-         'title' => 'Jaquette',
-         'output' => '<img src="/upload/covers/(:value)" height="150">',
-         'sortable' => false
-      ),
-      'released_at' => array(
-         'title' => 'Date de sortie',
-         'output' => '<div style="position: relative;top: 68px;">(:value)</div>'
-      ),
-      'created_at' => array(
-         'title' => 'Mise en ligne',
-         'output' => '<div style="position: relative;top: 68px;">(:value)</div>'
-      ),
-   ),
+    'model' => 'App\Countdown',
 
-   'sort' => array(
-      'field' => 'released_at',
-      'direction' => 'desc'
-   ),
+    'columns' => array(
+        'name' => array(
+            'output' => '<div style="text-align: center;position: relative;top: 68px;">(:value)</div>',
+            'title' => 'Jeu',
+        ),
+        'thumbnail' => array(
+            'output' => '<img src="/uploads/countdown/(:value)" height="150">',
+            'sortable' => false,
+            'title' => 'Jaquette',
+        ),
+        'released_at' => array(
+            'output' => '<div style="position: relative;top: 68px;">(:value)</div>',
+            'title' => 'Date de sortie',
+        ),
+        'created_at' => array(
+            'output' => '<div style="position: relative;top: 68px;">(:value)</div>',
+            'title' => 'Mise en ligne',
+        ),
+    ),
 
-   /**
-    * The edit fields array
-    *
-    * @type array
-    */
-   'edit_fields' => array(
-      'id' => array(
-         'type' => 'key',
-         'title' => 'ID'
-      ),
-      'name' => array(
-         'title' => 'Jeu',
-      ),
-      'thumbnail' => array(
-         'title' => 'Jaquette',
-         'type' => 'image',
-         'location' => 'uploads/countdown/',
-         'naming' => 'random'
-      ),
-      'released_at' => array(
-         'title' => 'Date de sortie',
-         'type' => 'date',
-         'date_format' => 'yy-mm-dd'
-      )
-   )
+    'sort' => array(
+        'direction' => 'desc',
+        'field' => 'released_at',
+    ),
+
+    'edit_fields' => array(
+        'id' => array(
+            'title' => 'ID',
+            'type' => 'key',
+        ),
+        'name' => array(
+            'title' => 'Jeu',
+        ),
+        'thumbnail' => array(
+            'location' => 'uploads/countdown/',
+            'naming' => 'random',
+            'title' => 'Jaquette',
+            'type' => 'image',
+        ),
+        'released_at' => array(
+            'date_format' => 'yy-mm-dd',
+            'title' => 'Date de sortie',
+            'type' => 'date',
+        )
+    )
 );

@@ -52,7 +52,7 @@ return array(
      *  )
      */
     'menu' => array(
-        'Partie Membres' => array('User'),
+        'Partie Membres' => array('User', 'Rank', 'Role'),
         'Partie Site' => array('News', 'Video', 'countdown'),
         'Partie Forum' => array('Forum', 'Topic')
     ),
@@ -65,7 +65,7 @@ return array(
      */
     'permission'=> function()
     {
-        return Auth::check();
+        return Auth::check() && Auth::user()->hasRole('owner');
     },
 
     /**
