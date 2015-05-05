@@ -58,19 +58,14 @@
 </div>
 
 <div class="index-contents--video">
-    <div class="index-video">
-        <div class="videoWrapper">
-            <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/OUdh9kZhFtQ?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
+    @for ($i = 0; $i < 2; $i++)
+        <div class="index-video">
+            <div class="videoWrapper">
+                <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/{{ $videos[$i]->video_id }}?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
+            </div>
+            <h2 class="index-video__name">{{ $videos[$i]->name }}</h2>
         </div>
-        <h2 class="index-video__name">Lorem ipsum dolor sit amet.</h2>
-    </div>
-
-    <div class="index-video">
-        <div class="videoWrapper">
-            <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/KsB1ydR8NFk?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
-        </div>
-        <h2 class="index-video__name">Lorem ipsum dolor sit amet.</h2>
-    </div>
+    @endfor
 </div>
 <div class="index-contents" style="border-top: none">
 
@@ -214,19 +209,14 @@
 
 </div>
 <div class="index-contents--video">
-    <div class="index-video">
-        <div class="videoWrapper">
-            <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/OUdh9kZhFtQ?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
+    @for ($i = 2; $i < 4; $i++)
+        <div class="index-video">
+            <div class="videoWrapper">
+                <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/{{ $videos[$i]->video_id }}?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
+            </div>
+            <h2 class="index-video__name">{{ $videos[$i]->name }}</h2>
         </div>
-        <h2 class="index-video__name">Lorem ipsum dolor sit amet.</h2>
-    </div>
-
-    <div class="index-video">
-        <div class="videoWrapper">
-            <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/KsB1ydR8NFk?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
-        </div>
-        <h2 class="index-video__name">Lorem ipsum dolor sit amet.</h2>
-    </div>
+    @endfor
 </div>
 <div class="index-contents" style="border: none">
 <center><code>Encart à remplir</code></center>
