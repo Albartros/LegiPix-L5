@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 use Carbon\Carbon;
+use App\Rank;
 
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 
@@ -42,49 +43,23 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function getUserRank()
     {
-        // Counting total amount of posts
-        $number_of_posts = $this->posts + $this->comments;
+        $number_of_posts = $this->nbr_posts + $this->nbr_comments;
 
-        $rank_names = array(
-            'Inconnu',     // 1
-            'Vagabond',    // 2
-            'Touriste',    // 4
-            'Passant',     // 8
-            'Journalier',  // 16
-            'Honorable',   // 32
-            'Habitué',     // 64
-            '',            // 128
-            '',            // 256
-            '',            // 512
-            'Addict',      // 1 024
-            '',            // 2 048
-            '',            // 4 096
-            '',            // 8 192
-            '',            // 16 384
-            '',            // 32 768
-            '',            // 65 536
-            '',            // 131 072
-            '',            // 262 144
-            '',            // 524 288
-            'Millionaire', // 1 048 576
-            'Légendaire',  // 2 097 152
-            'H4cK3R'       // 4 194 304
-        );
+        $rank_names = Rank::all()->toArray();
         $size_of_rank_names = sizeof($rank_names);
 
         for ($i = 0; $i < $size_of_rank_names; $i++) {
-
             // If user has no posts
             if ($number_of_posts == 0) {
                 return (string) 'Fantôme';
 
             // If user has X posts
             } else if ($number_of_posts < pow(2, $i)) {
-                return (string) $rank_names[$i - 1];
+                return (string) $rank_names[$i - 1]['name'];
 
             // If user has more posts than max amount
             } else if ($i == sizeof($rank_names) - 1) {
-                return (string) $rank_names[$i];
+                return (string) $rank_names[$i]['name'];
             }
         }
     }
