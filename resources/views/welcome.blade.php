@@ -67,7 +67,7 @@
         </div>
     @endfor
 </div>
-<div class="index-contents" style="border-top: none">
+<div class="index-contents">
 
 <h1 class="sujets">Derniers sujets actifs</h1>
 <ul class="index-topics">
@@ -184,16 +184,16 @@
 
 <div class="countdown">
 <div class="countdown__container">
-    <img src="http://placehold.it/189x259&amp;text=cover" class="countdown__image" alt="cover">
+    <img src="{!! asset('uploads/countdown/' . $countdowns->thumbnail) !!}" class="countdown__image" alt="cover">
          <div class="countdown__title">
-            <span id="countdown">2016-12-30 19:59:39</span>
+            <span id="countdown">{{ $countdowns->released_at }}</span>
          </div>
 </div>
 
       </div>
 
 </div>
-<div class="index-contents" style="border-top: none;">
+<div class="index-contents" style="display: none">
 <center><code>Encart à remplir</code></center>
 
 <!--<div id="calendar">
@@ -217,8 +217,5 @@
             <h2 class="index-video__name">{{ $videos[$i]->name }}</h2>
         </div>
     @endfor
-</div>
-<div class="index-contents" style="border: none">
-<center><code>Encart à remplir</code></center>
 </div>
 @stop
