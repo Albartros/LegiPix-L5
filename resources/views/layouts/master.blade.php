@@ -39,7 +39,7 @@
                                 </a>
                             </li>
                             <li class="menu__list__item">
-                                <a href="{!! route('index') !!}" class="menu__list__link">
+                                <a href="{!! route('f.index') !!}" class="menu__list__link">
                                 <i class="icon-forum icon--large"></i>Forum
                                 </a>
                             </li>
