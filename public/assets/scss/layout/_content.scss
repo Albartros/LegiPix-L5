@@ -26,7 +26,7 @@
         display: block;
         font-size: 15px;
         line-height: 2.5em;
-        padding-left: 5px;
+        padding-left: 10px;
         width: 100%;
         & > span:before { content: "Vous \00eates ici : " }
         & * .separator:before { content: "\20\5C\20"; font-style: normal }
