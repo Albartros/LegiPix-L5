@@ -20,12 +20,10 @@ class Countdown extends Model {
      */
     public function listIndexCountdowns()
     {
-        $shown_on_index = 1;
 
         return $this->orderBy('released_at', 'asc')
                     ->where('released_at', '>', Carbon::now())
-                    ->take($shown_on_index)
-                    ->get();
+                    ->first();
     }
 
 }
