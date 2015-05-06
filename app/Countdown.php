@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+use Carbon\Carbon;
+
 class Countdown extends Model {
 
     /**
@@ -18,12 +20,10 @@ class Countdown extends Model {
      */
     public function listIndexCountdowns()
     {
-        $shown_on_index = 2;
 
         return $this->orderBy('released_at', 'asc')
-                    ->where('released_at', '>', Date::now())
-                    ->take($shown_on_index)
-                    ->get();
+                    ->where('released_at', '>', Carbon::now())
+                    ->first();
     }
 
 }

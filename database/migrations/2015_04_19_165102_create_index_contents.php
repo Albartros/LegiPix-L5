@@ -36,6 +36,8 @@ class CreateIndexContents extends Migration {
             $table->increments('id');
             $table->string('name');
 
+            $table->string('thumbnail');
+
             // Timestamps
             $table->timestamps();
             $table->timestamp('released_at');

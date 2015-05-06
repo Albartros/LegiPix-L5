@@ -10,6 +10,15 @@
  | and give it the controller to call when that URI is requested.
  |
  */
+Route::get('/', array(
+    'as' => 'index',
+    'uses' => 'WelcomeController@index',
+));
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
 
 /*
  |--------------------------------------------------------------------------
@@ -26,19 +35,6 @@ Route::pattern('page', '[0-9]+');
 
 /*
  |--------------------------------------------------------------------------
- | Gestion de la page d'index
- |--------------------------------------------------------------------------
- |
- | La règle la plus importante du site : la redirection en page d'index.
- |
- */
-Route::get('/', array(
-    'as' => 'index',
-    'uses' => 'WelcomeController@index'
-));
-
-/*
- |--------------------------------------------------------------------------
  | Gestions des comptes utilisateurs
  |--------------------------------------------------------------------------
  |
@@ -47,36 +43,50 @@ Route::get('/', array(
  |
  */
 Route::group(
-    array('prefix' => 'membres'), function()
+    array('prefix' => 'profil'), function()
     {
-        Route::get('/inscription', array(
-            'as' => 'm.register',
-            'uses' => 'UsersController@create'
-        ));
-
-        Route::get('/connexion', array(
-            'as' => 'm.login',
-            'uses' => 'UsersController@login'
-        ));
-
-        Route::get('/deconnexion', array(
-            'as' => 'm.logout',
-            'uses' => 'UsersController@logout'
-        ));
-
         Route::group(
             array('prefix' => '/{id}-{username}'), function()
             {
                 Route::get('/', array(
                     'as' => 'm.view',
-                    'uses' => 'UsersController@showUser'
+                    'uses' => 'WelcomeController@index',
                 ));
 
                 Route::get('/edit', array(
                     'as' => 'm.edit',
-                    'uses' => 'UsersController@editUser'
+                    'uses' => 'WelcomeController@index',
                 ));
             }
         );
+    }
+);
+
+/*
+ |--------------------------------------------------------------------------
+ | Gestions de la partie forum
+ |--------------------------------------------------------------------------
+ |
+ | Le forum est une partie essentielle du site, l'ensemble des routings
+ | spécifiques au forum se retrouvent ici.
+ |
+ */
+Route::group(
+    array('prefix' => 'forum'), function()
+    {
+        Route::get('/', array(
+            'as' => 'f.index',
+            'uses' => 'ForumController@index',
+        ));
+
+        Route::get('/{id}-{slug}/{page?}', array(
+            'as' => 'f.forum',
+            'uses' => 'ForumController@showForum',
+        ));
+
+        Route::get('/{random}/{id}-{slug}/{page?}', array(
+            'as' => 'f.topic',
+            'uses' => 'ForumController@showTopic',
+        ));
     }
 );

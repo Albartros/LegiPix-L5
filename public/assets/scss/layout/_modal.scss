@@ -1,3 +1,5 @@
+$modal-color: $md-clr-red-700;
+
 .modal__mask {
    background-color: $black;
    cursor: pointer;
@@ -7,6 +9,7 @@
    position: fixed;
    top: 0;
    width: 100%;
+   z-index: 98
 }
 
 .modal {
@@ -22,15 +25,15 @@
 }
 
 .modal__container {
-   background-color: lighten($fontColorLight, 10%);
+   background-color: $md-clr-grey-300;
    font-weight: 300;
    width: 450px;
    z-index: 99;
 }
 
 .modal__name {
-   background-color: $belizehole;
-   color: $clouds;
+   background-color: $modal-color;
+   color: $md-clr-grey-50;
    font-size: 16px;
    font-weight: 400;
    height: 45px;
@@ -69,8 +72,8 @@
 
 .modal__form__icon {
    display: none;
-   background-color: $belizehole;
-   color: $clouds;
+   background-color: $modal-color;
+   color: $md-clr-grey-50;
    display: inline-block;
    float: left;
    font-size: 24px;
@@ -89,10 +92,11 @@
    position: relative;
    width: 260px;
    input {
-      @include box-sizing(border-box);
       font-size: 15px;
       height: 100%;
       width: 100%;
+      padding: 0 5px;
+      border-style: none;
    }
 }
 
@@ -105,9 +109,9 @@
    margin-top: 10px;
    text-align: center;
    button {
-      background-color: $belizehole;
+      background-color: $modal-color;
       border-style: none;
-      color: $backgroundColor;
+      color: $md-clr-grey-50;
       cursor: pointer;
       line-height: 28px;
       margin-top: 10px;

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2ec78aeb0119f8f17dfffdbc86cd2dd7",
+    "hash": "9bad4bd8bdcfae956dac5e14a309f516",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -311,47 +311,6 @@
                 "utils"
             ],
             "time": "2015-02-10 06:19:18"
-        },
-        {
-            "name": "devfactory/media",
-            "version": "2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DevFactoryCH/media.git",
-                "reference": "e1a82715150064c85457bbac83b1cb9856f8ebe2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DevFactoryCH/media/zipball/e1a82715150064c85457bbac83b1cb9856f8ebe2",
-                "reference": "e1a82715150064c85457bbac83b1cb9856f8ebe2",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.0",
-                "that0n3guy/transliteration": "2.0.x"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/migrations"
-                ],
-                "psr-4": {
-                    "Devfactory\\Media\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "DevFactory Sarl",
-                    "email": "developer@devfactory.ch"
-                }
-            ],
-            "description": "Laravel package for saving uploaded files and linking them with models",
-            "time": "2015-04-07 14:28:49"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -751,6 +710,62 @@
             "time": "2014-07-14 20:59:35"
         },
         {
+            "name": "jenssegers/date",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/laravel-date.git",
+                "reference": "779f4568c0c5446932e0077cb604be898e1aaf00"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/779f4568c0c5446932e0077cb604be898e1aaf00",
+                "reference": "779f4568c0c5446932e0077cb604be898e1aaf00",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "~1.0",
+                "php": ">=5.3.3",
+                "symfony/translation": "~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jenssegers\\Date\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "http://jenssegers.be"
+                }
+            ],
+            "description": "A date library to help you work with dates in different languages",
+            "keywords": [
+                "carbon",
+                "date",
+                "datetime",
+                "i18n",
+                "laravel",
+                "time",
+                "translation"
+            ],
+            "time": "2015-04-30 15:22:38"
+        },
+        {
             "name": "jeremeamia/SuperClosure",
             "version": "2.1.0",
             "source": {
@@ -936,16 +951,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.0.2",
+            "version": "v5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "9af203053815cb12c9b8307e8367153c84fdd4b7"
+                "reference": "c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/9af203053815cb12c9b8307e8367153c84fdd4b7",
-                "reference": "9af203053815cb12c9b8307e8367153c84fdd4b7",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94",
+                "reference": "c55fda58b1a9a1b58bd04f97e0fb9ebc238a0a94",
                 "shasum": ""
             },
             "require": {
@@ -982,7 +997,7 @@
                     "email": "adam@laravelcollective.com"
                 }
             ],
-            "time": "2015-03-10 15:59:48"
+            "time": "2015-05-06 14:23:37"
         },
         {
             "name": "league/commonmark",
@@ -2360,39 +2375,6 @@
                 "dump"
             ],
             "time": "2015-03-31 08:12:29"
-        },
-        {
-            "name": "that0n3guy/transliteration",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/that0n3guy/transliteration.git",
-                "reference": "9effe0d77c600f096ea18f7be6888874b73deeea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/that0n3guy/transliteration/zipball/9effe0d77c600f096ea18f7be6888874b73deeea",
-                "reference": "9effe0d77c600f096ea18f7be6888874b73deeea",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.0",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "That0n3guy\\Transliteration\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Peter O",
-                    "email": "that0n3guy@users.noreply.github.com"
-                }
-            ],
-            "time": "2015-02-12 08:07:35"
         },
         {
             "name": "torann/hashids",

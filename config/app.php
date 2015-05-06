@@ -152,10 +152,9 @@ return [
       'Barryvdh\Debugbar\ServiceProvider',
       'Collective\Html\HtmlServiceProvider',
       'Cviebrock\EloquentSluggable\SluggableServiceProvider',
-      'Devfactory\Media\MediaServiceProvider',
       'Frozennode\Administrator\AdministratorServiceProvider',
       'GrahamCampbell\Markdown\MarkdownServiceProvider',
-      'That0n3guy\Transliteration\TransliterationServiceProvider',
+      'Jenssegers\Date\DateServiceProvider',
       'Torann\Hashids\HashidsServiceProvider',
       'Zizaco\Entrust\EntrustServiceProvider',
 

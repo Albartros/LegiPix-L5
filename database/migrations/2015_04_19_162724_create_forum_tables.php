@@ -32,6 +32,7 @@ class CreateForumTables extends Migration {
             $table->string('slug');
 
             $table->string('text');
+            $table->string('thumbnail');
 
             // Metadata
             $table->string('tag')->nullable()->default(null);

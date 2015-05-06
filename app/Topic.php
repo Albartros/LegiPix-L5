@@ -45,12 +45,22 @@ class Topic extends Model {
      */
     public function listIndexTopics()
     {
-        $shown_on_index = 10;
+        $shown_on_index = 5;
 
         return $this->orderBy('anwsered_at', 'desc')
                     ->orderBy('id', 'desc')
                     ->take($shown_on_index)
                     ->get();
+    }
+
+    /**
+     * Gets the posts from a topic.
+     *
+     * @return object
+     */
+    public function posts()
+    {
+        return $this->hasMany('Post');
     }
 
     /**
@@ -62,7 +72,7 @@ class Topic extends Model {
     {
         $pagination = 15;
 
-        return $this->hasMany('Post')
+        return $this->posts()
                     ->paginate($pagination);
     }
 
@@ -73,7 +83,7 @@ class Topic extends Model {
      */
     public function getLastPost()
     {
-        return $this->hasMany('Post')
+        return $this->posts()
                     ->find($this->last_post_id);
     }
 

@@ -58,23 +58,18 @@
 </div>
 
 <div class="index-contents--video">
-    <div class="index-video">
-        <div class="videoWrapper">
-            <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/OUdh9kZhFtQ?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
+    @for ($i = 0; $i < 2; $i++)
+        <div class="index-video">
+            <div class="videoWrapper">
+                <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/{{ $videos[$i]->video_id }}?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
+            </div>
+            <h2 class="index-video__name">{{ $videos[$i]->name }}</h2>
         </div>
-        <h2 class="index-video__name">Lorem ipsum dolor sit amet.</h2>
-    </div>
-
-    <div class="index-video">
-        <div class="videoWrapper">
-            <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/KsB1ydR8NFk?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
-        </div>
-        <h2 class="index-video__name">Lorem ipsum dolor sit amet.</h2>
-    </div>
+    @endfor
 </div>
-<div class="index-contents" style="border-top: none">
+<div class="index-contents">
 
-
+<h1 class="sujets">Derniers sujets actifs</h1>
 <ul class="index-topics">
     <li class="index-topic">
         <a class="index-topic__link" href="#">
@@ -189,34 +184,38 @@
 
 <div class="countdown">
 <div class="countdown__container">
-    <img src="http://placehold.it/189x259&amp;text=cover" class="countdown__image" alt="cover">
+    <img src="{!! asset('uploads/countdown/' . $countdowns->thumbnail) !!}" class="countdown__image" alt="cover">
          <div class="countdown__title">
-            <span id="countdown">2016-12-30 19:59:39</span>
+            <span id="countdown">{{ $countdowns->released_at }}</span>
          </div>
 </div>
 
       </div>
 
 </div>
-<div class="index-contents" style="border-top: none;     padding-left: 20px;">
-Liste de news + calendrier social play (?)
+<div class="index-contents" style="display: none">
+<center><code>Encart à remplir</code></center>
+
+<!--<div id="calendar">
+  <h1>Octobre 2015</h1>
+  <table>
+    <tr><td class="lastmonth"></td><td>1</td><td>2</td><td>3</td><td class="hastask">4</td><td>5</td><td>6</td></tr>
+    <tr><td>7</td><td class="current">8</td><td class="hastask">9</td><td>10</td><td>11</td><td class="hastask">12</td><td>13</td></tr>
+    <tr><td>14</td><td class="hastask">15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+    <tr><td class="hastask">21</td><td>22</td><td>23</td><td>24</td><td>25</td><td class="hastask">26</td><td>27</td></tr>
+    <tr><td>28</td><td>29</td><td class="hastask">30</td><td>31</td><td class="nextmonth"></td><td></td><td></td></tr>
+  </table>
+</div>-->
+
 </div>
 <div class="index-contents--video">
-    <div class="index-video">
-        <div class="videoWrapper">
-            <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/OUdh9kZhFtQ?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
+    @for ($i = 2; $i < 4; $i++)
+        <div class="index-video">
+            <div class="videoWrapper">
+                <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/{{ $videos[$i]->video_id }}?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
+            </div>
+            <h2 class="index-video__name">{{ $videos[$i]->name }}</h2>
         </div>
-        <h2 class="index-video__name">Lorem ipsum dolor sit amet.</h2>
-    </div>
-
-    <div class="index-video">
-        <div class="videoWrapper">
-            <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/KsB1ydR8NFk?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
-        </div>
-        <h2 class="index-video__name">Lorem ipsum dolor sit amet.</h2>
-    </div>
-</div>
-<div class="index-contents" style="border: none">
-Les meilleurs posteurs de la semaine / derniers membres / connectés + feed twitter (?)
+    @endfor
 </div>
 @stop

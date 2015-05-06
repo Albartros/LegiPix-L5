@@ -51,7 +51,11 @@ return array(
      *      'Analytics' => array('E-Commerce' => 'page.ecommerce.analytics'),
      *  )
      */
-    'menu' => array(),
+    'menu' => array(
+        'Partie Membres' => array('User', 'Rank', 'Role'),
+        'Partie Site' => array('News', 'Video', 'countdown'),
+        'Partie Forum' => array('CategoryForum', 'Forum', 'Topic')
+    ),
 
     /**
      * The permission option is the highest-level authentication check that lets you define a closure that should return true if the current user
@@ -61,7 +65,7 @@ return array(
      */
     'permission'=> function()
     {
-        return Auth::check();
+        return Auth::check() && Auth::user()->hasRole('owner');
     },
 
     /**
@@ -84,7 +88,7 @@ return array(
      *
      * @type string
      */
-    'home_page' => '',
+    'home_page' => 'User',
 
     /**
      * The route to which the user will be taken when they click the "back to site" button
@@ -105,7 +109,7 @@ return array(
      *
      * @type string
      */
-    'logout_path' => false,
+    'logout_path' => 'auth/logout',
 
     /**
      * This is the key of the return path that is sent with the redirection to your login_action. Session::get('redirect') will hold the return URL.

@@ -16,9 +16,9 @@ class Forum extends Model {
      *
      * @return object
      */
-    public function getCategory()
+    public function category()
     {
-        return $this->belongsTo('CategoryForum');
+        return $this->belongsTo('App\CategoryForum');
     }
 
     /**

@@ -4,3 +4,4 @@
 config.rb
 watch.bat
 .sass-cache
+/public/packages/*

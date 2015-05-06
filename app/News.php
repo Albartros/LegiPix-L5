@@ -26,7 +26,7 @@ class News extends Model {
      *
      * @return object
      */
-    public function listIndexTopics()
+    public function listIndexNews()
     {
         return $this->orderBy('created_at', 'desc')
                     ->orderBy('id', 'desc')
