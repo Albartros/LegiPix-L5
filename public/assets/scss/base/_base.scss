@@ -49,9 +49,6 @@ b, strong {
 img {
     @include user-select(none);
 }
-iframe {
-    border: none
-}
 .no-smartphone {
     display: none;
     @include respond-to(tablet) {
