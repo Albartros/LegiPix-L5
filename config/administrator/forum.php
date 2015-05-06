@@ -33,11 +33,11 @@ return array(
       ),
       'thumbnail' => array(
          'title' => 'Thumbnail',
-         'output' => '<img src="/upload/forums/(:value)" height="64">',
+         'output' => '<img src="/uploads/forum/(:value)" height="64">',
          'sortable' => false
       ),
-      'description' => array(
-         'title' => 'Description',
+      'text' => array(
+         'title' => 'text',
          'sortable' => false
       ),
       'topics' => array(
@@ -48,7 +48,7 @@ return array(
       ),
       'forum_cat' => array(
          'title' => 'Catégorie',
-         'relationship' => 'getCategory',
+         'relationship' => 'category',
          'select' => "(:table).name"
       ),
       'position' => array(
@@ -70,19 +70,19 @@ return array(
       'name' => array(
          'title' => 'Nom'
       ),
-      'description' => array(
-         'title' => 'Description'
+      'text' => array(
+         'title' => 'text'
       ),
       'thumbnail' => array(
          'title' => 'Thumbnail',
          'type' => 'image',
-         'location' => 'upload/forums/',
+         'location' => 'uploads/forum/',
          'naming' => 'random'
       ),
       'slug' => array(
          'title' => 'Slug dans l\'URL'
       ),
-      'getCategory' => array(
+      'category' => array(
          'title' => 'Catégorie',
          'type' => 'relationship', //this is the name of the Eloquent relationship method
          'name_field' => 'name',

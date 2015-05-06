@@ -54,7 +54,7 @@ return array(
     'menu' => array(
         'Partie Membres' => array('User', 'Rank', 'Role'),
         'Partie Site' => array('News', 'Video', 'countdown'),
-        'Partie Forum' => array('Forum', 'Topic')
+        'Partie Forum' => array('CategoryForum', 'Forum', 'Topic')
     ),
 
     /**
