@@ -10,6 +10,15 @@
  | and give it the controller to call when that URI is requested.
  |
  */
+Route::get('/', array(
+    'as' => 'index',
+    'uses' => 'WelcomeController@index',
+));
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
 
 /*
  |--------------------------------------------------------------------------
@@ -23,24 +32,6 @@
 Route::pattern('id', '[0-9]+');
 Route::pattern('slug', '^[a-z0-9]+(?:-[a-z0-9]+)*$');
 Route::pattern('page', '[0-9]+');
-
-/*
- |--------------------------------------------------------------------------
- | Gestion de la page d'index
- |--------------------------------------------------------------------------
- |
- | La règle la plus importante du site : la redirection en page d'index.
- |
- */
-Route::get('/', array(
-    'as' => 'index',
-    'uses' => 'WelcomeController@index'
-));
-
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
 
 /*
  |--------------------------------------------------------------------------
@@ -59,14 +50,43 @@ Route::group(
             {
                 Route::get('/', array(
                     'as' => 'm.view',
-                    'uses' => 'WelcomeController@index'
+                    'uses' => 'WelcomeController@index',
                 ));
 
                 Route::get('/edit', array(
                     'as' => 'm.edit',
-                    'uses' => 'WelcomeController@index'
+                    'uses' => 'WelcomeController@index',
                 ));
             }
         );
+    }
+);
+
+/*
+ |--------------------------------------------------------------------------
+ | Gestions de la partie forum
+ |--------------------------------------------------------------------------
+ |
+ | Le forum est une partie essentielle du site, l'ensemble des routings
+ | spécifiques au forum se retrouvent ici.
+ |
+ */
+Route::group(
+    array('prefix' => 'forum'), function()
+    {
+        Route::get('/', array(
+            'as' => 'f.index',
+            'uses' => 'ForumController@index',
+        ));
+
+        Route::get('/{id}-{slug}/{page?}', array(
+            'as' => 'f.forum',
+            'uses' => 'ForumController@showForum',
+        ));
+
+        Route::get('/{random}/{id}-{slug}/{page?}', array(
+            'as' => 'f.topic',
+            'uses' => 'ForumController@showTopic',
+        ));
     }
 );
