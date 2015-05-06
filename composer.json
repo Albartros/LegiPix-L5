@@ -9,7 +9,6 @@
       "anhskohbo/no-captcha": "2.*",
       "barryvdh/laravel-debugbar": "~2.0",
       "cviebrock/eloquent-sluggable": "dev-master",
-      "devfactory/media": "2.0.*",
       "frozennode/administrator": "5.*",
       "graham-campbell/markdown": "~3.0",
       "jenssegers/date": "~3.0",
