@@ -17,7 +17,7 @@ class RegisterRequest extends FormRequest
     public function authorize()
     {
         // Only allow logged in users
-        // return \Auth::check();
+        // returnAuth: :check
         // Allows all users in
         return true;
     }

@@ -1,11 +1,8 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\CategoryForum;
-
-use Illuminate\Http\Request;
 
 class ForumController extends Controller {
 
@@ -18,8 +15,6 @@ class ForumController extends Controller {
     {
         $categories = CategoryForum::orderBy('position')->get();
 
-         /*return View::make('forum.index')
-            ->with('categories', $categories);*/
         return view('forum.index', [
             'categories' => $categories,
         ]);
