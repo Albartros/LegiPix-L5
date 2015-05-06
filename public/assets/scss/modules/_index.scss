@@ -1,20 +1,36 @@
-.index-articles, .index-contents { @include clearfix() }
+.index-articles, .index-contents, .index-contents--video {
+    @include clearfix();
+    border-bottom-color: $head-foot-color;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    &:last-of-type { border-bottom-style: none }
+    @include respond-to(tablet) { border-bottom-style: none }
+}
 .index-articles .index-article:nth-of-type(n+5) {
     display: none;
     @include respond-to(desktop) { display: block }
 }
 .index-contents, .index-contents--video {
     background-color: $md-clr-grey-100;
-    margin-top: 20px;
-    padding: 20px;
     overflow: hidden;
-    position: relative
+    position: relative;
+    @include respond-to(tablet) {
+        border-bottom-style: none;
+        margin-top: 10px;
+        padding: 10px
+    }
+    @include respond-to(desktop) {
+        margin-top: 20px;
+        padding: 20px
+    }
 }
 .index-contents--video {
-    @include flexbox((
-        display: flex,
-        justify-content: space-between
-    ))
+    @include respond-to(tablet) {
+        @include flexbox((
+            display: flex,
+            justify-content: space-between
+        ))
+    }
 }
 /*
 |--------------------------------------------------------------------------
@@ -22,14 +38,12 @@
 |--------------------------------------------------------------------------
 */
 .index-article {
-    border-bottom: 1px solid $gradColorTo;
+    color: $md-clr-grey-200;
     height: 110px;
     overflow: hidden;
     position: relative;
     width: 100%;
-    color: $md-clr-grey-200;
     @include respond-to(tablet) {
-        border-style: none;
         float: left;
         height: auto;
         width: 50%
@@ -72,14 +86,15 @@
     @include transition-duration(.1s);
     @include transition-property(all);
     @include transition-timing-function(linear);
-    background-color: rgba(0,0,0,.7);
+    background-color: $md-clr-grey-900;
     bottom: 0;
     display: block;
     height: 2em;
     left: 0;
     line-height: 2em;
     position: absolute;
-    width: 100%
+    width: 100%;
+    @include respond-to(tablet) { background-color: rgba(0, 0, 0, .7) }
 }
 .index-article__link-block:hover {
     @include respond-to(tablet) {
@@ -111,9 +126,8 @@
 |--------------------------------------------------------------------------
 */
 .index-video {
-    @include respond-to(desktop) {
-        width: 49% // Padding like
-    }
+    width: 100%;
+    @include respond-to(tablet) { width: 49% }
 }
 .videoWrapper {
     height: 0;
@@ -132,17 +146,15 @@
     width: 100%
 }
 .index-video__name {
-    display: none;
-    @include respond-to(desktop) {
-        background-color: $gradColorFrom;
-        color: $backgroundColor;
-        display: block;
-        font-size: 15px;
-        font-weight: normal;
-        line-height: 2em;
-        margin: 0;
-        text-align: center
-    }
+    background-color: $gradColorFrom;
+    color: $backgroundColor;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 2em;
+    margin: 0;
+    text-align: center;
+    @include respond-to(tablet) { display: none }
+    @include respond-to(desktop) { display: block }
 }
 /*
 |--------------------------------------------------------------------------
@@ -151,7 +163,7 @@
 */
 .countdown {
     display: none;
-    @include respond-to(desktop) {
+    @include respond-to(tablet) {
         @include flexbox((
             display: flex,
             flex-direction: column,
@@ -169,7 +181,11 @@
 }
 .countdown__container {
     margin: 0px auto;
-    width: 45%
+    width: 60%;
+    max-width: 200px;
+    @include respond-to(desktop) {
+        width: 45%
+    }
 }
 .countdown__image {
     display: block;
@@ -177,7 +193,6 @@
     width: 100%
 }
 .countdown__title {
-    //background: #107c10; // XBOX Green
     background-color: $md-clr-grey-900;
     display: inline-block;
     padding: 5px 0;
@@ -206,29 +221,47 @@ h1.sujets {
         margin-bottom: 3px;
         display: none;
     }
+
+
+
 .index-topics {
+    width: 100%;
+    @include respond-to(tablet) {
+        width: 60%;
+    }
+    @include respond-to(desktop) {
+
+    }
     height: 100%;
     list-style-type: none;
     margin: 0px;
     padding: 0px;
-    width: 60%;
     &:hover + .index-topic__background { opacity: 1 }
 }
 .index-topic, .index-topic--new {
+    padding-top: 80px;
+    @include respond-to(tablet) {
+
+    }
+    @include respond-to(desktop) {
+        padding-top: 12%;
+    }
     @include box-sizing(border-box);
     border-bottom: 1px solid $md-clr-grey-600;
-    padding-top: 12%;
+
     position: relative;
     width: 100%;
     z-index: 3;
     &:last-of-type { border: none }
-    &:hover {
-        & + .index-topic__bloc {
-            @include translateX(100%);
-            opacity: 1
-        }
-        .index-topic__title {
-            padding-left: 5px
+    @include respond-to(desktop) {
+        &:hover {
+            & + .index-topic__bloc {
+                @include translateX(100%);
+                opacity: 1
+            }
+            .index-topic__title {
+                padding-left: 5px
+            }
         }
     }
 }
@@ -248,10 +281,15 @@ h1.sujets {
     border-radius: 50%;
     display: block;
     float: left;
-    margin-left: 1%;
+    margin-left: 2%;
     margin-right: 3%;
-    margin-top: 1%;
-    width: 10%
+    margin-top: 16px;
+    width: 48px;
+    @include respond-to(desktop) {
+        margin-top: 1%;
+        margin-left: 1%;
+        width: 10%;
+    }
 }
 .index-topic__info {
     display: inline-block;
@@ -259,10 +297,18 @@ h1.sujets {
     font-size: 16px;
     position: relative;
     top: 14px;
+    margin-top: 4px;
     p {
         @include clearfix();
         margin: 0;
-        width: 99%
+        width: 95%
+    }
+    @include respond-to(tablet) {
+        p { width: 97% }
+    }
+    @include respond-to(desktop) {
+        margin-top: 0;
+        p { width: 99% }
     }
 }
 .index-topic__title {
@@ -290,34 +336,42 @@ h1.sujets {
     top: 1px
 }
 .index-topic__bloc {
-    transform: translateZ(0);
-    @include transition-duration(.3s);
-    @include transition-property(all);
-    @include transition-timing-function(linear);
-    @include box-sizing(border-box);
-    bottom: 20px;
-    opacity: 0;
-    padding: 6px 10px 20px;
-    position: absolute;
-    right: 40.3%;
-    top: 20px;
-    width: 40.3%;
-    z-index: 2
+    display: none;
+    @include respond-to(desktop) {
+        transform: translateZ(0);
+        @include transition-duration(.3s);
+        @include transition-property(all);
+        @include transition-timing-function(linear);
+        @include box-sizing(border-box);
+        bottom: 20px;
+        display: block;
+        opacity: 0;
+        padding: 6px 10px 20px;
+        position: absolute;
+        right: 40.3%;
+        top: 20px;
+        width: 40.3%;
+        z-index: 2
+    }
 }
 .index-topic__background {
-    transform: translateZ(0);
-    @include transition-duration(.2s);
-    @include transition-property(opacity);
-    @include transition-timing-function(linear);
-    background: $md-clr-grey-100;
-    bottom: 0;
-    height: 100%;
-    opacity: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 40.3%;
-    z-index: 1
+    display: none;
+    @include respond-to(desktop) {
+        transform: translateZ(0);
+        @include transition-duration(.2s);
+        @include transition-property(opacity);
+        @include transition-timing-function(linear);
+        background: $md-clr-grey-100;
+        bottom: 0;
+        display: block;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40.3%;
+        z-index: 1
+    }
 }
 .index-post-info { text-align: center }
 .index-post__avatar { border-radius: 50%; width: 45px }

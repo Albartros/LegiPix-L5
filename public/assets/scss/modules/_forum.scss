@@ -2,11 +2,11 @@
    @include clearfix();
    @include respond-to(mobile) {
       width: 100%;
+      background-color: $md-clr-grey-100;
    }
    @include respond-to(desktop) {
       margin: 0 auto;
-      padding-top: 10px;
-      width: 96%;
+      padding: 10px 10px 0;
    }
 }
 
@@ -22,13 +22,15 @@
    }
    @include respond-to(tablet) {
       height: 64px;
+      float: left;
+      width: 50%;
       &:first-of-type {
          margin-top: 0;
       }
    }
    @include respond-to(desktop) {
-      float: left;
-      width: 50%;
+
+      width: 33.333%;
       &:hover .forum__info__title {
          color: darken($blue, 20%);
          padding-left: .2em;
@@ -41,6 +43,7 @@
    left: 0;
    position: absolute;
    top: 0;
+   //border-radius: 50%;
    @include respond-to(mobile) {
       width: 43px;
    }
@@ -51,7 +54,7 @@
 
 .forum__info {
    line-height: 14px;
-   padding-left: 2%;
+   padding-left: 10px;
    position: relative;
    @include respond-to(mobile) {
       margin-left: 43px;
@@ -62,7 +65,7 @@
       top: 11px;
    }
    @include respond-to(desktop) {
-      top: 2px;
+      top: 0;
    }
 }
 
@@ -70,11 +73,13 @@
    @include transition-duration(.1s);
    @include transition-property(all);
    @include transition-timing-function(linear);
-   font-size: 16px;
+   font-size: 18px;
    font-weight: 500;
-   margin: 0.5em 0 0 0;
+   margin-top: .2em;
+margin-bottom: .8em;
    padding: 0;
    position: relative;
+   //text-transform: uppercase
 }
 
 .forum__info__description {
