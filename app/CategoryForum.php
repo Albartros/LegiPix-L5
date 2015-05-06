@@ -9,15 +9,17 @@ class CategoryForum extends Model {
      *
      * @var string
      */
-    protected $table = 'forum_categories';
+    protected $table = 'forums_categories';
+
+    public $timestamps = false;
 
     /**
      * Gets the forums from a category.
      *
      * @return object
      */
-    public function getForums() {
-        return $this->hasMany('Forum');
+    public function forums() {
+        return $this->hasMany('App\Forum', 'category_id', 'id');
     }
 
 }

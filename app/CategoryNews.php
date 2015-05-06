@@ -11,6 +11,8 @@ class CategoryNews extends Model {
      */
     protected $table = 'news_categories';
 
+    public $timestamps = false;
+
     /**
      * Gets the news from a category.
      *
