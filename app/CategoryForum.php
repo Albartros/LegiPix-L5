@@ -19,7 +19,7 @@ class CategoryForum extends Model {
      * @return object
      */
     public function forums() {
-        return $this->hasMany('App\Forum', 'category_id', 'id');
+        return $this->hasMany('App\Forum', 'category_id', 'id')->orderBy('position');
     }
 
 }
