@@ -145,7 +145,7 @@
 
             Développement du site par Albartros, contribuez sur <a href="{{ url('https://github.com/Albartros/LegiPix-L5', $parameters = array(), $secure = null) }}" class="footer__link" rel="nofollow" target="_blank"><i class="icon-github"></i>GitHub</a>.
 
-            @if(Auth::check() && Auth::user()->hasRole('owner'))
+            @if(Auth::check() && Auth::user()->can('canAccessAdmin'))
             <span class="no-smartphone">Accéder à l'onglet <a href="{!! route('admin_dashboard') !!}" class="footer__link" rel="nofollow"><i class="icon-locked"></i>Administration</a>.</span>
             @endif
         </footer>
