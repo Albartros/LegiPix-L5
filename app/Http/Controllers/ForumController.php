@@ -13,7 +13,7 @@ class ForumController extends Controller {
      */
     public function index()
     {
-        $categories = CategoryForum::orderBy('position')->get();
+        $categories = CategoryForum::with('forums')->orderBy('position')->get();
 
         return view('forum.index', [
             'categories' => $categories,
