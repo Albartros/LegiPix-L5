@@ -16,7 +16,7 @@ class MarkOnline {
         /**
          * Marking the user Online
          */
-        if ( \Auth::check() && ( ! \Auth::user()->isOnline() ) ) {
+        if (\Auth::check() && ( ! \Auth::user()->isOnline())) {
             \Auth::user()->makeOnline();
         }
 

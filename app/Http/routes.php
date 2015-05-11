@@ -45,22 +45,22 @@ Route::pattern('page', '[0-9]+');
 Route::group(
     array('prefix' => 'profil'), function()
     {
-        Route::group(
-            array('prefix' => '/{id}-{username}'), function()
-            {
-                Route::get('/', array(
-                    'as' => 'm.view',
-                    'uses' => 'WelcomeController@index',
-                ));
+        Route::get('/', array(
+            'as' => 'u.index',
+            'uses' => 'UsersController@index',
+        ));
 
-                Route::get('/edit', array(
-                    'as' => 'm.edit',
-                    'uses' => 'WelcomeController@index',
-                ));
-            }
-        );
+        Route::get('/edit', array(
+            'as' => 'u.edit',
+            'uses' => 'UsersController@edit',
+        ));
     }
 );
+
+Route::get('membre/{id}-{username}', array(
+    'as' => 'u.view',
+    'uses' => 'UsersController@user',
+));
 
 /*
  |--------------------------------------------------------------------------
@@ -79,14 +79,42 @@ Route::group(
             'uses' => 'ForumController@index',
         ));
 
-        Route::get('/{id}-{slug}/{page?}', array(
+        Route::get('/{id}-{slug}', array(
             'as' => 'f.forum',
             'uses' => 'ForumController@showForum',
         ));
 
-        Route::get('/{random}/{id}-{slug}/{page?}', array(
+        Route::get('/{random}/{id}-{slug}', array(
             'as' => 'f.topic',
             'uses' => 'ForumController@showTopic',
+        ));
+    }
+);
+
+/*
+ |--------------------------------------------------------------------------
+ | Gestions des news du site
+ |--------------------------------------------------------------------------
+ |
+ | Gestion des news du site.
+ |
+ */
+Route::group(
+    array('prefix' => 'news'), function()
+    {
+        Route::get('/', array(
+            'as' => 'n.index',
+            'uses' => 'ArticlesController@index',
+        ));
+
+        Route::get('/{id}-{slug}', array(
+            'as' => 'n.category',
+            'uses' => 'ArticlesController@category',
+        ));
+
+        Route::get('/{random}/{id}-{slug}', array(
+            'as' => 'n.article',
+            'uses' => 'ArticlesController@article',
         ));
     }
 );

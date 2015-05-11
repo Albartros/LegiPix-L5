@@ -15,7 +15,8 @@
       "laravelcollective/html": "~5.0",
       "mjohnson/decoda": "6.*",
       "torann/hashids": "2.0.*@dev",
-      "zizaco/entrust": "dev-laravel-5"
+      "zizaco/entrust": "dev-laravel-5",
+      "fzaninotto/faker": "~1.4"
    },
    "require-dev": {
       "phpunit/phpunit": "~4.0",

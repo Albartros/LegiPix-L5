@@ -2,24 +2,24 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryNews extends Model {
+class ForumCategory extends Model {
 
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'news_categories';
+    protected $table = 'forums_categories';
 
     public $timestamps = false;
 
     /**
-     * Gets the news from a category.
+     * Gets the forums from a category.
      *
      * @return object
      */
-    public function getForums() {
-        return $this->hasMany('News');
+    public function forums() {
+        return $this->hasMany('App\Forum', 'category_id', 'id')->orderBy('position');
     }
 
 }

@@ -65,7 +65,7 @@ return array(
      */
     'permission'=> function()
     {
-        return Auth::check() && Auth::user()->hasRole('owner');
+        return Auth::check() && Auth::user()->can('canAccessAdmin');
     },
 
     /**

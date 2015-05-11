@@ -1,9 +1,8 @@
 <?php namespace App\Http\Controllers;
 
-use App\ForumCategory;
 use App\Http\Controllers\Controller;
 
-class ForumController extends Controller {
+class UsersController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -12,11 +11,17 @@ class ForumController extends Controller {
      */
     public function index()
     {
-        $categories = ForumCategory::with('forums')->orderBy('position')->get();
+        //
+    }
 
-        return view('forum.index', [
-            'categories' => $categories,
-        ]);
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function user()
+    {
+        //
     }
 
     /**

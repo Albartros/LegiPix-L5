@@ -7,69 +7,46 @@
 @section('section', 'index')
 
 @section('content')
+
 <div class="index-articles">
-    <div class="index-article">
-        <div class="index-ratio-keeper"></div>
-        <a href="#" class="index-article__link-block" style="background-image: url(http://placehold.it/420x473)">
-            <div class="corner-ribbon">nouveau</div>
-            <div class="index-article__news">
-                <span class="index-article__news__title">Lorem ipsum dolor sit amet</span>
-                <div class="index-article__news__resume">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi in itaque distinctio temporibus ullam iure corporis est. Quae architecto nesciunt odio, delectus a aspernatur eum eos debitis, rerum ex, vel vitae? Quidem nisi eos amet provident harum fugit eum eligendi commodi expedita quae illo sint repudiandae error quia quos a libero temporibus, rem nobis, porro! Esse vitae obcaecati soluta aut! Quos officia mollitia sit nihil nulla illo velit error perferendis sunt saepe harum, deleniti minus aut consequatur repudiandae non. Recusandae dolores animi, blanditiis vitae deleniti, consequuntur, et veritatis repellat laboriosam, quaerat esse officiis fugit porro eaque libero. Sit, possimus, veritatis!</div>
+    @if ( ! $articles->isEmpty())
+        @foreach ($articles as $article)
+            <div class="index-article">
+                <div class="index-ratio-keeper"></div>
+                <a href="{!! $article->getLink() !!}" class="index-article__link-block" style="background-image: url({!! asset('uploads/article/' . e($article->thumbnail)) !!})">
+                    <div class="corner-ribbon">nouveau</div>
+                    <div class="index-article__news">
+                        <span class="index-article__news__title">{{ $article->name }}</span>
+                        <div class="index-article__news__resume">{!! $article->unparsedText() !!}</div>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
-    <div class="index-article">
-        <div class="index-ratio-keeper"></div>
-        <a href="#" class="index-article__link-block" style="background-image: url(http://placehold.it/315x237)">
-            <div class="corner-ribbon">vedette</div>
-            <div class="index-article__news">
-                <span class="index-article__news__title">Lorem ipsum dolor sit amet</span>
-                <div class="index-article__news__resume">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi in itaque distinctio temporibus ullam iure corporis est. Quae architecto nesciunt odio, delectus a aspernatur eum eos debitis, rerum ex, vel vitae? Quidem nisi eos amet provident harum fugit eum eligendi commodi expedita quae illo sint repudiandae error quia quos a libero temporibus, rem nobis, porro! Esse vitae obcaecati soluta aut! Quos officia mollitia sit nihil nulla illo velit error perferendis sunt saepe harum, deleniti minus aut consequatur repudiandae non. Recusandae dolores animi, blanditiis vitae deleniti, consequuntur, et veritatis repellat laboriosam, quaerat esse officiis fugit porro eaque libero. Sit, possimus, veritatis!</div>
-            </div>
-        </a>
-    </div>
-    <div class="index-article">
-        <div class="index-ratio-keeper"></div>
-        <a href="#" class="index-article__link-block" style="background-image: url(http://placehold.it/315x237)">
-            <div class="index-article__news">
-                <span class="index-article__news__title">Lorem ipsum dolor sit amet</span>
-                <div class="index-article__news__resume">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi in itaque distinctio temporibus ullam iure corporis est. Quae architecto nesciunt odio, delectus a aspernatur eum eos debitis, rerum ex, vel vitae? Quidem nisi eos amet provident harum fugit eum eligendi commodi expedita quae illo sint repudiandae error quia quos a libero temporibus, rem nobis, porro! Esse vitae obcaecati soluta aut! Quos officia mollitia sit nihil nulla illo velit error perferendis sunt saepe harum, deleniti minus aut consequatur repudiandae non. Recusandae dolores animi, blanditiis vitae deleniti, consequuntur, et veritatis repellat laboriosam, quaerat esse officiis fugit porro eaque libero. Sit, possimus, veritatis!</div>
-            </div>
-        </a>
-    </div>
-    <div class="index-article">
-        <div class="index-ratio-keeper"></div>
-        <a href="#" class="index-article__link-block" style="background-image: url(http://placehold.it/315x237)">
-            <div class="index-article__news">
-                <span class="index-article__news__title">Lorem ipsum dolor sit amet</span>
-                <div class="index-article__news__resume">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi in itaque distinctio temporibus ullam iure corporis est. Quae architecto nesciunt odio, delectus a aspernatur eum eos debitis, rerum ex, vel vitae? Quidem nisi eos amet provident harum fugit eum eligendi commodi expedita quae illo sint repudiandae error quia quos a libero temporibus, rem nobis, porro! Esse vitae obcaecati soluta aut! Quos officia mollitia sit nihil nulla illo velit error perferendis sunt saepe harum, deleniti minus aut consequatur repudiandae non. Recusandae dolores animi, blanditiis vitae deleniti, consequuntur, et veritatis repellat laboriosam, quaerat esse officiis fugit porro eaque libero. Sit, possimus, veritatis!</div>
-            </div>
-        </a>
-    </div>
-    <div class="index-article">
-        <div class="index-ratio-keeper"></div>
-        <a href="#" class="index-article__link-block" style="background-image: url(http://placehold.it/315x237)">
-            <div class="index-article__news">
-                <span class="index-article__news__title">Lorem ipsum dolor sit amet</span>
-                <div class="index-article__news__resume">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi in itaque distinctio temporibus ullam iure corporis est. Quae architecto nesciunt odio, delectus a aspernatur eum eos debitis, rerum ex, vel vitae? Quidem nisi eos amet provident harum fugit eum eligendi commodi expedita quae illo sint repudiandae error quia quos a libero temporibus, rem nobis, porro! Esse vitae obcaecati soluta aut! Quos officia mollitia sit nihil nulla illo velit error perferendis sunt saepe harum, deleniti minus aut consequatur repudiandae non. Recusandae dolores animi, blanditiis vitae deleniti, consequuntur, et veritatis repellat laboriosam, quaerat esse officiis fugit porro eaque libero. Sit, possimus, veritatis!</div>
-            </div>
-        </a>
-    </div>
+        @endforeach
+    @else
+        <p style="text-align: center">Pas d'articles à afficher</p>
+    @endif
 </div>
 
-<div class="index-contents--video">
-    @for ($i = 0; $i < 2; $i++)
-        <div class="index-video">
-            <div class="videoWrapper">
-                <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/{{ $videos[$i]->video_id }}?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
-            </div>
-            <h2 class="index-video__name">{{ $videos[$i]->name }}</h2>
-        </div>
-    @endfor
-</div>
 <div class="index-contents">
+    <h2 class="headline">Vidéos à voir et à revoir</h2>
+    <div class="index-contents-video">
+        @if ($videos->count() >= 2)
+            @for ($i = 0; $i < 2; ++$i)
+                <div class="index-video">
+                    <div class="videoWrapper">
+                        <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/{{ $videos[$i]->video_id }}?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
+                    </div>
+                    <h2 class="index-video__name">{{ $videos[$i]->name }}</h2>
+                </div>
+            @endfor
+        @else
+            <p style="text-align: center; width: 100%">Pas de vidéos à afficher</p>
+        @endif
+    </div>
+</div>
 
-<h1 class="sujets">Derniers sujets actifs</h1>
+<div class="index-contents">
+<h2 class="headline">En direct de nos forums</h2>
 <ul class="index-topics">
     <li class="index-topic">
         <a class="index-topic__link" href="#">
@@ -180,42 +157,62 @@
 <div class="index-topic__background"></div>
 
 
-
-
-<div class="countdown">
-<div class="countdown__container">
-    <img src="{!! asset('uploads/countdown/' . $countdowns->thumbnail) !!}" class="countdown__image" alt="cover">
-         <div class="countdown__title">
-            <span id="countdown">{{ $countdowns->released_at }}</span>
-         </div>
-</div>
-
-      </div>
-
-</div>
-<div class="index-contents" style="display: none">
-<center><code>Encart à remplir</code></center>
-
-<!--<div id="calendar">
-  <h1>Octobre 2015</h1>
-  <table>
-    <tr><td class="lastmonth"></td><td>1</td><td>2</td><td>3</td><td class="hastask">4</td><td>5</td><td>6</td></tr>
-    <tr><td>7</td><td class="current">8</td><td class="hastask">9</td><td>10</td><td>11</td><td class="hastask">12</td><td>13</td></tr>
-    <tr><td>14</td><td class="hastask">15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
-    <tr><td class="hastask">21</td><td>22</td><td>23</td><td>24</td><td>25</td><td class="hastask">26</td><td>27</td></tr>
-    <tr><td>28</td><td>29</td><td class="hastask">30</td><td>31</td><td class="nextmonth"></td><td></td><td></td></tr>
-  </table>
-</div>-->
-
-</div>
-<div class="index-contents--video">
-    @for ($i = 2; $i < 4; $i++)
-        <div class="index-video">
-            <div class="videoWrapper">
-                <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/{{ $videos[$i]->video_id }}?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
-            </div>
-            <h2 class="index-video__name">{{ $videos[$i]->name }}</h2>
+    <div class="countdown">
+        <h2 class="headline">Prochaine sortie à suivre</h2>
+        <div class="countdown-aligner">
+            @if ( ! is_null($countdown))
+                <div class="countdown__container">
+                    <img src="{!! asset('uploads/countdown/' . $countdown->thumbnail) !!}" class="countdown__image" alt="cover">
+                    <div class="countdown__title">
+                        <span id="countdown">{{ $countdown->released_at }}</span>
+                    </div>
+                </div>
+            @else
+                <p style="text-align: center">Pas de sorties prévues</p>
+            @endif
         </div>
-    @endfor
+    </div>
+
 </div>
+<div class="index-contents">
+    <h2 class="headline">Les autres articles</h2>
+    @if ( ! $news->isEmpty())
+        @foreach ($news as $new)
+            <div class="index-new">
+                <div class="index-ratio-keeper"></div>
+                <a href="{{ $new->getLink() }}" class="index-article__link-block" style="background-image: url({!! asset('uploads/article/' . e($article->thumbnail)) !!})">
+                    <div class="index-article__news">
+                        <span class="index-article__news__title">{{ $new->name }}</span>
+                        <div class="index-article__news__resume">{!! $new->unparsedText() !!}</div>
+                    </div>
+                </a>
+            </div>
+        @endforeach
+    @else
+        <p style="text-align: center">Pas d'articles à afficher</p>
+    @endif
+</div>
+
+<div class="index-contents">
+    <h2 class="headline">Encore plus de vidéos</h2>
+    <div class="index-contents-video">
+        @if ($videos->count() >= 2)
+            @for ($i = 2; $i < 4; ++$i)
+                <div class="index-video">
+                    <div class="videoWrapper">
+                        <iframe class="index-video__video" src="https://www.youtube-nocookie.com/embed/{{ $videos[$i]->video_id }}?rel=0&amp;vq=hd720&amp;modestbranding=1&amp;showinfo=0&amp;html5=1" allowfullscreen player.setPlaybackQuality(hd720)></iframe>
+                    </div>
+                    <h2 class="index-video__name">{{ $videos[$i]->name }}</h2>
+                </div>
+            @endfor
+        @else
+            <p style="text-align: center; width: 100%">Pas de vidéos à afficher</p>
+        @endif
+    </div>
+</div>
+
+<div class="index-contents">
+    <h2 class="headline">Membres de la communauté</h2>
+</div>
+
 @stop
