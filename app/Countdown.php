@@ -18,7 +18,7 @@ class Countdown extends Model {
      *
      * @return object
      */
-    public function listIndexCountdowns()
+    public function listIndexCountdown()
     {
 
         return $this->orderBy('released_at', 'asc')
