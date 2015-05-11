@@ -16,7 +16,6 @@ class CountdownTableSeeder extends Seeder {
         Countdown::create(array(
             'name' => $faker->sentence(3),
             'released_at' => $faker->dateTimeBetween('+1 month', '+6 months'),
-            'thumbnail' => 'dummy.jpg',
         ));
     }
 }

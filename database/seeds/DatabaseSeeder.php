@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder {
         $this->call('MakeFirstMemberFullAdmin');
 
         // All the other seeders
+        $this->call('ArticleTableSeeder');
         $this->call('CountdownTableSeeder');
         $this->call('VideoTableSeeder');
     }

@@ -12,7 +12,7 @@ class MakeFirstMemberFullAdmin extends Seeder {
         $first = User::find(1);
 
         // We place the first user in every category
-        foreach( range(1, 5) as $i )
+        foreach (range(1, 5) as $i)
         {
             $first->attachRole($i);
         }

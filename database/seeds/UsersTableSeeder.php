@@ -12,7 +12,7 @@ class UserTableSeeder extends Seeder {
         // Create the Admin
         User::create(array(
             'email' => 'albartros@legipix.dev',
-            'name' => 'albartros',
+            'name' => 'Albartros',
             'password' => Hash::make('1234'),
         ));
 
@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder {
         $faker = Faker::create();
 
         // Create 5 fake users
-        foreach( range(1, 5) as $item )
+        foreach (range(1, 5) as $item)
         {
             User::create(array(
                 'email' => $faker->safeEmail,

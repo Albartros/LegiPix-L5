@@ -15,7 +15,7 @@ class VideoTableSeeder extends Seeder {
         // Create 4 Halo videos
         $videos = array('tHQiYPiNVEE', '9rd8FWUCCZk', 'V9D2HzbT9Pc', '4KKWsPZjjjQ');
 
-        foreach( $videos as $video )
+        foreach ($videos as $video)
         {
             Video::create(array(
                 'name' => $faker->sentence(6),
