@@ -20,7 +20,7 @@ return array(
     *
     * @type string
     */
-   'model' => 'App\CategoryForum',
+   'model' => 'App\ForumCategory',
 
    /**
     * The columns array

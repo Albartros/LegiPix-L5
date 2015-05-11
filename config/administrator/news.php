@@ -18,7 +18,7 @@ return array(
    * The class name of the Eloquent model that this config represents
    * @type string
    */
-   'model' => 'App\News',
+   'model' => 'App\Article',
 
    /**
    * The columns array
