@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Article;
 use App\Countdown;
-use App\News;
 use App\Topic;
 use App\Video;
 
@@ -24,10 +24,13 @@ class WelcomeController extends Controller {
      */
     public function index()
     {
-        $c = new Countdown;
-        $countdowns = $c->listIndexCountdowns();
+        $a = new Article;
+        $articles = $a->listIndexArticles();
 
-        $n = new News;
+        $c = new Countdown;
+        $countdown = $c->listIndexCountdown();
+
+        $n = new Article;
         $news = $n->listIndexNews();
 
         $t = new Topic;
@@ -37,10 +40,11 @@ class WelcomeController extends Controller {
         $videos = $v->listIndexVideos();
 
         return view('welcome', [
-            'countdowns' => $countdowns,
-            'news' => $news,
-            'topics' => $topics,
-            'videos' => $videos
+            'articles'  => $articles,
+            'countdown' => $countdown,
+            'news'      => $news,
+            'topics'    => $topics,
+            'videos'    => $videos,
         ]);
     }
 
