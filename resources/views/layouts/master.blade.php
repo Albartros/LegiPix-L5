@@ -11,7 +11,7 @@
 
         <!-- Style -->
         {!! Html::style('assets/css/style.css') !!}
-        {!! Html::style('http://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic|Roboto+Condensed:300') !!}
+        {!! Html::style('http://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic|Roboto+Condensed:300|Orbitron') !!}
         {!! Html::style('assets/css/fontello.css') !!}
         <!--[if IE 7]>{!! Html::style('assets/css/fontello-ie7.css') !!}<![endif]-->
         <!--[if lt IE 9]>{!! Html::style('http://html5shiv.googlecode.com/svn/trunk/html5.js') !!}<![endif]-->
@@ -58,7 +58,7 @@
                     @if(Auth::check())
                     <img src="http://placehold.it/60x60&amp;text=A" class="auth-user__avatar">
                     <div class="auth-user" id="header-main-user">
-                        <span class="auth-user__name">Bienvenue, {!! link_to_route('m.view', $title = Auth::user()->name, array(Auth::id(), Auth::user()->name), $attributes = array(), $secure = null) !!}</span>
+                        <span class="auth-user__name">Bienvenue, {!! link_to_route('u.index', Auth::user()->name) !!}</span>
                         <ul class="header__main__user-notification">
                             <li class="notification-item">
                                 <a href="#"><i id="m-notification-forum" data-content="06" class="notification-item__icon icon--large icon-chat"></i></a>
