@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryForum extends Model {
+class ForumCategory extends Model {
 
     /**
      * The database table used by the model.
