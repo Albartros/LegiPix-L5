@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration {
              * Editable Fields...
              */
             $table->text('text')->nullable()->default(null);
+            $table->string('avatar')->default('default.png');
 
             $table->string('ctc_facebook')->nullable()->default(null);
             $table->string('ctc_internet')->nullable()->default(null);
@@ -50,9 +51,6 @@ class CreateUsersTable extends Migration {
             // Confirmation Status
             $table->boolean('confirmed')->default(false);
             $table->string('confirmation_code');
-
-            // Premium Status
-            $table->boolean('teamed')->default(false);
 
             // Timestamps
             $table->timestamps();

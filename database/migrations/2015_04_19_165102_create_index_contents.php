@@ -36,7 +36,7 @@ class CreateIndexContents extends Migration {
             $table->increments('id');
             $table->string('name');
 
-            $table->string('thumbnail');
+            $table->string('thumbnail')->default('default.png');
 
             // Timestamps
             $table->timestamps();

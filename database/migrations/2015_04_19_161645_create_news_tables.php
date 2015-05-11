@@ -12,7 +12,7 @@ class CreateNewsTables extends Migration {
      */
     public function up()
     {
-        Schema::create('news_categories', function(Blueprint $table)
+        Schema::create('articles_categories', function(Blueprint $table)
         {
             // Default Fields
             $table->increments('id');
@@ -28,7 +28,7 @@ class CreateNewsTables extends Migration {
             $table->timestamps();
         });
 
-        Schema::create('news', function(Blueprint $table)
+        Schema::create('articles', function(Blueprint $table)
         {
             // Default Fields
             $table->increments('id');
@@ -36,8 +36,10 @@ class CreateNewsTables extends Migration {
             $table->string('slug');
 
             $table->text('text');
+            $table->string('thumbnail')->default('default.png');
 
             // Statistics
+            $table->integer('comments')->unsigned()->default(0);
             $table->integer('views')->unsigned()->default(0);
 
             // Relationships
@@ -45,7 +47,7 @@ class CreateNewsTables extends Migration {
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('news_categories');
+            $table->foreign('category_id')->references('id')->on('articles_categories');
 
             // Metadata
             $table->boolean('featured')->default(false);
@@ -63,8 +65,8 @@ class CreateNewsTables extends Migration {
      */
     public function down()
     {
-        Schema::drop('news');
-        Schema::drop('news_categories');
+        Schema::drop('articles');
+        Schema::drop('articles_categories');
     }
 
 }
