@@ -36,7 +36,7 @@ header {
 |--------------------------------------------------------------------------
 */
 .logo {
-    background-image: url("../img/logo/bleu-154-48.png");
+    background-image: url("../img/logo/logo.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: block;
@@ -44,7 +44,7 @@ header {
     margin: 0 auto;
     width: 130px;
     @include respond-to(tablet) {
-        background-image: url("../img/logo/bleu-154-48.svg");
+        background-image: url("../img/logo/logo.svg");
         height: 48px;
         margin: 0 auto;
         width: 154px

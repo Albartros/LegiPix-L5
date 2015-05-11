@@ -1,3 +1,22 @@
+/*
+|--------------------------------------------------------------------------
+| Global
+|--------------------------------------------------------------------------
+*/
+.headline {
+    cursor: default;
+    font-family: $orbitron;
+    font-size: 120%;
+    font-weight: 400;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    word-spacing: 3px;
+    &:first-letter { color: $md-clr-blue-700 }
+    @include respond-to(tablet) { text-align: left; font-size: 150% }
+}
+
 .index-articles, .index-contents, .index-contents--video {
     @include clearfix();
     border-bottom-color: $head-foot-color;
@@ -17,19 +36,23 @@
     @include respond-to(tablet) {
         border-bottom-style: none;
         margin-top: 10px;
-        padding: 10px
+        padding: 10px;
+        padding-top: 0
     }
     @include respond-to(desktop) {
         margin-top: 20px;
-        padding: 20px
+        padding: 20px;
+        padding-top: 0
     }
 }
-.index-contents--video {
+.index-contents-video {
     @include respond-to(tablet) {
         @include flexbox((
             display: flex,
             justify-content: space-between
-        ))
+        ));
+        height: 100%;
+        width: 100%
     }
 }
 /*
@@ -37,7 +60,7 @@
 | Articles
 |--------------------------------------------------------------------------
 */
-.index-article {
+.index-article, .index-new {
     color: $md-clr-grey-200;
     height: 110px;
     overflow: hidden;
@@ -56,6 +79,16 @@
             .index-article__news { height: 6.4em }
             .index-ratio-keeper { padding-top: 112.5% }
         }
+    }
+}
+.index-new {
+    &:nth-of-type(n+5) { display: none }
+    @include respond-to(tablet) {
+        width: 33.333%;
+        &:first-child { width: inherit }
+        &:hover .index-article__news { height: 4.4em !important }
+        &:nth-of-type(n+5) { display: block }
+        .index-article__news__resume { height: 2.1em }
     }
 }
 .index-article__link-block {
@@ -164,28 +197,35 @@
 .countdown {
     display: none;
     @include respond-to(tablet) {
+        bottom: 0;
+        display: block;
+        float: right;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40%
+    }
+}
+.countdown-aligner {
+    @include respond-to(tablet) {
         @include flexbox((
             display: flex,
             flex-direction: column,
             justify-content: center
         ));
         bottom: 0;
-        color: $backgroundColor;
-        float: right;
+        left: 0;
         position: absolute;
         right: 0;
         text-align: center;
-        top: 0;
-        width: 40%
+        top: 0
     }
 }
 .countdown__container {
     margin: 0px auto;
     width: 60%;
     max-width: 200px;
-    @include respond-to(desktop) {
-        width: 45%
-    }
+    @include respond-to(desktop) { margin-top: 25px; width: 45% }
 }
 .countdown__image {
     display: block;
@@ -194,6 +234,7 @@
 }
 .countdown__title {
     background-color: $md-clr-grey-900;
+    color: $md-clr-grey-50;
     display: inline-block;
     padding: 5px 0;
     width: 100%
@@ -203,35 +244,9 @@
 | Topics
 |--------------------------------------------------------------------------
 */
-h1.sujets {
-        //border-radius:5px 5px 0 0;
-        //margin-bottom: 0;
-        //text-shadow:0 0 10px rgba(0,0,0,.8);
-        background: $md-clr-red-600;
-        color: white;
-        cursor: default;
-        font-size: 120%;
-        font-weight: 400;
-        letter-spacing: 1px;
-        padding: 15px 0;
-        text-align: center;
-        text-transform: uppercase;
-        width: 60%;
-        margin:0;
-        margin-bottom: 3px;
-        display: none;
-    }
-
-
-
 .index-topics {
     width: 100%;
-    @include respond-to(tablet) {
-        width: 60%;
-    }
-    @include respond-to(desktop) {
-
-    }
+    @include respond-to(tablet) { width: 60% }
     height: 100%;
     list-style-type: none;
     margin: 0px;
@@ -239,35 +254,29 @@ h1.sujets {
     &:hover + .index-topic__background { opacity: 1 }
 }
 .index-topic, .index-topic--new {
-    padding-top: 80px;
-    @include respond-to(tablet) {
-
-    }
-    @include respond-to(desktop) {
-        padding-top: 12%;
-    }
     @include box-sizing(border-box);
     border-bottom: 1px solid $md-clr-grey-600;
-
+    padding-top: 80px;
     position: relative;
     width: 100%;
     z-index: 3;
-    &:last-of-type { border: none }
+    &:first-of-type { border-top: 1px solid $md-clr-grey-600 }
+    &:last-of-type { border-bottom-style: none }
+    @include respond-to(tablet) {
+        &:first-of-type { border-top-style: none }
+    }
     @include respond-to(desktop) {
+        padding-top: 12%;
         &:hover {
             & + .index-topic__bloc {
                 @include translateX(100%);
                 opacity: 1
             }
-            .index-topic__title {
-                padding-left: 5px
-            }
+            .index-topic__title { padding-left: 5px }
         }
     }
 }
-.index-topic--new {
-    .index-topic__title { color: $md-clr-red-A700 }
-}
+.index-topic--new .index-topic__title { color: $md-clr-red-A700 }
 .index-topic__link {
     @include clearfix();
     bottom: 0;
@@ -343,13 +352,13 @@ h1.sujets {
         @include transition-property(all);
         @include transition-timing-function(linear);
         @include box-sizing(border-box);
-        bottom: 20px;
+        bottom: 0;
         display: block;
         opacity: 0;
-        padding: 6px 10px 20px;
+        //padding: 6px 10px 20px;
         position: absolute;
         right: 40.3%;
-        top: 20px;
+        top: 0;
         width: 40.3%;
         z-index: 2
     }
@@ -376,20 +385,24 @@ h1.sujets {
 .index-post-info { text-align: center }
 .index-post__avatar { border-radius: 50%; width: 45px }
 .index-post, .index-post--new {
+    @include box-sizing(border-box);
+    bottom: 0;
     color: $md-clr-grey-900;
     height: 100%;
     opacity: .7;
     overflow: hidden;
-    padding: 2px 3px;
+    padding: 10px 8px 0;
     position: relative;
-    .index-post__separator:before { content: "Dernier message" }
+    top: -5px;
     &:first-child { opacity: 1 }
+    .index-post__separator:before { content: "Dernier message" }
 }
 .index-post--new {
     height: 50%;
     &:last-child {
         .index-post__separator:before { content: "Dernier message lu" }
     }
+    p { margin: 8px 0 0 }
 }
 .index-post__separator {
     padding: 0 3px;
