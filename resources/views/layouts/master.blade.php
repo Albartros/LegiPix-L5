@@ -10,20 +10,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <!-- Style -->
-        {!! Html::style('assets/css/style.css') !!}
-        {!! Html::style('http://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic|Roboto+Condensed:300|Orbitron') !!}
-        {!! Html::style('assets/css/fontello.css') !!}
-        <!--[if IE 7]>{!! Html::style('assets/css/fontello-ie7.css') !!}<![endif]-->
+        {!! Html::style('css/style.css') !!}
+        {!! Html::style('http://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500,500italic|Roboto+Condensed:400|Orbitron') !!}
+        {!! Html::style('css/fontello.css') !!}
+        <!--[if IE 7]>{!! Html::style('css/fontello-ie7.css') !!}<![endif]-->
         <!--[if lt IE 9]>{!! Html::style('http://html5shiv.googlecode.com/svn/trunk/html5.js') !!}<![endif]-->
 
         <!-- Favicons -->
-        <link rel="icon" type="image/png" href="{{ asset('assets/img/icon/favicon.png') }}">
-        <link rel="apple-touch-icon-precomposed" href="{{ asset('assets/img/icon/icon.png') }}">
-        <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/icon/favicon.ico') }}" /><![endif]-->
+        <link rel="icon" type="image/png" href="{{ asset('img/icon/favicon.png') }}">
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('img/icon/icon.png') }}">
+        <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/icon/favicon.ico') }}" /><![endif]-->
 
         <!-- Modern UI -->
         <meta name="msapplication-TileColor" content="#148DD4">
-        <meta name="msapplication-TileImage" content="{{ asset('assets/img/icon/pinned-favicon.png') }}">
+        <meta name="msapplication-TileImage" content="{{ asset('img/icon/pinned-favicon.png') }}">
         <meta name="application-name" content="LegiPix">
     </head>
     <body>
@@ -211,7 +211,7 @@
         </div>
 
         <!-- JavaScript -->
-        {!! HTML::script('assets/js/main.js') !!}
+        {!! HTML::script('js/main.js') !!}
         @yield('scripts')
     </body>
 </html>
