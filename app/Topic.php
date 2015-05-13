@@ -97,10 +97,10 @@ class Topic extends Model {
         if ($this->created_at->diffInHours(Carbon::now()) <= 5) {
             return Date::parse($this->created_at)->diffForHumans();
         } elseif ($this->created_at->isToday()) {
-            return 'Aujourd\'hui à ' . $this->created_at->format('H:i');
+            return 'aujourd\'hui à ' . $this->created_at->format('H:i');
         } elseif ($this->created_at->isYesterday()) {
-            return 'Hier à ' . $this->created_at->format('H:i');
+            return 'hier à ' . $this->created_at->format('H:i');
         }
-        return 'Le ' . Date::parse($this->created_at)->format('j F Y à H:i');
+        return 'le ' . Date::parse($this->created_at)->format('j F Y à H:i');
     }
 }
