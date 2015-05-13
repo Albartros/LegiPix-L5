@@ -2,7 +2,6 @@
 
 use App\Forum;
 use App\Topic;
-use App\Post;
 use App\ForumCategory;
 use App\Http\Controllers\Controller;
 
