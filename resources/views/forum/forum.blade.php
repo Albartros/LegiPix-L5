@@ -21,7 +21,9 @@
         <h1 class="parallax__title">{{ $forum->name }}</h1>
         <div class="parallax__meta">52 Sujets&nbsp;&nbsp;-&nbsp;&nbsp;126 Messages</div>
         <div class="parallax__buttons">
-            <a href="#">Nouveau Sujet</a>
+            @if (Auth::check())
+            <a href="#new">Nouveau Sujet</a>
+            @endif
             {!! $topics->render() !!}
         </div>
     </div>
@@ -33,7 +35,7 @@
         </div>
     </div>
 
-    @if($topics->isEmpty())
+    @if ($topics->isEmpty())
     <div class="empty__page">
         <h1 class="empty__page__smiley">:'(</h1>
         <div class="empty__page__message">
@@ -43,18 +45,19 @@
     </div>
     @else
     <ul class="topics">
-        @foreach($topics as $topic)
+        @foreach ($topics as $topic)
             <li class="topic">
-                <img src="{!! asset('uploads/avatar/' . $topic->author->avatar) !!}" alt="avatar-{{ $topic->author->name }}" class="topic__author-avatar">
+                <img src="{!! asset('uploads/avatar/' . $topic->author->avatar) !!}" alt="avatar-{{ $topic->author->name }}" class="topic__author-avatar" title="Auteur">
+                <img src="{!! asset('uploads/avatar/' . $topic->lastPost->author->avatar) !!}" alt="avatar-{{ $topic->author->name }}" class="topic__author-avatar" title="Dernier">
 
                 <div class="topic__main">
                     <h3 class="topic__main__title">{!! link_to_route('f.topic', $topic->name, [(int) $forum->id . '-' . e($forum->slug), (int) $topic->id, e($topic->slug)]) !!}</h3>
                     <div class="topic__main__info">
-                        <span class="topic__main__author">
-                            @if(Auth::check() && Auth::id() == $topic->user_id)
-                            Vous,
+                        <span class="topic__main__author">Par
+                            @if (Auth::check() && Auth::id() == $topic->user_id)
+                            <strong>vous</strong>,
                             @else
-                            {{ $topic->author->name }},
+                            <strong>{{ $topic->author->name }}</strong>,
                             @endif
                         </span>
                         <span class="topic__main__date">{!! $topic->parsedDate() !!}</span>
@@ -105,8 +108,6 @@
 
     @if(Auth::check())
        <div class="editor__header" id="new">
-          <!--<div class="editor__header__info">Créer un nouveau sujet</div>-->
-          <div class="align-center"><i class="icon-d-arr-l"></i> <i class="icon-arr-l"></i> Page 3 sur 12 <i class="icon-arr-r"></i> <i class="icon-d-arr-r"></i></div>
        </div>
        <p class="post__help--alt">Créer un nouveau sujet de discussions dans le forum <strong>{{{ $forum->name }}}</strong>.</p>
        {{ Form::open(array('route' => 'f.index')) }}
