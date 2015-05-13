@@ -2,6 +2,7 @@
 
 use App\Article;
 use App\Http\Controllers\Controller;
+use Jenssegers\Date\Date;
 
 class ArticlesController extends Controller {
 
@@ -22,10 +23,18 @@ class ArticlesController extends Controller {
      */
     public function article($random, $id, $slug)
     {
+        // Selecting the article
         $article = Article::find($id);
 
+        // Incrementing views
+        $article->increment('views');
+
+        // Setting Locale for \Date
+        Date::setLocale('fr');
+
         return view('news.article', [
-            'article'  => $article,
+            'article' => $article,
+            'date' => Date::parse($article->created_at),
         ]);
     }
 

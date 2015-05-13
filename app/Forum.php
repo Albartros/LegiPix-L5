@@ -22,19 +22,36 @@ class Forum extends Model {
     }
 
     /**
+     * Gets the category containing the forum.
+     *
+     * @return object
+     */
+    public function topics()
+    {
+        return $this->hasMany('App\Topic');
+    }
+
+    /**
      * Gets the topics from a forum and paginates them.
      *
      * @return object
      */
-    public function getTopics()
+    public function listTopics()
     {
-        $pagination = 15;
-
-        return $this->hasMany('Topic')
+        return $this->hasMany('App\Topic')
                     ->orderBy('pinned', 'desc')
                     ->orderBy('anwsered_at', 'desc')
-                    ->orderBy('id', 'desc')
-                    ->paginate($pagination);
+                    ->orderBy('id', 'desc');
+    }
+
+    /**
+     * Paginated posts accessor. Access via $topic->posts_paginated
+     *
+     * @return \Illuminate\Pagination\Paginator
+     */
+    public function getPostsPaginatedAttribute()
+    {
+        return $this->listTopics()->paginate(10);
     }
 
 }

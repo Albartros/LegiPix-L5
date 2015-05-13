@@ -1,0 +1,51 @@
+body#site-down {
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  background: #141418;
+  color: #EDEDED;
+  display: -webkit-flex;
+  display: flex;
+  font-family: 'Roboto',sans-serif;
+  height: 100%;
+  justify-content: center;
+  padding: 0 !important;
+  position: fixed;
+  width: calc(100% - 16px);
+}
+
+body#site-down > .container {
+  text-align: center;
+  width: 100%;
+}
+
+body#site-down * div#logo {
+  background-image: url(../img/logo/bleu-154-48.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  height: 40px;
+  width: 130px;
+}
+
+body#site-down * p {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Tablettes
+ **/
+@media (min-width : 768px) {
+
+  body#site-down * div#logo {
+    background-image: url(../img/logo/bleu-300-94.png);
+    height: 94px;
+    width: 300px;
+  }
+
+  body#site-down * p {
+    font-size: 20px;
+  }
+
+}

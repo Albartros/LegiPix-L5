@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Forum;
+use App\Topic;
 use App\ForumCategory;
 use App\Http\Controllers\Controller;
 
@@ -16,6 +18,17 @@ class ForumController extends Controller {
 
         return view('forum.index', [
             'categories' => $categories,
+        ]);
+    }
+
+    public function forum($id, $slug)
+    {
+        $forum = Forum::find($id);
+        $topics = Topic::with('author', 'lastPost')->where('forum_id', $id)->orderBy('pinned', 'desc')->orderBy('anwsered_at', 'desc')->orderBy('id', 'desc')->paginate(20);
+
+        return view('forum.forum', [
+            'forum' => $forum,
+            'topics' => $topics,
         ]);
     }
 

@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder {
         $this->call('ArticleTableSeeder');
         $this->call('CountdownTableSeeder');
         $this->call('VideoTableSeeder');
+        $this->call('ForumTablesSeeder');
     }
 
 }

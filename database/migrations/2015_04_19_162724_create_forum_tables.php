@@ -32,6 +32,7 @@ class CreateForumTables extends Migration {
             $table->string('slug');
 
             $table->string('text');
+            $table->string('banner')->default('default.png');
             $table->string('thumbnail')->default('default.png');
 
             // Metadata

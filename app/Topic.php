@@ -1,6 +1,8 @@
 <?php namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Date\Date;
 
 class Topic extends Model {
 
@@ -16,16 +18,16 @@ class Topic extends Model {
      *
      * @var array
      */
-    protected $touches = array('get_forum');
+    protected $touches = array('forum');
 
     /**
      * Gets the author of the topic.
      *
      * @return object
      */
-    public function getAuthor()
+    public function author()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo('App\User', 'user_id');
     }
 
     /**
@@ -33,9 +35,9 @@ class Topic extends Model {
      *
      * @return object
      */
-    public function getForum()
+    public function forum()
     {
-        return $this->belongsTo('Forum');
+        return $this->belongsTo('App\Forum');
     }
 
     /**
@@ -60,7 +62,12 @@ class Topic extends Model {
      */
     public function posts()
     {
-        return $this->hasMany('Post');
+        return $this->hasMany('App\Post');
+    }
+
+    public function lastPost()
+    {
+        return $this->hasOne('App\Post', 'id', 'last_post_id');
     }
 
     /**
@@ -72,8 +79,7 @@ class Topic extends Model {
     {
         $pagination = 15;
 
-        return $this->posts()
-                    ->paginate($pagination);
+        return $this->posts()->paginate($pagination);
     }
 
     /**
@@ -81,21 +87,20 @@ class Topic extends Model {
      *
      * @return object
      */
-    public function getLastPost()
+    public function last()
     {
-        return $this->posts()
-                    ->find($this->last_post_id);
+        return $this->posts()->find($this->last_post_id);
     }
 
-    /**
-     * Adds a view to the views counter.
-     *
-     * @return void
-     */
-    public function addView()
+    public function parsedDate()
     {
-        $this->views = $this->views + 1;
-        $this->save();
+        if ($this->created_at->diffInHours(Carbon::now()) <= 5) {
+            return Date::parse($this->created_at)->diffForHumans();
+        } elseif ($this->created_at->isToday()) {
+            return 'Aujourd\'hui à ' . $this->created_at->format('H:i');
+        } elseif ($this->created_at->isYesterday()) {
+            return 'Hier à ' . $this->created_at->format('H:i');
+        }
+        return 'Le ' . Date::parse($this->created_at)->format('j F Y à H:i');
     }
-
 }
