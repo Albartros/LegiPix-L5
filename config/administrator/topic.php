@@ -33,12 +33,12 @@ return array(
       ),
       'user_name' => array(
          'title' => 'Auteur',
-         'relationship' => 'getAuthor',
-         'select' => "(:table).username"
+         'relationship' => 'author',
+         'select' => "(:table).name"
       ),
       'forum' => array(
          'title' => 'Forum',
-         'relationship' => 'getForum',
+         'relationship' => 'forum',
          'select' => '(:table).name'
       ),
       'last_post_id'
@@ -61,12 +61,12 @@ return array(
          'type' => 'bool',
          'title' => 'Verrouillé',
       ),
-      'getAuthor' => array(
+      'author' => array(
          'title' => 'Auteur',
          'type' => 'relationship', //this is the name of the Eloquent relationship method
-         'name_field' => 'username',
+         'name_field' => 'name',
       ),
-      'getForum' => array(
+      'forum' => array(
          'title' => 'Forum',
          'type' => 'relationship', //this is the name of the Eloquent relationship method
          'name_field' => 'name',
