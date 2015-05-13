@@ -29,13 +29,15 @@
       }
    }
    @include respond-to(desktop) {
-
-      width: 33.333%;
       &:hover .forum__info__title {
          color: darken($blue, 20%);
          padding-left: .2em;
       }
    }
+}
+
+.forum__link {
+    @include full()
 }
 
 .forum__thumbnail {
@@ -97,6 +99,7 @@ margin-bottom: .8em;
 }
 
 .topics {
+    background-color: $md-clr-grey-100;
    list-style-type: none;
    margin: 10px auto;
    padding: 0;
@@ -235,7 +238,7 @@ margin-bottom: .8em;
 
 .topic__last-post__user {
    display: inline-block;
-   font-weight: 500;
+   font-weight: 400;
    &:before {
       content: "Dernier : ";
       font-weight: 300;
@@ -250,6 +253,8 @@ margin-bottom: .8em;
 
 .topic__last-post__date {
    display: inline-block;
+   font-family: $robotoCond;
+   font-weight: 300
 }
 
 .topic__info__major,
@@ -661,4 +666,77 @@ margin-bottom: .8em;
       font-weight: 500;
       margin-top: 0;
    }
+}
+
+.parallax {
+    height: 170px;
+    background-position: 50% 0;
+    text-transform: uppercase;
+}
+
+.parallax__title {
+    color: $md-clr-grey-50;
+    cursor: default;
+    font-family: $orbitron;
+    font-weight: 500;
+    margin: 0 0 0 30px;
+    opacity: .85;
+    position: relative;
+    text-shadow: 1px 1px 3px $md-clr-grey-800;
+    top: 20%;
+}
+
+.parallax__meta, .parallax__buttons {
+    //font-family: $orbitron;
+    //font-weight: 400;
+    color: $md-clr-grey-50;
+    cursor: default;
+    font-size: 120%;
+    margin-left: 30px;
+    opacity: .9;
+    position: relative;
+    text-shadow: 1px 1px 3px $md-clr-grey-900;
+    top: 20%;
+}
+
+.parallax__buttons {
+    top: 35%;
+    font-weight: 400;
+    margin-right: 30px;
+    color: $md-clr-grey-300;
+    a {
+        @include transition-duration(.1s);
+        @include transition-property(all);
+        @include transition-timing-function(linear);
+        border-radius: 3px;
+        border: 2px solid $md-clr-grey-300;
+        box-shadow: 1px 1px 3px $md-clr-grey-600;
+        padding: 1px 8px;
+        &:hover { border-color: $md-clr-grey-100; color: $md-clr-grey-50 }
+    }
+    .pagination {
+        @include flexbox((
+            display: flex,
+            flex-direction: rox,
+            justify-content: space-between
+        ));
+        float: right;
+        font-family: $robotoCond;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            display: inline-block;
+            margin: 0 2px 0 1px;
+            &:first-of-type { margin-left: 0 }
+            &:last-of-type { margin-right: 0 }
+            span {
+                border-radius: 3px;
+                border: 2px solid $md-clr-grey-300;
+                box-shadow: 1px 1px 3px $md-clr-grey-600;
+                padding: 1px 8px
+            }
+            &.active span { border-color: $md-clr-grey-100; color: $md-clr-grey-50 }
+        }
+    }
 }

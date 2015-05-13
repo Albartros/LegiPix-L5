@@ -264,7 +264,7 @@ if(countdown) {
 window.onscroll = function(){
    var windowYOffset = window.pageYOffset,
    parallax = document.getElementById("parallax"),
-   speed = 0.2,
+   speed = 0.1,
    elBackgrounPos = "50% " + (-windowYOffset * speed) + "px";
 
    parallax.style.backgroundPosition = elBackgrounPos;

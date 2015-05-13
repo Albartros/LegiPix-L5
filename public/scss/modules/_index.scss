@@ -92,14 +92,10 @@
     }
 }
 .index-article__link-block {
+    @include full();
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0
 }
 .corner-ribbon {
     @include transform(rotate(-45deg));
@@ -116,6 +112,7 @@
     width: 200px
 }
 .index-article__news {
+    transform: translateZ(0);
     @include transition-duration(.1s);
     @include transition-property(all);
     @include transition-timing-function(linear);
@@ -171,11 +168,9 @@
     @include respond-to(tablet) { top: 1px }
 }
 .index-video__video {
+    @include full();
     height: 100%;
-    left: 0;
     max-width: none;
-    position: absolute;
-    top: 0;
     width: 100%
 }
 .index-video__name {
@@ -213,12 +208,8 @@
             flex-direction: column,
             justify-content: center
         ));
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        right: 0;
+        @include full();
         text-align: center;
-        top: 0
     }
 }
 .countdown__container {

@@ -3,15 +3,15 @@
 | Les en-têtes des articles
 |--------------------------------------------------------------------------
 */
-.news__header {
+.article__header {
    @include clearfix();
-   background-color: $gradColorFrom;
+   background-color: $md-clr-grey-900;
    color: $backgroundColor;
    height: 2.5em;
    line-height: 2.5em;
    width: 100%;
    @include respond-to(tablet) {
-      border-top: 2px solid lighten($black, 30%);
+      border-top: 2px solid $head-foot-color;
       font-size: 15px;
    }
    @include respond-to(desktop) {
@@ -19,7 +19,7 @@
    }
 }
 
-.news__header__date {
+.article__header__date {
    @include respond-to(mobile) {
       display: none;
    }
@@ -29,16 +29,16 @@
       padding-right: 10px;
    }
    @include respond-to(desktop) {
-      border-right: 2px solid lighten($black, 30%);
+      border-right: 2px solid $md-clr-grey-700;
       float: left;
       padding-left: 10px;
-      .news__header__date--day {
+      .article__header__date--day {
          font-weight: 400;
       }
    }
 }
 
-.news__header__title {
+.article__header__title {
    @include respond-to(mobile) {
       display: block;
       text-align: center;
@@ -51,12 +51,12 @@
    }
 }
 
-.news__header__meta {
+.article__header__meta {
    @include respond-to(mobile) {
       display: none;
    }
    @include respond-to(desktop) {
-      border-left: 2px solid lighten($black, 30%);
+      border-left: 2px solid $md-clr-grey-700;
       display: block;
       float: right;
       padding-left: 10px;
@@ -64,9 +64,11 @@
    }
 }
 
-.news__header__meta--icons {
+.article__header__meta--icons {
    position: relative;
    top: 1px;
+   cursor: default;
+   padding-right: 2px;
    i:before {
       margin: 0;
    }
@@ -78,7 +80,7 @@
 |--------------------------------------------------------------------------
 */
 .category__name {
-   background-color: $gradColorFrom;
+   background-color: $md-clr-grey-900;
    color: $backgroundColor;
    height: 2.5em;
    line-height: 2.5em;
@@ -87,7 +89,7 @@
       text-align: center;
    }
    @include respond-to(tablet) {
-      border-top: 2px solid lighten($black, 30%);
+      border-top: 2px solid $head-foot-color;
       font-size: 15px;
       text-align: left;
       .category__name__title {
@@ -109,7 +111,7 @@
    margin: 0;
    @include respond-to(desktop) {
       float: left;
-      border-right: 2px solid lighten($black, 30%);
+      border-right: 2px solid $head-foot-color;
    }
 }
 
@@ -128,8 +130,8 @@
    display: none;
    @include respond-to(tablet) {
       @include clearfix();
-      background-color: $gradColorFrom;
-      border-top: 2px solid lighten($black, 30%);
+      background-color: $md-clr-grey-900;
+      border-top: 2px solid $head-foot-color;
       color: $backgroundColor;
       display: block;
       font-size: 15px;
@@ -151,7 +153,7 @@
 .topics__info__info {
    display: none;
    @include respond-to(desktop) {
-      border-left: 2px solid lighten($black, 30%);
+      border-left: 2px solid $head-foot-color;
       display: block;
       float: right;
       text-align: center;
@@ -163,7 +165,7 @@
    float: left;
    a {
       padding: 0.1em 1em;
-      border: 2px solid lighten($black, 30%);
+      border: 2px solid $head-foot-color;
    }
 }
 
@@ -175,21 +177,21 @@
       width: 127px;
    }
    @include respond-to(desktop) {
-      border-left: 2px solid lighten($black, 30%);
+      border-left: 2px solid $head-foot-color;
    }
 }
 
 .topic__header,
 .editor__header {
    @include clearfix();
-   background-color: $gradColorFrom;
+   background-color: $md-clr-grey-900;
    color: $backgroundColor;
    font-size: 15px;
    height: 2.5em;
    line-height: 2.5em;
    width: 100%;
    @include respond-to(tablet) {
-      border-top: 2px solid lighten($black, 30%);
+      border-top: 2px solid $head-foot-color;
    }
    @include respond-to(desktop) {
       border-top-width: 3px;
@@ -212,7 +214,7 @@
 .topic__header__info {
    display: none;
    @include respond-to(desktop) {
-      border-right: 2px solid lighten($black, 30%);
+      border-right: 2px solid $head-foot-color;
       display: block;
       float: left;
       padding-left: 4px;
@@ -229,7 +231,7 @@
       margin-right: 8px;
       a {
          padding: 0.1em 1em;
-         border: 2px solid lighten($black, 30%);
+         border: 2px solid $head-foot-color;
       }
    }
 }
