@@ -32,7 +32,7 @@ class ArticleTableSeeder extends Seeder {
                 'featured' => 1,
                 'name' => $article_name,
                 'slug' => $faker->slug,
-                'text' => $faker->text(500),
+                'text' => $faker->text(5000),
                 'user_id' => 1,
             ));
         }
