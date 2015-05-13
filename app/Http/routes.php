@@ -81,12 +81,12 @@ Route::group(
 
         Route::get('/{id}-{slug}', array(
             'as' => 'f.forum',
-            'uses' => 'ForumController@showForum',
+            'uses' => 'ForumController@forum',
         ));
 
         Route::get('/{random}/{id}-{slug}', array(
             'as' => 'f.topic',
-            'uses' => 'ForumController@showTopic',
+            'uses' => 'ForumController@topic',
         ));
     }
 );
