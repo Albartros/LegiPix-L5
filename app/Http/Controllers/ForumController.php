@@ -24,7 +24,7 @@ class ForumController extends Controller {
     public function forum($id, $slug)
     {
         $forum = Forum::find($id);
-        $topics = Topic::with('author', 'lastPost')->where('forum_id', $id)->orderBy('pinned', 'desc')->orderBy('anwsered_at', 'desc')->orderBy('id', 'desc')->paginate(20);
+        $topics = Topic::with('author', 'lastPost')->where('forum_id', $id)->orderBy('pinned', 'desc')->orderBy('anwsered_at', 'desc')->orderBy('id', 'desc')->paginate(15);
 
         return view('forum.forum', [
             'forum' => $forum,
