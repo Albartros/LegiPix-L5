@@ -111,7 +111,7 @@
    margin: 0;
    @include respond-to(desktop) {
       float: left;
-      border-right: 2px solid $head-foot-color;
+      border-right: 1px solid $md-clr-grey-600;
    }
 }
 
@@ -153,7 +153,7 @@
 .topics__info__info {
    display: none;
    @include respond-to(desktop) {
-      border-left: 2px solid $head-foot-color;
+      border-left: 1px solid $md-clr-grey-600;
       display: block;
       float: right;
       text-align: center;
@@ -165,7 +165,7 @@
    float: left;
    a {
       padding: 0.1em 1em;
-      border: 2px solid $head-foot-color;
+      border: 1px solid $md-clr-grey-600;
    }
 }
 
@@ -177,7 +177,7 @@
       width: 127px;
    }
    @include respond-to(desktop) {
-      border-left: 2px solid $head-foot-color;
+      border-left: 1px solid $md-clr-grey-600;
    }
 }
 
@@ -214,7 +214,7 @@
 .topic__header__info {
    display: none;
    @include respond-to(desktop) {
-      border-right: 2px solid $head-foot-color;
+      border-right: 1px solid $md-clr-grey-600;
       display: block;
       float: left;
       padding-left: 4px;
@@ -231,7 +231,7 @@
       margin-right: 8px;
       a {
          padding: 0.1em 1em;
-         border: 2px solid $head-foot-color;
+         border: 1px solid $md-clr-grey-600;
       }
    }
 }

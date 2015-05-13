@@ -111,9 +111,8 @@ margin-bottom: .8em;
 
 .topic {
    @include clearfix();
-   width: 96%;
    overflow: hidden;
-   padding: 0 2%;
+   padding: 0px 20px;
    @include respond-to(mobile) {
       margin-bottom: 10px;
       &:last-child {
@@ -160,8 +159,10 @@ margin-bottom: .8em;
    float: left;
    width: 42px;
    @include respond-to(tablet) {
-      padding: 5px;
-      width: 50px;
+        border-radius: 50%;
+        margin: 5px 20px 5px 0px;
+        width: 50px;
+        &:first-of-type { margin-right: 5px }
    }
 
 }
@@ -215,10 +216,6 @@ margin-bottom: .8em;
       padding: 0 10px;
       width: 130px;
    }
-}
-
-.topic__main__author {
-   font-weight: 500;
 }
 
 .topic__last-post {
@@ -675,68 +672,115 @@ margin-bottom: .8em;
 }
 
 .parallax__title {
-    color: $md-clr-grey-50;
-    cursor: default;
+    color: $md-clr-grey-200;
     font-family: $orbitron;
+    font-size: 125%;
     font-weight: 500;
-    margin: 0 0 0 30px;
-    opacity: .85;
+    margin: 0;
     position: relative;
+    text-align: center;
     text-shadow: 1px 1px 3px $md-clr-grey-800;
-    top: 20%;
+    top: 5%;
+    @include respond-to(tablet) {
+        font-size: 200%;
+        margin-left: 30px;
+        text-align: left;
+        top: 16%;
+    }
+    @include respond-to(desktop) {
+        cursor: default;
+    }
 }
 
 .parallax__meta, .parallax__buttons {
-    //font-family: $orbitron;
-    //font-weight: 400;
-    color: $md-clr-grey-50;
-    cursor: default;
-    font-size: 120%;
-    margin-left: 30px;
-    opacity: .9;
+    color: $md-clr-grey-200;
     position: relative;
-    text-shadow: 1px 1px 3px $md-clr-grey-900;
-    top: 20%;
+    text-align: center;
+    top: 15%;
+    @include respond-to(tablet) {
+        font-size: 120%;
+        margin-left: 30px;
+        text-align: left;
+        top: 16%;
+    }
+    @include respond-to(desktop) {
+        cursor: default;
+    }
 }
 
+.parallax__meta { text-shadow: 1px 1px 3px $md-clr-grey-900 }
+
 .parallax__buttons {
-    top: 35%;
+    @include flexbox((
+        display: flex,
+        flex-direction: column,
+        justify-content: center
+    ));
     font-weight: 400;
-    margin-right: 30px;
-    color: $md-clr-grey-300;
-    a {
-        @include transition-duration(.1s);
-        @include transition-property(all);
-        @include transition-timing-function(linear);
-        border-radius: 3px;
-        border: 2px solid $md-clr-grey-300;
-        box-shadow: 1px 1px 3px $md-clr-grey-600;
-        padding: 1px 8px;
-        &:hover { border-color: $md-clr-grey-100; color: $md-clr-grey-50 }
+    top: 20%;
+    text-align: center;
+    @include respond-to(tablet) {
+        text-align: left;
+        margin-right: 30px;
+    }
+    @include respond-to(desktop) {
+
     }
     .pagination {
         @include flexbox((
             display: flex,
-            flex-direction: rox,
-            justify-content: space-between
+            flex-direction: row,
+            justify-content: center,
         ));
+        @include respond-to(tablet) {
+            @include flexbox((
+                align-self: flex-end
+            ));
+        }
+        @include respond-to(desktop) {
+
+        }
+        color: $md-clr-grey-900;
         float: right;
-        font-family: $robotoCond;
+        font-family: Tahoma, Geneva, sans-serif;
         list-style-type: none;
         margin: 0;
+        opacity: .9;
         padding: 0;
+        position: relative;
+        top: 25px;
         li {
             display: inline-block;
-            margin: 0 2px 0 1px;
-            &:first-of-type { margin-left: 0 }
-            &:last-of-type { margin-right: 0 }
-            span {
-                border-radius: 3px;
-                border: 2px solid $md-clr-grey-300;
-                box-shadow: 1px 1px 3px $md-clr-grey-600;
-                padding: 1px 8px
+            margin: 0 2px;
+            &:first-of-type {
+                margin-left: 0;
+                a, span {
+                    bottom: 1px;
+                    padding-bottom: 3px;
+                    padding-top: 1px;
+                    position: relative
+                }
             }
-            &.active span { border-color: $md-clr-grey-100; color: $md-clr-grey-50 }
+            &:last-of-type {
+                margin-right: 0;
+                a, span {
+                    bottom: 1px;
+                    padding-bottom: 3px;
+                    padding-top: 1px;
+                    position: relative
+                }
+            }
+            a {
+                transform: translateZ(0); // Acceleration Materielle
+                @include transition-duration(.1s);
+                @include transition-property(all);
+                @include transition-timing-function(ease-in);
+                background-color: $md-clr-grey-200;
+                padding: 2px 8px;
+                &:hover { color: $md-clr-grey-100; background-color: mix($md-clr-blue-700, $md-clr-blue-600) }
+            }
+            span { background-color: $md-clr-grey-200; color: $md-clr-grey-500; padding: 2px 8px }
+            &.active span { color: $md-clr-grey-100; background-color: mix($md-clr-blue-700, $md-clr-blue-600) }
         }
     }
 }
