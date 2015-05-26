@@ -2,6 +2,15 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Forum
+ *
+ * @property-read \App\ForumCategory $category 
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Topic[] $topics 
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Topic')
+ *                     ->orderBy('pinned[] $listTopics 
+ * @property-read mixed $posts_paginated 
+ */
 class Forum extends Model {
 
     /**
@@ -51,7 +60,7 @@ class Forum extends Model {
      */
     public function getPostsPaginatedAttribute()
     {
-        return $this->listTopics()->paginate(10);
+        return $this->listTopics()->paginate($this->per_page);
     }
 
 }

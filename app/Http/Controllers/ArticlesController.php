@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Article;
+use App\ArticleCategory;
 use App\Http\Controllers\Controller;
 use Jenssegers\Date\Date;
 
@@ -13,7 +14,11 @@ class ArticlesController extends Controller {
      */
     public function index()
     {
-        //
+        $categories = ArticleCategory::with('paginatedArticles')->get();
+        //dd($categories->toArray());
+        return view('news.index', [
+            'categories' => $categories,
+        ]);
     }
 
     /**

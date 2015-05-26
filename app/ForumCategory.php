@@ -2,6 +2,11 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\ForumCategory
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Forum[] $forums 
+ */
 class ForumCategory extends Model {
 
     /**

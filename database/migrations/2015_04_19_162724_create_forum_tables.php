@@ -36,7 +36,7 @@ class CreateForumTables extends Migration {
             $table->string('thumbnail')->default('default.png');
 
             // Metadata
-            $table->string('tag')->nullable()->default(null);
+            $table->integer('per_page')->unsigned()->default(15);
             $table->integer('position')->unsigned();
 
             // Statistics
@@ -61,8 +61,8 @@ class CreateForumTables extends Migration {
             // Metadata
             $table->boolean('locked')->default(false);
             $table->boolean('pinned')->default(false);
-            $table->boolean('tagged')->default(false);
             $table->integer('last_post_id')->unsigned();
+            $table->integer('per_page')->unsigned()->default(20);
 
             // Statistics
             $table->integer('views')->default(0);

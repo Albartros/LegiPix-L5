@@ -34,7 +34,7 @@
                     <nav class="menu">
                         <menu class="menu__list">
                             <li class="menu__list__item">
-                                <a href="{!! route('index') !!}" class="menu__list__link">
+                                <a href="{!! route('n.index') !!}" class="menu__list__link">
                                 <i class="icon-fire icon--large"></i>News
                                 </a>
                             </li>

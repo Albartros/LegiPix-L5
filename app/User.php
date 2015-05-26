@@ -63,9 +63,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-     * Checks if user is online
-     *
-     * @return boolean
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function topics()
+    {
+        return $this->hasMany('user_id', 'id');
+    }
+
+    /**
+     * @return bool
      */
     public function isOnline()
     {
@@ -85,8 +91,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-     * Make a user to appear online
-     *
      * @return void
      */
     public function makeOnline()

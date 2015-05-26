@@ -4,6 +4,10 @@ use Illuminate\Database\Eloquent\Model;
 
 use Carbon\Carbon;
 
+/**
+ * App\Countdown
+ *
+ */
 class Countdown extends Model {
 
     /**

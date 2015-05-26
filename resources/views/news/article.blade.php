@@ -13,7 +13,7 @@
         <span>
             {!! link_to_route('index', 'Accueil') !!}<i class="separator"></i>
             {!! link_to_route('n.index', 'News') !!}<i class="separator"></i>
-            {!! link_to_route('n.category', e($article->category->name), [(int) $article->category->id, e($article->category->slug)]) !!}<i class="separator"></i>
+            {!! link_to_route('n.category', e($article->category->name), [$article->category->id, e($article->category->slug)]) !!}<i class="separator"></i>
             {{ ucfirst($article->name) }}
         </span>
     </div>
@@ -23,7 +23,7 @@
         </div>
         <div class="article__header__title">{{ ucfirst($article->name) }}</div>
         <div class="article__header__meta">
-            {!! link_to_route('u.view', e($article->author->name), [(int) $article->author->id, e($article->author->name)]) !!}
+            {!! link_to_route('u.view', e($article->author->name), [$article->author->id, e($article->author->name)]) !!}
             &nbsp;-&nbsp;
             vues {!! $article->views !!}
             &nbsp;-&nbsp;

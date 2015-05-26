@@ -2,6 +2,12 @@
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Article
+ *
+ * @property-read \App\ArticleCategory $category 
+ * @property-read \App\User $author 
+ */
 class Article extends Model {
 
     /**
@@ -24,7 +30,7 @@ class Article extends Model {
     /**
      * Gets the category containing the forum.
      *
-     * @return object
+     * @return mixed
      */
     public function author()
     {
@@ -34,7 +40,7 @@ class Article extends Model {
     /**
      * Lists articles shown on index page.
      *
-     * @return object
+     * @return mixed
      */
     public function listIndexArticles()
     {
@@ -49,7 +55,7 @@ class Article extends Model {
     /**
      * Lists news shown on index page.
      *
-     * @return object
+     * @return mixed
      */
     public function listIndexNews()
     {

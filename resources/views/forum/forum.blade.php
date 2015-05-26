@@ -19,10 +19,10 @@
 
     <div id="parallax" class="parallax" style="background-image: url({{ asset('uploads/banner/' . $forum->banner) }})">
         <h1 class="parallax__title">{{ $forum->name }}</h1>
-        <div class="parallax__meta">52 Sujets&nbsp;&nbsp;-&nbsp;&nbsp;126 Messages</div>
+        <div class="parallax__meta">{{ $forum->topics }} Sujets&nbsp;&nbsp;-&nbsp;&nbsp;{{ $forum->posts }} Messages</div>
         <div class="parallax__buttons">
             @if (Auth::check())
-            <a href="#new">Nouveau Sujet</a>
+            <a href="#new" class="parallax__btn">Nouveau Sujet</a>
             @endif
             {!! $topics->render() !!}
         </div>
@@ -51,7 +51,7 @@
                 <img src="{!! asset('uploads/avatar/' . $topic->lastPost->author->avatar) !!}" alt="avatar-{{ $topic->author->name }}" class="topic__author-avatar" title="Dernier">
 
                 <div class="topic__main">
-                    <h3 class="topic__main__title">{!! link_to_route('f.topic', $topic->name, [(int) $forum->id . '-' . e($forum->slug), (int) $topic->id, e($topic->slug)]) !!}</h3>
+                    <h3 class="topic__main__title new">{!! link_to_route('f.topic', $topic->name, [(int) $forum->id . '-' . e($forum->slug), (int) $topic->id, e($topic->slug)]) !!}</h3>
                     <div class="topic__main__info">
                         <span class="topic__main__author">Par
                             @if (Auth::check() && Auth::id() == $topic->user_id)
@@ -64,20 +64,16 @@
                     </div>
                 </div>
 
-                @if($topic->tagged && $forum->tag)
-                    <span class="topic__tag"><i class="icon-tag"></i> {{{ $forum->tag }}}</span>
-                @endif
-
-                @if($topic->pinned)
-                    <span class="topic__tag" title="Épinglé"><i class="icon-pin"></i></span>
-                @endif
-
                 @if($topic->locked)
                     <span class="topic__tag" title="Verrouillé"><i class="icon-locked"></i></span>
                 @endif
 
                 @if(Auth::check() && Auth::id() != $topic->user_id)
                     <span class="topic__tag" title="Nouveau"><i class="icon-new"></i></span>
+                @endif
+
+                @if($topic->pinned)
+                    <span class="topic__tag" title="Épinglé"><i class="icon-pin"></i></span>
                 @endif
 
                 <div class="topic__info">
@@ -91,7 +87,7 @@
                     </dl>
                 </div>
 
-                <a href="{{ route('f.topic', [(int) $forum->id . '-' . e($forum->slug), (int) $topic->id, e($topic->slug)]) }}#message-{{ $topic->last_post_id }}" class="topic__last-post" title="Accéder au dernier message">
+                <a href="{{ route('f.topic', [(int) $forum->id . '-' . e($forum->slug), (int) $topic->id, e($topic->slug)]) }}?page={!! ceil($topic->posts / $topic->per_page) !!}#message-{{ $topic->last_post_id }}" class="topic__last-post" title="Accéder au dernier message">
                     <div class="topic__last-post__user">
                         @if(Auth::check() && Auth::id() == $topic->lastPost->user_id)
                             Vous

@@ -150,6 +150,7 @@ return [
        */
       'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
       'Barryvdh\Debugbar\ServiceProvider',
+      'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
       'Collective\Html\HtmlServiceProvider',
       'Cviebrock\EloquentSluggable\SluggableServiceProvider',
       'Frozennode\Administrator\AdministratorServiceProvider',

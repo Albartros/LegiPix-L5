@@ -77,9 +77,7 @@ class Topic extends Model {
      */
     public function getPosts()
     {
-        $pagination = 15;
-
-        return $this->posts()->paginate($pagination);
+        return $this->posts()->paginate($this->per_page);
     }
 
     /**
@@ -101,6 +99,6 @@ class Topic extends Model {
         } elseif ($this->created_at->isYesterday()) {
             return 'hier à ' . $this->created_at->format('H:i');
         }
-        return 'le ' . Date::parse($this->created_at)->format('j F Y à H:i');
+        return 'le ' . Date::parse($this->created_at)->format('j F Y');
     }
 }

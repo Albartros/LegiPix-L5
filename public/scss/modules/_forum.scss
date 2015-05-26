@@ -138,7 +138,7 @@ margin-bottom: .8em;
 }
 
 .topic__main {
-   overflow: hidden;
+   //overflow: hidden;
    @include respond-to(tablet) {
       @include flexbox((
          display: flex,
@@ -147,10 +147,7 @@ margin-bottom: .8em;
          ));
    }
    @include respond-to(desktop) {
-      &:hover .topic__main__title {
-         color: darken($blue, 20%);
-         padding-left: .2em;
-      }
+        position: relative;
    }
 }
 
@@ -178,23 +175,43 @@ margin-bottom: .8em;
       margin: 0;
    }
    @include respond-to(desktop) {
-      @include transition-duration(.1s);
-      @include transition-property(all);
-      @include transition-timing-function(linear);
+    &.new:before {
+        content: "\2022";
+        position: absolute;
+        top: 3px;
+        left: -20px;
+        font-family: monospace;
+        font-size: 35px;
+        color: $md-clr-blue-600;
+    }
+       a{
+            @include transition-duration(.1s);
+          @include transition-property(all);
+          @include transition-timing-function(linear);
+           &:hover {
+             //color: darken($blue, 20%);
+             padding-left: .2em;
+          }
+    }
+  }
    }
-}
 
 .topic__main__info {
    display: none;
    @include respond-to(tablet) {
       display: block;
+      font-style: italic;
+      color: $md-clr-grey-800;
+      strong { color: $md-clr-grey-900 }
    }
 }
 
 .topic__tag {
    display: none;
    @include respond-to(desktop) {
-      border: 1px solid lighten($gradColorFrom, 50%);
+      //border: 1px solid lighten($gradColorFrom, 50%);
+      color: $md-clr-grey-100;
+      background-color: $md-clr-blue-600;
       display: block;
       margin-left: .2em;
       padding: 3px 6px;
@@ -225,11 +242,16 @@ margin-bottom: .8em;
    }
    @include respond-to(tablet) {
       line-height: 1em;
-      width: 120px;
+      width: 130px;
       text-align: right;
    }
    @include respond-to(desktop) {
-
+        @include transition-duration(.1s);
+      @include transition-property(all);
+      @include transition-timing-function(linear);
+        &:hover { margin-left: 2px; padding-right: 5px;
+            .topic__last-post__user {color: darken($blue, 20%);}
+        }
    }
 }
 
@@ -263,7 +285,8 @@ margin-bottom: .8em;
       margin: 0;
    }
    dt {
-      font-weight: 500;
+      //font-weight: 500;
+      color: $md-clr-grey-800;
    }
    dd {
       float: right;
@@ -708,7 +731,7 @@ margin-bottom: .8em;
     }
 }
 
-.parallax__meta { text-shadow: 1px 1px 3px $md-clr-grey-900 }
+.parallax__meta, .parallax__btn { text-shadow: 1px 1px 3px $md-clr-grey-900 }
 
 .parallax__buttons {
     @include flexbox((

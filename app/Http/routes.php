@@ -15,6 +15,11 @@ Route::get('/', array(
     'uses' => 'WelcomeController@index',
 ));
 
+Route::get('/poster', array(
+    'as' => 'poster',
+    'uses' => 'WelcomeController@index',
+));
+
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',

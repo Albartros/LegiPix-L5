@@ -29,7 +29,6 @@ class ForumTablesSeeder extends Seeder {
                 'name' => $faker->sentence(4),
                 'position' => $item,
                 'slug' => $faker->slug,
-                'tag' => $faker->word,
                 'text' => $faker->sentence(6),
             ));
         }
@@ -45,7 +44,6 @@ class ForumTablesSeeder extends Seeder {
                 'name' => $faker->sentence(4),
                 'pinned' => $faker->numberBetween(0, 1),
                 'slug' => $faker->slug,
-                'tagged' => $faker->numberBetween(0, 1),
                 'user_id' => 1,
             ));
         }
